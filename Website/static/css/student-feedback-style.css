@@ -119,25 +119,41 @@ header a{
 .line {
     background: black;
     height: 3px;
-    width: 1720px;
+    width: 90%;
 }
 .btn{
-    height: 100px;
-    width: 250px;
-    background-color: #6CA0ED;
+    height: 50px;
+    width: 50px;
+
     border:none;
-    border-radius: 43px;
+    border-radius: 50%;
 }
 
 .btn:hover{
-    background-color: #B4D1FD;
+    opacity: 0.5;
 }
 
 input {
-    height: 100px;
+    height: 50px;
+    background-color: #D9D9D9;
     width: 500px;
     border-radius: 43px;
     font-size: 28px;
     padding-left: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
 }
 
+.feedback {
+    height: 50px;
+    background-color: #D9D9D9;
+    width: 500px;
+    border-radius: 43px;
+    font-size: 28px;
+    padding-left: 20px;
+    margin-top: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}

@@ -25,20 +25,17 @@
                 <div class="green-block"></div>
                 <div class="yellow-block"></div>
                 <div class="red-block"></div>
-                <!--TODO: 
-                1.fix border
-                2.put the blocks into a seperate div
-                3. Add bottom line
-                -->
+                
             </div>
+            <div class="circle"></div>
             <div class="line"></div>
         </div>
         
         <form method="POST">
-            <input type="text" name="feedback" id="feedback">
-            <a>
-                <button type="submit" class="btn" href="/feedback">Add feedback</button>
-            </a>
+            <input type="text" name="feedback" id="feedback" placeholder="feedback">
+            <button href="/feedback">
+                <img type="submit" class="btn" src="{{ url_for('static', filename='pictures/Add btn.png') }}">
+            </button>
         </form>
         <div class="feedbacks">
             {% for feedback in feedbacks %}
