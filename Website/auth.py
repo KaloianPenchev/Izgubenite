@@ -15,12 +15,12 @@ def login():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
-        print("1")
+        
         user = User.query.filter_by(email=email).first()
         
         if check_password_hash(user.password, password):
             login_user(user, remember=True)
-            print("2")
+            
             return redirect(url_for('auth.profile_student'))
                 #if current_user.role == '0':
                     #return redirect(url_for('auth.profile-student'))
@@ -64,7 +64,7 @@ def sign_up():
 @login_required
 def profile_student():
     #role = current_user.role
-    print("3")
+    
     return render_template('student.html', user=current_user)
 
 @auth.route('/profile_teacher')
