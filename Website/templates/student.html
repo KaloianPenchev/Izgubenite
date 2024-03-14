@@ -11,9 +11,7 @@
 <body>
     <div class="header"></div>
     <div class="profilepage">
-        <img src="{{ url_for('static', filename='pictures/user.png') }}"> 
-        
-        
+        <img class="profilepic" src="{{ url_for('static', filename='pictures/user.png') }}"> 
         <div class="details">
             <h1 class="details-text">Role: Student</h1>
             <h1 class="details-text">Name: {{name}}</h1>
