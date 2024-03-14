@@ -1,5 +1,8 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 * {
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+
     margin: 0;
     padding: 0;
 }
@@ -47,6 +50,8 @@ header {
     width: 89%;
     height: 48%;
     border-radius: 43px;
+    font-size: 100px;
+
 }
 #teacher-things {
     list-style: none;
@@ -73,15 +78,28 @@ header {
 #teacher-students button{
     background-color: #6CA0ED;
     border: solid;
-    border-radius: 10px;
-    width: 260px;
-    height: 30px;
+    border-radius: 43px;
+    width: 355px;
+    height: 91px;
+    font-size: 40px;
 }
 #teacher-students li {
      margin-top: 40px;
- }
-#Need-to-return-fedback{
+ }/* Need to return feedback? */
+/* Need to return feedback? */
+
+#Need-to-return-feedback{
+    position: absolute;
+    top: 50px;
     display: flex;
     justify-content: center;
+    font-weight: 400;
     font-size: 40px;
+    line-height: 45px;
+    align-items: center;
+    text-align: center;
+    width: 770px;
+    height: 00px;
+    color: #000000;
 }
+
