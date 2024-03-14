@@ -4,10 +4,10 @@ from flask import Flask, Blueprint, render_template, request, flash, redirect, u
 
 generator = Blueprint('auth', __name__)
 
-questions = json.load(open("static\JS\questions.json", "r"))
+questions = json.load(open("static/JS/questions.json"))
 
 @generator.route('/maths', methods=['GET', 'POST'])
-def generateTest():
+def generateTestMat():
     met = [0] * 100
     choose = []
     test = []
@@ -25,7 +25,7 @@ def generateTest():
 
 
 @generator.route('/history', methods=['GET', 'POST'])
-def generateTest():
+def generateTestHis():
     met = [0] * 100
     choose = []
     test = []
@@ -43,7 +43,7 @@ def generateTest():
 
 
 @generator.route('/geography', methods=['GET', 'POST'])
-def generateTest():
+def generateTestGeo():
     met = [0] * 100
     choose = []
     test = []

@@ -1,213 +1,174 @@
 {
-  "questions": [
+  "categories": [
     {
-      "question": "How much is the square root of 25?",
-      "options": ["625", "5", "6", "7"],
-      "answer": "5",
-      "category": "maths",
-      "subcategory": "algebra"
-      
+      "name": "Mathematics",
+      "subcategories": [
+        {
+          "name": "Algebra",
+          "questions": [
+            {
+              "question": "How much is the square root of 25?",
+              "options": ["625", "5", "6", "7"],
+              "answer": "5"
+            },
+            {
+              "question": "How much is the square root of 169?",
+              "options": ["14", "13", "9", "28561"],
+              "answer": "13"
+            },
+            {
+              "question": "The square root of 289 is?:",
+              "options": ["17", "13", "21", "14"],
+              "answer": "17"
+            },
+            {
+              "question": "How much is 1 to the power of 0?",
+              "options": ["1", "0", "0.5", "-1"],
+              "answer": "1"
+            },
+            {
+              "question": "How much is 3 to the power of 4?",
+              "options": ["126", "81", "12", "412"],
+              "answer": "81"
+            },
+            {
+              "question": "How much is 4 to the power of 2?",
+              "options": ["12", "8", "16", "32"],
+              "answer": "16"
+            },
+            {
+              "question": "What are the roots of the equation: x*x - 3 * 3 = 0?",
+              "options": ["3 and -3", "1 and 0", "2 and 3", "no real roots"],
+              "answer": "3 and -3"
+            },
+            {
+              "question": "What are the roots of the equation: 4*x*x + x - 5 = 0?",
+              "options": ["2 и 4", "-1 и 1.25", "2 и 6", "no real roots"],
+              "answer": "3 и -3"
+            },
+            {
+              "question": "What are the roots of the equation: 4*x*x + x + 3 + 8*x*x = 0?",
+              "options": ["6 и -2", "-1 и 3", "-4 и 3", "no real roots"],
+              "answer": "no real roots"
+            }
+          ]
+        },
+        {
+          "name": "Geometry",
+          "questions": [
+            {
+              "question": "What is the formula to calculate the area of a circle?",
+              "options": ["π*r*r", "π*π*r", "2*π*r", "4*r*r"],
+              "answer": "π*r*r"
+            },
+            {
+              "question": "What is the area of a circle with a 16cm diameter",
+              "options": ["32π", "16π", "256π", "8π"],
+              "answer": "32π"
+            },
+            {
+              "question": "What is the area of a circle with a 6cm radius",
+              "options": ["12π", "36π", "126π", "218π"],
+              "answer": "36π"
+            },
+            {
+              "question": "At least how many points do you need to form a plane?",
+              "options": ["0", "1", "2", "3"],
+              "answer": "3"
+            },
+            {
+              "question": "At least how many points do you need to form a segment?",
+              "options": ["1", "4", "2", "3"],
+              "answer": "2"
+            },
+            {
+              "question": "How many points does a nonagon have?",
+              "options": ["7", "3", "9", "6"],
+              "answer": "9"
+            },
+            {
+              "question": "A right-angled triangle ABC(C=90°) has coordinates of points A(2, 4) and B(6, 8).Find the coordinates of point C.",
+              "options": ["C(6, 4)", "C(2, 6)", "C(4, 6)", "C(8, 2)"],
+              "answer": "C(6, 4)"
+            }
+          ]
+        }
+      ]
     },
-
     {
-      "question": "How much is the square root of 169?",
-      "options": ["14", "13", "9", "28561"],
-      "answer": "13",
-      "category": "maths",
-      "subcategory": "algebra"
+      "name": "History",
+      "subcategories": [
+        {
+          "name": "Ancient History",
+          "questions": [
+            {
+              "question": "Who is thought to be \"the father of history\"?",
+              "options": ["Platon", "Aristotle", "Herodotus", "Socrates"],
+              "answer": "Herodotus"
+            }
+          ]
+        },
+        {
+          "name": "Bulgarian History",
+          "questions": [
+            {
+              "question": "What is the first bulgarian contitution called?",
+              "options": ["The Revivalist Constitution", "The Plovdiv Constitution", "The Stanbolovian Constitution", "The Tarnovo Constitution"],
+              "answer": "The Tarnovo Constitution"
+            },
+            {
+              "question": "What year does bulgaria declare independece from the Ottoman empire?",
+              "options": ["1787", "2023", "1878", "1867"],
+              "answer": "1878"
+            },
+            {
+              "question": "Under which ruler were the Bulgarians baptized??",
+              "options": ["Boris I", "Peter I", "Simeon", "Krum"],
+              "answer": "Boris I"
+            }
+          ]
+        }
+      ]
     },
-
     {
-      "question": "The square root of 289 is?:",
-      "options": ["17", "13", "21", "14"],
-      "answer": "17",
-      "category": "maths",
-      "subcategory": "algebra"
-    },
-
-    {
-      "question": "How much is 1 to the power of 0?",
-      "options": ["1", "0", "0.5", "-1"],
-      "answer": "1",
-      "category": "maths",
-      "subcategory": "algebra"
-    },
-
-    {
-      "question": "How much is 3 to the power of 4?",
-      "options": ["126", "81", "12", "412"],
-      "answer": "81",
-      "category": "maths",
-      "subcategory": "algebra"
-    },
-
-    {
-      "question": "How much is 4 to the power of 2?",
-      "options": ["12", "8", "16", "32"],
-      "answer": "16",
-      "category": "maths",
-      "subcategory": "algebra"
-    },
-
-    {
-      "question": "What is the formula to calculate the area of a circle?",
-      "options": ["π*r*r", "π*π*r", "2*π*r", "4*r*r"],
-      "answer": "π*r*r",
-      "category": "maths",
-      "subcategory": "geometry"
-    },
-
-    {
-      "question": "What is the area of a circle with a 16cm diameter",
-      "options": ["32π", "16π", "256π", "8π"],
-      "answer": "32π",
-      "category": "maths",
-      "subcategory": "geometry"
-    },
-
-    {
-      "question": "What is the area of a circle with a 6cm radius",
-      "options": ["12π", "36π", "126π", "218π"],
-      "answer": "36π",
-      "category": "maths",
-      "subcategory": "geometry"
-    },
-
-    {
-      "question": "At least how many points do you need to form a plane?",
-      "options": ["0", "1", "2", "3"],
-      "answer": "3",
-      "category": "maths",
-      "subcategory": "geometry"
-    },
-
-    {
-      "question": "At least how many points do you need to form a segment?",
-      "options": ["1", "4", "2", "3"],
-      "answer": "2",
-      "category": "maths",
-      "subcategory": "geometry"
-    },
-
-    {
-      "question": "How many points does a nonagon have?",
-      "options": ["7", "3", "9", "6"],
-      "answer": "9",
-      "category": "maths",
-      "subcategory": "geometry"
-    },
-
-    {
-      "question": "A right-angled triangle ABC(C=90°) has coordinates of points A(2, 4) and B(6, 8).Find the coordinates of point C.",
-      "options": ["C(6, 4)", "C(2, 6)", "C(4, 6)", "C(8, 2)"],
-      "answer": "C(6, 4)",
-      "category": "maths",
-      "subcategory": "geometry"
-    },
-
-    {
-      "question": "What are the roots of the equation: x*x - 3 * 3 = 0?",
-      "options": ["3 and -3", "1 and 0", "2 and 3", "no real roots"],
-      "answer": "3 and -3",
-      "category": "maths",
-      "subcategory": "algebra"
-    },
-
-    {
-      "question": "What are the roots of the equation: 4*x*x + x - 5 = 0?",
-      "options": ["2 и 4", "-1 и 1.25", "2 и 6", "no real roots"],
-      "answer": "3 и -3",
-      "category": "maths",
-      "subcategory": "algebra"
-    },
-
-    {
-      "question": "What are the roots of the equation: 4*x*x + x + 3 + 8*x*x = 0?",
-      "options": ["6 и -2", "-1 и 3", "-4 и 3", "no real roots"],
-      "answer": "no real roots",
-      "category": "maths",
-      "subcategory": "algebra"
-    },
-
-    {
-      "question": "Who is thought to be \"the father of history\"?",
-      "options": ["Platon", "Aristotle", "Herodotus", "Socrates"],
-      "answer": "Herodotus",
-      "category": "history",
-      "subcategory": "ancient history"
-      
-    },
-
-    {
-      "question": "What is the first bulgarian contitution called?",
-      "options": ["The Revivalist Constitution", "The Plovdiv Constitution", "The Stanbolovian Constitution", "The Tarnovo Constitution"],
-      "answer": "The Tarnovo Constitution",
-      "category": "history",
-      "subcategory": "bulgarian history"
-    },
-
-    {
-      "question": "What year does bulgaria declare independece from the Ottoman empire?",
-      "options": ["1787", "2023", "1878", "1867"],
-      "answer": "1878",
-      "category": "history",
-      "subcategory": "bulgarian history"
-    },
-
-    {
-      "question": "Under which ruler were the Bulgarians baptized??",
-      "options": ["Boris I", "Peter I", "Simeon", "Krum"],
-      "answer": "Boris I",
-      "category": "history",
-      "subcategory": "bulgarian history"
-    },
-
-    {
-      "question": "What is the square root of 25?",
-      "options": ["4", "5", "6", "7"],
-      "answer": "5",
-      "category": "maths",
-      "subcategory": "algebra"
-    },
-
-    {
-      "question": "Which nation the the island Bali belong to?",
-      "options": ["Indonesia", "Malaysia", "New Zeland", "Australia"],
-      "answer": "Indonesia",
-      "category": "geography",
-      "subcategory": "natural geography"
-    },
-
-    {
-      "question": "Which is the largest country in the world?",
-      "options": ["Canada", "USA", "India", "Russia"],
-      "answer": "Russia",
-      "category": "geography",
-      "subcategory": "geopolitics"
-    },
-
-    {
-      "question": "Inside which country is mount Everest located inside of?",
-      "options": ["Nepal", "China", "Bhutan", "Pakistan"],
-      "answer": "Nepal",
-      "category": "geography",
-      "subcategory": "geopolitics"
-    },
-
-    {
-      "question": "Which city is the capital of Australia?",
-      "options": ["Sidney", "Purt", "Canberra", "Melbourne"],
-      "answer": "Canberra",
-      "category": "geography",
-      "subcategory": "geopolitics"
-    },
-
-    {
-      "question": "How much of the Earth is covered by water",
-      "options": ["71%", "62%", "88%", "40.5%"],
-      "answer": "71%",
-      "category": "geography",
-      "subcategory": "geopolitics"
+      "name": "Geography",
+      "subcategories": [
+        {
+          "name": "Natural Geography",
+          "questions": [
+            {
+              "question": "Which nation the the island Bali belong to?",
+              "options": ["Indonesia", "Malaysia", "New Zeland", "Australia"],
+              "answer": "Indonesia"
+            },
+            {
+              "question": "How much of the Earth is covered by water",
+              "options": ["71%", "62%", "88%", "40.5%"],
+              "answer": "71%"
+            }
+          ]
+        },
+        {
+          "name": "Geopolitics",
+          "questions": [
+            {
+              "question": "Which is the largest country in the world?",
+              "options": ["Canada", "USA", "India", "Russia"],
+              "answer": "Russia"
+            },
+            {
+              "question": "Inside which country is mount Everest located inside of?",
+              "options": ["Nepal", "China", "Bhutan", "Pakistan"],
+              "answer": "Nepal"
+            },
+            {
+              "question": "Which city is the capital of Australia?",
+              "options": ["Sidney", "Purt", "Canberra", "Melbourne"],
+              "answer": "Canberra"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
