@@ -20,20 +20,13 @@ def login():
         
         if check_password_hash(user.password, password):
             login_user(user, remember=True)
-            if user.role == '1':
+            if current_user.role == '1':
                 return redirect(url_for('auth.profile_teacher'))
-            elif user.role == '0':
+            elif current_user.role == '0':
                 return redirect(url_for('auth.profile_student'))
-            
-                #if current_user.role == '0':
-                    #return redirect(url_for('auth.profile-student'))
-                #else:
-                    #return redirect(url_for('auth.profile-teacher'))
-
         else:
             flash('Incorrect password, try again.', category='error')
         
-
     return render_template('login.html', user=current_user )
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
@@ -46,20 +39,19 @@ def sign_up():
         role = request.form.get('role')
         print(request.form)
         user = User.query.filter_by(email=email).first()
-        # if user:
-        #     flash('Email already exists.', category='error')
-        #     print("2")
-        # else:
+        
         new_user = User(first_name=first_name, email=email, password=generate_password_hash(
             password, method='pbkdf2:sha256') , role=role)
+        
         db.session.add(new_user)
         db.session.commit()
-        login_user(new_user, remember=True)
-        flash('Account created!', category='success')
         
-        if role == '1':
+        login_user(new_user, remember=True)
+        
+        
+        if current_user.role == '1':
             return redirect(url_for('auth.profile_teacher'))
-        elif role == '0':
+        elif current_user.role == '0':
             return redirect(url_for('auth.profile_student'))
     
     return render_template('register.html', user=current_user)
@@ -70,14 +62,12 @@ def sign_up():
 @auth.route('/profile_student')
 @login_required
 def profile_student():
-    #role = current_user.role
     
     return render_template('student.html', user=current_user, studentname=current_user.first_name , studentemail=current_user.email)
 
 @auth.route('/profile_teacher')
 @login_required
 def profile_teacher():
-    #role = current_user.role
     return render_template('teacher.html', user=current_user, teachername=current_user.first_name , teacheremail=current_user.email)
 
 
@@ -87,6 +77,14 @@ def profile_teacher():
 def logout():
     logout_user()
     return redirect(url_for('auth.login'))
-    #return render_template('login.html' , user=current_user)
+    
+    
+@auth.route('/feedbackpage')
+@login_required
+def feedbackpage():
+    if current_user.role == '1':
+        return render_template('teacher-feedback.html', user=current_user)
+    elif current_user.role == '0':
+        return render_template('student-feedback.html', user=current_user)
     
 
