@@ -21,3 +21,9 @@ def home():
             flash('Feedback added!', category='success')
     feedbacks = Feedback.query.filter_by(student_email=current_user.email).all()
     return render_template("student-feedback.html", user=current_user, feedbacks=feedbacks)
+
+@views.route('/reaction', methods=['GET','POST'])
+@login_required
+def reacting():
+    #feedbacks = Feedback.query.filter_by(student_email=current_user.email).all()
+    return render_template("teacher-feedback.html",  user=current_user, feedbacks=Feedback.query.all())
