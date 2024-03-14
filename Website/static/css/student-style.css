@@ -18,8 +18,8 @@ header {
     height: 100%;
 }
 .button1{
-    height: 50%;
-    width:200%; 
+    height: 50%; 
+    width: 200%;
     border-radius: 30px;
 }
 .button1:hover{
