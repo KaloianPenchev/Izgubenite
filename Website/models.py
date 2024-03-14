@@ -7,3 +7,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150))
     password = db.Column(db.String(150))
     role = db.Column(db.String(150))
+
+class Feedback(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    student_id = db.Column(db.Integer)
+    message = db.Column(db.Text)
