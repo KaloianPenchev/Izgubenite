@@ -1,0 +1,87 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 11%;
+    width: 100%;
+    background-color: #6CA0ED;
+
+}
+#side-teachers{
+    position: absolute;
+    top: 11%;
+    width: 100%;
+    height: 89%;
+}
+#left-side-teachers {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-color: #B4D1FD;
+}
+#top-left-side-teachers {
+    position: absolute;
+    display: flex;
+    left: 3%;
+    top: 7%;
+}
+
+#bottom-left-side-teachers {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+#info {
+    position: absolute;
+    justify-content: center;
+    top: 50%;
+    width: 89%;
+    height: 48%;
+    border-radius: 43px;
+}
+#teacher-things {
+    list-style: none;
+    margin-left: 30px;
+    font-size: 40px;
+}
+#right-side-teachers {
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-color: #F5F5F5;
+}
+#teacher-students{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+}
+#teacher-students button{
+    background-color: #6CA0ED;
+    border: solid;
+    border-radius: 10px;
+    width: 260px;
+    height: 30px;
+}
+#teacher-students li {
+     margin-top: 40px;
+ }
+#Need-to-return-fedback{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
