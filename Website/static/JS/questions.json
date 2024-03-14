@@ -89,6 +89,25 @@
               "answer": "C(6, 4)"
             }
           ]
+        },
+        {
+          "Stereometry":[
+            {
+              "question": "A sphere has a radius of 6cm. Find the volume of the sphere.",
+              "options": ["288π", "864π", "144π", "432π"],
+              "answer": "288π"
+            },
+            {
+              "question":"A side of a cube is 4cm. How much is it's surface area?",
+              "options": ["96", "64", "32", "16"],
+              "answer":"96"
+            },
+            {
+              "question": "A rectangular cuboid has sides a=12cm, b=7cm and c. If its volume is 1334 find c",
+              "options": ["16cm", "32cm", "4cm", "11cm"],
+              "answer": "16cm"
+            }
+          ]
         }
       ]
     },
@@ -117,8 +136,13 @@
             },
             {
               "question": "Under which ruler were the Bulgarians baptized??",
-              "options": ["Boris I", "Peter I", "Simeon", "Krum"],
+              "options": ["Boris I", "Peter I", "Simeon I", "Krum"],
               "answer": "Boris I"
+            },
+            {
+              "question": "Unde which ruler Bulgaria had the largest territory in its history",
+              "options": ["Boris I", "Peter I", "Simeon I", "Krum"],
+              "answer":"Simeon I"
             }
           ]
         }

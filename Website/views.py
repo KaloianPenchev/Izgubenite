@@ -20,4 +20,4 @@ def home():
             db.session.commit()
             flash('Feedback added!', category='success')
 
-    return render_template("teacher-feedback.html", user=current_user)
+    return render_template("student-feedback.html", user=current_user)

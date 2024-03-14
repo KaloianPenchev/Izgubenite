@@ -1,0 +1,38 @@
+<!DOCTYPE html><!--TODO: backend-->
+<html lang="en">
+    <head>
+        <title>student-feedback</title>
+        <link rel="stylesheet" type="text/css" href="/Website/static/css/student-feedback-style.css">
+    </head>
+
+<script src="/Website/static/JS/app.js"></script>
+    <body>
+        <header>
+            <div-left>
+                <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
+            </div-left>
+            <div-right id="div-right">
+                <a href="/logout">
+                    <button type="submit" class="button1">Logout</button>
+                </a>
+            </div-right>
+        </header>
+        <div class="feedback-histogram">
+            <div class="green-block"></div>
+            <div class="yellow-block"></div>
+            <div class="red-block"></div>
+            <!--TODO: 
+            1.fix border
+            2.put the blocks into a seperate div
+            3. Add bottom line
+            -->
+        </div>
+        <div class="messages">
+            <a href="/">
+                <button type="submit" class="button1">Logout</button>
+            </a>
+            <button type="submit" class="btn">Add feedback</button>
+        </div>
+
+    </body>
+</html>
