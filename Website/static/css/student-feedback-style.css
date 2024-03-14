@@ -30,36 +30,52 @@ header {
 }
 .button1{
     background-color: #B4D1FD;
-    margin-right: 10%;
-    height: 100px; 
-    width: 150px;
+    
+    height: 100%; 
+    width: 100%;
     border-radius: 30px;
 }
 .button1:hover{
     opacity: 0.5;
 }
+header a{
+    margin-right: 10%;
+    height: 50%; 
+    width: 30%;
+}
+
 #logo {
     width: 10%;
     height: 100%;
 }
 
+
+
 .main{
     display: flex;
     align-items: end;
     justify-content: start;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
+    align-content: start;
     width: 1920px;
-    height: 400px;
+    height: 500px;
 
 }
 .feedback-histogram{
-    width: 1920px;
-    height: 300px;
+    width: 1720px;
+    height: 400px;
     display: flex;
     align-items: end;
     justify-content: start;
     flex-flow: row nowrap;
     
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: #19E607;
+    height: 200px;
+    width: 200px;
 }
 
 
@@ -68,9 +84,11 @@ header {
     width: 70px;
     height: 200px;
     background-color: #19E607;
+    border-style: solid;
     border-color: black;
     border-width: 3px;
-    border: 3px, black;
+    border-bottom-width: 0;
+    
     margin-left: 70px;
     
 }
@@ -80,7 +98,9 @@ header {
     margin-left: 70px;
     height: 100px;
     background-color: yellow;
+    border-style: solid;
     border-width: 3px;
+    border-bottom-width: 0;
     border-color: black;
 
 }
@@ -89,7 +109,9 @@ header {
     width: 70px;
     height: 50px;
     background-color: red;
+    border-style: solid;
     border-width: 3px;
+    border-bottom-width: 0;
     border-color: black;
     margin-left: 70px;
 
@@ -97,7 +119,7 @@ header {
 .line {
     background: black;
     height: 3px;
-    width: 1920px;
+    width: 1720px;
 }
 .btn{
     height: 100px;
@@ -109,5 +131,13 @@ header {
 
 .btn:hover{
     background-color: #B4D1FD;
+}
+
+input {
+    height: 100px;
+    width: 500px;
+    border-radius: 43px;
+    font-size: 28px;
+    padding-left: 20px;
 }
 
