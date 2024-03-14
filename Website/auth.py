@@ -53,7 +53,7 @@ def sign_up():
         login_user(new_user, remember=True)
         flash('Account created!', category='success')
         
-        return redirect(url_for('auth.profile_student') ,user=current_user)
+        return redirect(url_for('auth.profile_student'))
 
     return render_template('register.html', user=current_user)
 
