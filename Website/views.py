@@ -15,9 +15,9 @@ def home():
         if len(feedback) < 1:
             flash('Feedback is too short!', category='error')
         else:
-            new_feedback = Feedback(student_email=current_user.email, message=feedback)
+            new_feedback = Feedback(student_email=current_user.email, message=feedback, grade="N/A")
             db.session.add(new_feedback)
             db.session.commit()
-            
-
-    return render_template("student-feedback.html", user=current_user)
+            flash('Feedback added!', category='success')
+    feedbacks = Feedback.query.filter_by(student_email=current_user.email).all()
+    return render_template("student-feedback.html", user=current_user, feedbacks=feedbacks)

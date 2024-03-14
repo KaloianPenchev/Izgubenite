@@ -34,15 +34,18 @@
             <div class="line"></div>
         </div>
         
-        
         <form method="POST">
-            
             <input type="text" name="feedback" id="feedback">
             <a>
                 <button type="submit" class="btn" href="/feedback">Add feedback</button>
             </a>
-        
         </form>
-
+        <div class="feedbacks">
+            {% for feedback in feedbacks %}
+                <section class="feedback">
+                    <p>{{ feedback.message }}</p>
+                </section>
+            {% endfor %}
+        </div>
     </body>
 </html>

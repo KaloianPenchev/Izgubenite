@@ -83,8 +83,8 @@ def logout():
 @login_required
 def feedbackpage():
     if current_user.role == '1':
-        return render_template('teacher-feedback.html', user=current_user)
+        return render_template('teacher-feedback.html', user=current_user, feedbacks=Feedback.query.all())
     elif current_user.role == '0':
-        return render_template('student-feedback.html', user=current_user)
+        return redirect(url_for('views.home'))
     
 
