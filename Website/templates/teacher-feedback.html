@@ -11,23 +11,41 @@
                 <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
             </div-left>
             <div-right id="div-right">
-                
-                    <a href="/logout">
-                        <button type="submit" class="button1">Log out</button>
-                    </a>
-                    <a href="/profile_teacher">
-                        <button type="submit" class="button1">Profile</button>
-                    </a>
-                
+                <a href="/logout">
+                    <button type="submit" class="button1">Logout</button>
+                </a>
+                <a href="/profile_student">
+                    <button type="submit" class="button1">Profile</button>
+                </a>
             </div-right>
         </header>
-        <main>
-            <div class="progress">
-                <!--TODO: IMPLEMENT PROGRESS WITH RECTANGULARS-->
+        <div class="main">
+            <div class="feedback-histogram">
+                <div class="green-block"></div>
+                <div class="yellow-block"></div>
+                <div class="red-block"></div>
+                <!--TODO: 
+                1.fix border
+                2.put the blocks into a seperate div
+                3. Add bottom line
+                -->
             </div>
-            <div class="messages">
-                
-            </div>
-        </main>
+            <div class="line"></div>
+        </div>
+        <div class="feedbacks">
+            {% for feedback in feedbacks %}
+                <section class="feedback">
+                    <p>{{ feedback.message }}</p>
+                    <div class="reactions">
+                        <ul>
+                            <li>duma</li>
+                            <li>duma</li>
+                            <li>duma</li>
+                        </ul>
+                    </div>
+                    <button class="btn" type="submit">submit</button>
+                </section>
+            {% endfor %}
+        </div>
     </body>
 </html>

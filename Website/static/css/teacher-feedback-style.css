@@ -48,3 +48,8 @@ header a{
     width: 10%;
     height: 100%;
 }
+.feedback{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
