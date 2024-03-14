@@ -70,13 +70,23 @@ input::placeholder {
     display:flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+    font-size: 36px;
+    align-items: center;
+    margin-bottom: 10px;
 
+}
+
+.checkboxes input{
+    width: 30px;
+    height: 30px;
+    margin-right: 6px;
 }
 
 .option {
     display:flex;
     flex-flow: row nowrap;
     justify-content: start;
+    align-items: center;
 }
 
 button {
@@ -110,4 +120,9 @@ button:hover {
 h2{
     margin-top: 40px;
     font-size: 24px;
+}
+
+.btn link{
+    text-decoration: none;
+    font-size: 10px;
 }
