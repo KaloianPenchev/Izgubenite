@@ -1,0 +1,110 @@
+@import url('https://fonts.cdnfonts.com/css/comfortaa');
+
+* {
+    font-family: 'Comfortaa', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+}
+body {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    height: 1080px;
+    width: 1920px;
+
+
+}
+
+img {
+    
+    width: 50vw;
+    height: 100vw;
+}
+
+.register-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    height: 100vw;
+    width: 50vw;
+
+}
+
+input {
+    display: flex;
+    
+    
+    width: 25vw;
+    height: 5.938vw;
+    border: none;
+    border-radius: 2.24vw;
+    margin-bottom: 1.042vw;
+    background-color: #6CA0ED;
+    font-size: 1.458vw;
+    color:white;
+
+}
+
+.checkbox {
+    display: flex;
+    width: 10px;
+    height: 10px; 
+    
+
+
+}
+
+input::placeholder {
+    font-size: 1.458vw;
+    color:
+     white;
+}
+.checkboxes {
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+
+}
+
+.option {
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    color: white;
+    font-size: 1.458vw;
+
+
+    width: 247px;
+    height: 81px;
+    
+
+
+    background: #6CA0ED;
+    border-radius: 43px;
+
+}
+
+button:hover {
+
+    cursor: pointer;
+    background-color: #5D8BCF;
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

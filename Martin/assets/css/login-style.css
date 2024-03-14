@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Comfortaa, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    width: 1920px;
+    height: 1080px;
+}
+
+.main {
+    width: 50%;
+    height: 100%;
+}
+
+.login-box {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.login-box h1 {
+    margin-bottom: 20px;
+    font-size: 96px;
+}
+
+.login-box h4 {
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+.login-box a {
+    font-size: 24px;
+}
+
+.login-box input {
+    display: flex;
+    width: 478px;
+    height: 114px;
+    border: none;
+    border-radius: 43px;
+    outline: none;
+    margin-bottom: 20px;
+    background-color: #6CA0ED;
+    font-size: 28px;
+    padding-left: 20px;
+    color: #fff;
+}
+
+.login-box input::placeholder {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    color: #fff;
+}
+
+.login-box .btn button {
+    width: 247px;
+    height: 81px;
+    border: none;
+    border-radius: 43px;
+    outline: none;
+    background-color: #6CA0ED;
+    font-size: 28px;
+    color: #fff;
+}
+
+.login-box .btn {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box .btn:hover {
+    background-color: #5D8BCF;
+    cursor: pointer;
+}
+
+.login-box .btn:active {
+    background-color: #4F7DB1;
+}
