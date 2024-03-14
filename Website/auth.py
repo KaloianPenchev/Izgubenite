@@ -65,13 +65,13 @@ def sign_up():
 def profile_student():
     #role = current_user.role
     
-    return render_template('student.html', user=current_user)
+    return render_template('student.html', user=current_user, studentname=current_user.first_name , studentemail=current_user.email)
 
 @auth.route('/profile_teacher')
 @login_required
 def profile_teacher():
     #role = current_user.role
-    return render_template('teacher.html', user=current_user)
+    return render_template('teacher.html', user=current_user, teachername=current_user.first_name , teacheremail=current_user.email)
 
 
 
