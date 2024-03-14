@@ -1,10 +1,11 @@
 {
     "questions": [
       {
-        "question": "Колко е коренът на 25?",
+        "question": "How much is the root of 25?",
         "options": ["625", "5", "6", "7"],
         "answer": "5",
-        "categoty": "maths"
+        "categoty": "maths",
+        "subcategory": "equations"
         
       },
 
@@ -12,7 +13,8 @@
         "question": "Колко е коренът на 169?",
         "options": ["14", "13", "9", "28561"],
         "answer": "13",
-        "categoty": "maths"
+        "categoty": "maths",
+        "subcategory": "equations"
       },
 
       {
