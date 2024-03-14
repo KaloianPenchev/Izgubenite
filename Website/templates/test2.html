@@ -1,151 +1,186 @@
-<p id="p1"></p>
+<!--<p id="p1"></p>
 <div>
     <p id="A"></p>
     <p id="B"></p>
     <p id="C"></p>
     <p id="D"></p>
-    <input type="checkbox" id="1" onclick="Release(id)">
-    <input type="checkbox" id="2" onclick="Release(id)">
-    <input type="checkbox" id="3" onclick="Release(id)">
-    <input type="checkbox" id="4" onclick="Release(id)">
+    <input id="1" onclick="Release(id)" type="checkbox">
+    <input id="2" onclick="Release(id)" type="checkbox">
+    <input id="3" onclick="Release(id)" type="checkbox">
+    <input id="4" onclick="Release(id)" type="checkbox">
 
     <button onclick="Sub()">Submit</button>
-</div>
+</div>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Question</title>
+</head>
+<body>
+    <header>
+        <div id="left-header">
+
+        </div>
+        <div id="right-header">
+
+        </div>
+    </header>
+
+</body>
+</html>
 
 <script>
-    : "Колко е коренът на 25?",
- ["625", "5", "6", "7"],
-"5",
-: "maths"
-: "Колко е коренът на 169?",
- ["14", "13", "9", "28561"],
-"13",
-: "maths"
-: "Корен от 289 е:",
- ["17", "13", "21", "14"],
-"17",
-: "maths"
-: "Колко е 1 на степен 0?",
- ["1", "0", "0.5", "-1"],
-"1",
-: "maths"
-: "Колко е 3 на степен 4?",
- ["126", "144", "12", "412"]
-"144",
-: "maths"
-: "Колко е 4 на степен 2?",
- ["12", "8", "16", "32"],
-"144",
-: "maths"
-: "Каква е формулата за лице
- ["π*r*r", "π*π*r", "2*π*r",
-"π*r*r",
-: "maths"
-: "Колко е лицето на кръг с
- ["16π", "8π", "256π", "72π"
-"16π",
-: "maths"
-: "Колко е лицето на кръг с
- ["12π", "36π", "126π", "218
-"36π",
-: "maths"
-: "Колко най-малко точки мог
- ["0", "1", "2", "3"],
-"3",
-: "maths"
-: "Колко точки могат да обра
- ["1", "4", "2", "3"],
-"2",
-: "maths"
-: "Колко точки има правилния
- ["7", "3", "9", "6"],
-"9",
-: "maths"
-: "Правоъгълен триъгълник с
- ["C(6, 4)", "C(2, 6)", "C(4
-"C(6, 4)",
-: "maths"
-: "Кои са корените на уравне
- ["3 и -3", "1 и 0", "2 и 3"
-"3 и -3",
-: "maths"
-: "Кои са корените на уравне
- ["2 и 4", "-1 и 1.25", "2 и
-"3 и -3",
-: "maths"
-: "Кои са корените на уравне
- ["6 и -2", "-1 и 3", "-4 и
-"няма реални корени",
-: "maths"
-: "Кой се смята за \"баща на
- ["Платон", "Аристотел", "Хе
-"Херодот",
-: "history"
-: "Как се нарича първата Кон
- ["Възрожденска", "Пловдивск
-"Търновска",
-: "history"
-: "Коя година България се ос
- ["1787", "2023", "1878", "1
-"1878",
-: "history"
-: "При кой владетел са покръ
- ["Борис I", "Петър I", "Сим
-"Борис I",
-: "history"
-: "Колко е коренът на 25?",
- ["4", "5", "6", "7"],
-"5",
-: "history"
-: "Къде се намира остров Бал
- ["Индонезия", "Малайзия", "
-"Индонезия",
-: "geography"
-: "Коя е най-голямата държав
- ["Канада", "САЩ", "Индия",
-"Русия",
-: "geography"
-: "В коя държава се намира в
- ["Непал", "Китай", "Бутан",
-"Непал",
-: "geography"
-: "Коя е столицата на Австра
- ["Сидни", "Пърт", "Канбера"
-"Канбера",
-: "geography"
-: "Каква част от повърхностт
- ["71%", "62%", "88%", "40.5
-"71%",
-: "geography"
-    let questions = ["Колко е коренът на 25?", "How much is the square root of 169?"];
-    let pos_choisses = [["2", "5", "4", "7"], ["14", "13", "9", "28561"]];
-    let answer = ["5", "13"];
+    /*
+    "Колко най-малко точки мог
+        ["0", "1", "2", "3"],
+        "3",
+    :
+    "maths"
+    :
+    "Колко точки могат да обра
+        ["1", "4", "2", "3"],
+        "2",
+    :
+    "maths"
+    :
+    "Колко точки има правилния
+        ["7", "3", "9", "6"],
+        "9",
+    :
+    "maths"
+    :
+    "Правоъгълен триъгълник с
+        ["C(6, 4)", "C(2, 6)", "C(4
+    "C(6, 4)",
+    :
+    "maths"
+    :
+    "Кои са корените на уравне
+        ["3 и -3", "1 и 0", "2 и 3"
+    "3 и -3",
+    :
+    "maths"
+    :
+    "Кои са корените на уравне
+        ["2 и 4", "-1 и 1.25", "2 и
+    "3 и -3",
+    :
+    "maths"
+    :
+    "Кои са корените на уравне
+        ["6 и -2", "-1 и 3", "-4 и
+    "няма реални корени",
+    :
+    "maths"
+    :
+    "Кой се смята за \"баща на
+        ["Платон", "Аристотел", "Хе
+    "Херодот",
+    :
+    "history"
+    :
+    "Как се нарича първата Кон
+        ["Възрожденска", "Пловдивск
+    "Търновска",
+    :
+    "history"
+    :
+    "Коя година България се ос
+        ["1787", "2023", "1878", "1
+    "1878",
+    :
+    "history"
+    :
+    "При кой владетел са покръ
+        ["Борис I", "Петър I", "Сим
+    "Борис I",
+    :
+    "history"
+    :
+    "Колко е коренът на 25?",
+        ["4", "5", "6", "7"],
+        "5",
+    :
+    "history"
+    :
+    "Къде се намира остров Бал
+        ["Индонезия", "Малайзия", "
+    "Индонезия",
+    :
+    "geography"
+    :
+    "Коя е най-голямата държав
+        ["Канада", "САЩ", "Индия",
+        "Русия",
+    :
+    "geography"
+    :
+    "В коя държава се намира в
+        ["Непал", "Китай", "Бутан",
+        "Непал",
+    :
+    "geography"
+    :
+    "Коя е столицата на Австра
+        ["Сидни", "Пърт", "Канбера"
+    "Канбера",
+    :
+    "geography"
+    :
+    "Каква част от повърхностт
+        ["71%", "62%", "88%", "40.5
+    "71%",
+    :
+    "geography"
+    "Колко е 4 на степен 2?",
+        ["12", "8", "16", "32"],
+        "144";*/
+    const nu-category = new Map();
+    nu - category.set(0, "Arithmetic");
+    nu - category.set(1, "Geometry");
+    nu - category.set(2, "History");
+    nu - category.set(3, "Geography")
+    let questions = [["Колко е коренът на 25?", "How much is the square root of 169?", "Корен от 289 е:", "Колко е 1 на степен 0?", "Колко е 3 на степен 4?", "Колко е 4 на степен 2?"]];
+    let pos_choisses = [[["2", "5", "4", "7"], ["14", "13", "9", "28561"], ["17", "13", "21", "14"], ["1", "0", "0.5", "-1"], ["126", "144", "12", "412"], ["12", "8", "16", "32"]]];
+    let answer = [["5", "13", "17", "1", "144", "44"]];
     document.getElementById("p1").innerHTML = questions[0];
-    for(let i = 0; i <= 3; i++){
+    for (let i = 0; i <= 3; i++) {
         let char = String.fromCharCode(i + 65);
         document.getElementById(char).innerHTML = pos_choisses[i];
     }
-    function Release(s){
-        for(let i = 0; i <= 3; i++){
+
+    // addsQuestion
+    function addQuestion(s, i, a, b, c, d, j) {
+        questions[i].push(s);
+        pos_choisses[i].push({a, b, c, d});
+        answer.push(j);
+    }
+
+    function Release(s) {
+        for (let i = 0; i <= 3; i++) {
             let ch = String.fromCharCode(i + 49);
             //console.log(ch);
-            if(ch === s)continue;
+            if (ch === s) continue;
             document.getElementById(ch).checked = false;
         }
         return 0;
     }
-    function Sub(){
+
+    function Sub() {
         let ans = false;
-        for(let i = 0; i <= 3; i++) {
+        for (let i = 0; i <= 3; i++) {
             let ch = String.fromCharCode(i + 49);
             console.log(document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML)
-            if(document.getElementById(ch).checked && answer[0] === document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML){
+            if (document.getElementById(ch).checked && answer[0] === document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML) {
                 ans = true;
             }
         }
-        if(ans){
+        if (ans) {
             console.log("Correct");
-        }else console.log("Incorrect");
+        } else console.log("Incorrect");
         return 0;
     }
 

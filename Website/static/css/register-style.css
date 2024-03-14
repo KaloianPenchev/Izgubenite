@@ -5,33 +5,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
-
 }
-body {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: start;
-    height: 1080px;
-    width: 1920px;
-
-
-}
-
 img {
-    
-    width: 50vw;
-    height: 100vw;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .register-box {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: column wrap;
-    height: 100vw;
-    width: 50vw;
-
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 50%;
 }
 
 .register-box h1{

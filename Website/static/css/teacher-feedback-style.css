@@ -1,24 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/comfortaa');
 * {
-    font-family: "Comfortaa", sans-serif;
-    font-optical-sizing: auto;
-    margin: 0;
-    padding: 0;
+    padding: 0px;
+    margin: 0px;
 }
 header {
     position: absolute;
     top: 0px;
     left: 0px;
-    height: 11%;
+    height: 10%;
     width: 100%;
     background-color: #6CA0ED;
 }
+#div-left{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 50%;
+}
 #div-right {
     position: absolute;
-    left: 82%;
-    top: 25%;
+    display: flex;
+    left: 50%;
+    top: 0%;
     height: 100%;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
 }
+.button1{
+    background-color: #B4D1FD;
+    
+    height: 100%; 
+    width: 100%;
+    border-radius: 30px;
+}
+.button1:hover{
+    opacity: 0.5;
+}
+header a{
+    margin-right: 10%;
+    height: 50%; 
+    width: 30%;
+}
+
 #logo {
     width: 10%;
     height: 100%;

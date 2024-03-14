@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/student-style.css') }}">
     
-    <title>Document</title>
+    <title>Student Home Page</title>
 </head>
 <body>
     <header>
@@ -14,7 +14,7 @@
             <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
         </div-left>
         <div-right id="div-right">
-            <button onclick="window.location.href='/logout';" type="submit" class="button1">Log out</button>
+            <button onclick="window.location.href='/logout';" type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
         </div-right>
     </header>
     <div class="profilepage">
@@ -40,7 +40,7 @@
         </div>
         <div class="feedback">
             <h1 class="feedback-text">Need feedback?</h1>
-            <button onclick="window.location.href='/feedback';" type="submit" class="btn"><h1 class="details-text">Go to feedback page</h1></button>
+            <button onclick="window.location.href='/feedbackpage';" type="submit" class="btn"><h1 class="details-text">Go to feedback page</h1></button>
         </div>
     </div>
 </body>
