@@ -1,11 +1,9 @@
 {
   "categories": [
     {
-      "name": "Mathematics",
-      "subcategories": [
+      "Mathematics": [
         {
-          "name": "Algebra",
-          "questions": [
+          "Algebra": [
             {
               "question": "How much is the square root of 25?",
               "options": ["625", "5", "6", "7"],
@@ -54,8 +52,7 @@
           ]
         },
         {
-          "name": "Geometry",
-          "questions": [
+          "Geometry": [
             {
               "question": "What is the formula to calculate the area of a circle?",
               "options": ["π*r*r", "π*π*r", "2*π*r", "4*r*r"],
@@ -96,11 +93,9 @@
       ]
     },
     {
-      "name": "History",
-      "subcategories": [
+      "History": [
         {
-          "name": "Ancient History",
-          "questions": [
+          "Ancient History": [
             {
               "question": "Who is thought to be \"the father of history\"?",
               "options": ["Platon", "Aristotle", "Herodotus", "Socrates"],
@@ -109,8 +104,7 @@
           ]
         },
         {
-          "name": "Bulgarian History",
-          "questions": [
+          "Bulgarian History": [
             {
               "question": "What is the first bulgarian contitution called?",
               "options": ["The Revivalist Constitution", "The Plovdiv Constitution", "The Stanbolovian Constitution", "The Tarnovo Constitution"],
@@ -131,11 +125,9 @@
       ]
     },
     {
-      "name": "Geography",
-      "subcategories": [
+      "Geography": [
         {
-          "name": "Natural Geography",
-          "questions": [
+          "Natural geography": [
             {
               "question": "Which nation the the island Bali belong to?",
               "options": ["Indonesia", "Malaysia", "New Zeland", "Australia"],
@@ -149,8 +141,7 @@
           ]
         },
         {
-          "name": "Geopolitics",
-          "questions": [
+          "Geopolitics": [
             {
               "question": "Which is the largest country in the world?",
               "options": ["Canada", "USA", "India", "Russia"],
