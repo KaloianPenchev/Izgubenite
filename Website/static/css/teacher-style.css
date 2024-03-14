@@ -2,7 +2,6 @@
 * {
     font-family: "Comfortaa", sans-serif;
     font-optical-sizing: auto;
-
     margin: 0;
     padding: 0;
 }
@@ -33,7 +32,7 @@ header {
     position: absolute;
     display: flex;
     left: 3%;
-    top: 7%;
+    top: 5%;
 }
 
 #bottom-left-side-teachers {
@@ -50,8 +49,6 @@ header {
     width: 89%;
     height: 48%;
     border-radius: 43px;
-    font-size: 100px;
-
 }
 #teacher-things {
     list-style: none;
@@ -84,22 +81,14 @@ header {
     font-size: 40px;
 }
 #teacher-students li {
-     margin-top: 40px;
- }/* Need to return feedback? */
-/* Need to return feedback? */
-
+     margin-top: 20px;
+ }
 #Need-to-return-feedback{
-    position: absolute;
-    top: 50px;
     display: flex;
     justify-content: center;
-    font-weight: 400;
     font-size: 40px;
-    line-height: 45px;
-    align-items: center;
-    text-align: center;
-    width: 770px;
-    height: 00px;
-    color: #000000;
 }
-
+#profile-page{
+    height: 40%;
+    width: 40%;
+}
