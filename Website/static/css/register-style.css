@@ -34,35 +34,37 @@ img {
 
 }
 
-input {
-    display: flex;
-    
-    
-    width: 25vw;
-    height: 5.938vw;
-    border: none;
-    border-radius: 2.24vw;
-    margin-bottom: 1.042vw;
-    background-color: #6CA0ED;
-    font-size: 1.458vw;
-    color:white;
-
+.register-box h1{
+    margin-bottom: 20px;
+    font-size: 96px;
 }
 
+input {
+    display: flex;
+    width: 478px;
+    height: 114px;
+    border: none;
+    border-radius: 43px;
+    outline: none;
+    margin-bottom: 20px;
+    background-color: #6CA0ED;
+    font-size: 28px;
+    padding-left: 20px;
+    color: #fff;
+
+}
+ 
 .checkbox {
     display: flex;
     width: 10px;
     height: 10px; 
-    
-
-
 }
 
 input::placeholder {
-    font-size: 1.458vw;
-    color:
-     white;
-     padding-left: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    color: #fff;
 }
 .checkboxes {
     display:flex;
@@ -86,13 +88,8 @@ button {
     border: none;
     color: white;
     font-size: 1.458vw;
-
-
     width: 247px;
     height: 81px;
-    
-
-
     background: #6CA0ED;
     border-radius: 43px;
 
@@ -100,7 +97,7 @@ button {
 
 button:hover {
 
-    cursor: pointer;
+    opacity: 0.5;
     background-color: #5D8BCF;
 }
 
@@ -108,4 +105,9 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+h2{
+    margin-top: 40px;
+    font-size: 24px;
 }

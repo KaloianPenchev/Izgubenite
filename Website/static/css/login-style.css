@@ -81,10 +81,14 @@ body {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    border: none;
+    background: none;
 }
 
 .login-box .btn:hover {
-    background-color: #5D8BCF;
+    
+    
+    opacity: 0.5;
     cursor: pointer;
 }
 
