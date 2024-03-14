@@ -39,3 +39,12 @@ def create_database(app):
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')
+
+def create_tests():
+    app = Flask(__name__)
+
+    from .testGen import gen as testGenerator
+    app.register_blueprint(testGenerator, url_prefix='/')
+    
+
+    return app
