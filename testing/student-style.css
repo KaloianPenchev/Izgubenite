@@ -101,7 +101,7 @@
     top: 40%;
     left: 5%;
     right: 5%;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     list-style: none;
 }
