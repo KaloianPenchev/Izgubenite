@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/teacher-style.css') }}">
     <title>Teacher Home Page</title>
 </head>
@@ -13,33 +14,29 @@
             <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
         </div-left>
         <div-right id="div-right">
-            <button onclick="window.location.href='/logout';" type="submit" class="button1">Log out</button>
+            <button onclick="window.location.href='/logout';" type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
         </div-right>
     </header>
-    <div id="side-teachers">
-        <div id="left-side-teachers">
-            <div id="top-left-side-teachers">
-                <img style="border-radius: 50%" src="{{ url_for('static', filename='pictures/user.png') }}" id="profile-page">
-                <ul id="teacher-things">
-                    <li><p>Role: Teacher</p></li>
-                    <li><p>Name: {{teachername}}</p></li>
-                    <li><p>Email: {{teacheremail}}</p></li>
-                </ul>
-            </div>
-            <div id="bottom-left-side-teachers">
-                <input type="text" id="info" placeholder="Info/Bio" style="font-size: 40px;">
-            </div>
+    <div class="profilepage">
+        <img class="profilepic" src="{{ url_for('static', filename='pictures/user.png') }}"> 
+        <div class="details">
+            <h1 class="details-text">Role: Teacher</h1>
+            <h1 class="details-text">Name: {{studentname}}</h1>
+            <h1 class="details-text">Email: {{studentemail}}</h1>
         </div>
-        <div id="right-side-teachers">
-            <p id="Need-to-return-feedback">Need to return feedback?</p>
-            <ul id="teacher-students">
-                <li><button>student a</button></li>
-                <li><button>student b</button></li>
-                <li><button>student c</button></li>
-                <li><button>student d</button></li>
-            </ul>
+        <div class="bio">
+            <div class="edit"></div>
         </div>
     </div>
+    <div id="right-side-teachers">
+            <p id="Need-to-return-feedback">Need to return feedback?</p>
+            <ul id="teacher-students">
+                <li><button class="details-text">student a</button></li>
+                <li><button class="details-text">student b</button></li>
+                <li><button class="details-text">student c</button></li>
+                <li><button class="details-text">student d</button></li>
+            </ul>
+        </div>
 </body>
 </html>
 {% endblock %}
