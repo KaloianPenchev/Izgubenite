@@ -65,7 +65,7 @@ body {
     color: #fff;
 }
 
-.login-box .btn {
+.login-box .btn button {
     width: 247px;
     height: 81px;
     border: none;
@@ -74,6 +74,13 @@ body {
     background-color: #6CA0ED;
     font-size: 28px;
     color: #fff;
+}
+
+.login-box .btn {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .login-box .btn:hover {
