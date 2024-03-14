@@ -1,35 +1,26 @@
 {% block content %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Log in</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register-style.css') }}"> 
-    </head>
-    
-    <body>
-        <img src="{{ url_for('static', filename='pictures/person-writing.png') }}"> 
-        
-        <div class="register-box">
-            <h1>Register</h1>
-            <form method="post">
-                
-                    <input type="text" id="username" name="username" placeholder="Name">
-                
-                    <input type="email" id="email" name="email" placeholder="Email">
-                
-                    <input type="password" id="password" name="password" placeholder="Password "><br>
-                
-                <div class="checkboxes">
-                    <div class="option"><input type="checkbox" id="teacher" name="role" class="checkbox" value="1"><label>Teacher</label></div>
-                    <div class="option"><input type="checkbox" id="student" name="role" class="checkbox" value="0"><label>Student</label></div>
-                </div>
-                <div class="btn-center"><button type="submit">Register</button></div>
-            </form>
-            
-            
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <h2>Already have an account?<a href="/login">Log in!</a></h2>
-        </div>
-    </body>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register-style.css') }}"> 
+</head>
+<body>
+    <img src="{{ url_for('static', filename='pictures/person-writing.png') }}"> 
+    <div class="register-box">
+        <h1>Register</h1>
+        <form method="post">
+            <input type="text" id="username" name="username" placeholder="Name">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <input type="password" id="password" name="password" placeholder="Password "><br>
+            <div class="checkboxes">
+                <div class="option"><input type="checkbox" id="teacher" name="role_teacher" class="checkbox" value="1"><label>Teacher</label></div>
+                <div class="option"><input type="checkbox" id="student" name="role_student" class="checkbox" value="0"><label>Student</label></div>
+            </div>
+            <div class="btn-center"><button type="submit">Register</button></div>
+        </form>
+        <h2>Already have an account?<a href="{{ url_for('auth.login_page') }}">Log in!</a></h2>
+    </div>
+</body>
 </html>
 {% endblock %}

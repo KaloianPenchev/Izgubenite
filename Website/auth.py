@@ -53,18 +53,18 @@ def sign_up():
             flash('Role is required', category='error')
         else:
             new_user = User(email=email, first_name=first_name, password=generate_password_hash(
-                password, method='pbkdf2:sha256') , role=role)
+                password, method='pbkdf2:sha256'), role=role)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
             flash('Account created!', category='success')
-            if current_user.role == '0':
-                return redirect(url_for('auth.profile-student') , user=current_user)
+            if role == '0':
+                return redirect(url_for('auth.profile_student'))
             else:
-                return redirect(url_for('auth.profile-teacher') , user=current_user)
+                return redirect(url_for('auth.profile_teacher'))
             
-
     return render_template('register.html', user=current_user)
+
 
 
 @auth.route('/profile-student')
