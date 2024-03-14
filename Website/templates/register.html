@@ -1,13 +1,14 @@
+{% block content %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Log in</title>
-        <link rel="stylesheet" type="text/css" href="assets/css/Register-style.css">
-
+        <link rel="stylesheet" type="text/css" href="{{ url_for('assets', filename='css/register-style.css') }}"> 
     </head>
-    <script src="assets/js/script..js"></script>
+    
     <body>
-        <img src="assets/images/person-writing.png" alt="Img not found">
+        <img href="{{ url_for('assets', filename='pictures/person-writing.png') }}"> 
+        
         <div class="register-box">
             <h1>Register</h1>
             <form method="post">
@@ -29,3 +30,4 @@
         </div>
     </body>
 </html>
+{% endblock %}

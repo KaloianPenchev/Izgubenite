@@ -1,15 +1,19 @@
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="student-style.css">
+    <link rel="stylesheet" href="{{ url_for('assets', filename='css/student-style.css') }}">
+    
     <title>Document</title>
 </head>
 <body>
     <div class="header"></div>
     <div class="profilepage">
-        <img class="profilepic" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+        <img href="{{ url_for('assets', filename='pictures/user.png') }}"> 
+        
+        
         <div class="details">
             <h1 class="details-text">Role: Student</h1>
             <h1 class="details-text">Name: {{name}}</h1>
@@ -36,3 +40,4 @@
     </div>
 </body>
 </html>
+{% endblock %}

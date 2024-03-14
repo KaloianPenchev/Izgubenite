@@ -1,11 +1,14 @@
+{% block content %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Login</title>
-        <link rel="stylesheet" type="text/css" href="assets/css/login-style.css">
+        <link rel="stylesheet" href="{{ url_for('assets', filename='css/login-style.css') }}"> 
+        
     </head>
     <body>
-        <img class="main" src="assets/pictures/person-writing.png">
+        <img class="main" href="{{ url_for('assets', filename='pictures/person-writing.png') }}"> 
+        
         <div class="login-box">
             <h1>Login</h1>
             <form method="post">
@@ -20,3 +23,5 @@
         </div>
     </body>
 </html>
+
+{% endblock %}
