@@ -9,15 +9,36 @@ header {
     position: absolute;
     top: 0px;
     left: 0px;
-    height: 11%;
+    height: 10%;
     width: 100%;
     background-color: #6CA0ED;
 }
+#div-left{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 50%;
+}
 #div-right {
     position: absolute;
-    left: 82%;
-    top: 25%;
+    display: flex;
+    left: 50%;
+    top: 0%;
     height: 100%;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+}
+.button1{
+    background-color: #B4D1FD;
+    margin-right: 10%;
+    height: 50%; 
+    width: 30%;
+    border-radius: 30px;
+}
+.button1:hover{
+    opacity: 0.5;
 }
 #logo {
     width: 10%;
@@ -25,7 +46,7 @@ header {
 }
 #side-teachers{
     position: absolute;
-    top: 11%;
+    top: 10%;
     width: 100%;
     height: 89%;
 }
@@ -55,7 +76,7 @@ header {
     position: absolute;
     justify-content: center;
     top: 50%;
-    width: 89%;
+    width: 90%;
     height: 48%;
     border-radius: 43px;
 }

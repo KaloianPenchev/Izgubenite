@@ -1,0 +1,48 @@
+<p id="p1"></p>
+<div>
+    <p id="A"></p>
+    <p id="B"></p>
+    <p id="C"></p>
+    <p id="D"></p>
+    <input type="checkbox" id="1" onclick="Release(id)">
+    <input type="checkbox" id="2" onclick="Release(id)">
+    <input type="checkbox" id="3" onclick="Release(id)">
+    <input type="checkbox" id="4" onclick="Release(id)">
+
+    <button onclick="Sub()">Submit</button>
+</div>
+
+<script>
+    let questions = ["How much is the square root of 25?", "How much is the square root of 169?"];
+    let pos_choisses = ["2", "5", "4", "7"];
+    let answer = ["5"];
+    document.getElementById("p1").innerHTML = questions[0];
+    for(let i = 0; i <= 3; i++){
+        let char = String.fromCharCode(i + 65);
+        document.getElementById(char).innerHTML = pos_choisses[i];
+    }
+    function Release(s){
+        for(let i = 0; i <= 3; i++){
+            let ch = String.fromCharCode(i + 49);
+            //console.log(ch);
+            if(ch === s)continue;
+            document.getElementById(ch).checked = false;
+        }
+        return 0;
+    }
+    function Sub(){
+        let ans = false;
+        for(let i = 0; i <= 3; i++) {
+            let ch = String.fromCharCode(i + 49);
+            console.log(document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML)
+            if(document.getElementById(ch).checked && answer[0] === document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML){
+                ans = true;
+            }
+        }
+        if(ans){
+            console.log("Correct");
+        }else console.log("Incorrect");
+        return 0;
+    }
+
+</script>
