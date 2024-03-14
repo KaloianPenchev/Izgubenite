@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('assets', filename='css/student-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/student-style.css') }}">
     
     <title>Document</title>
 </head>
 <body>
     <div class="header"></div>
     <div class="profilepage">
-        <img href="{{ url_for('assets', filename='pictures/user.png') }}"> 
+        <img src="{{ url_for('static', filename='pictures/user.png') }}"> 
         
         
         <div class="details">

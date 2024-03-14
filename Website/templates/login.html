@@ -3,11 +3,11 @@
 <html>
     <head>
         <title>Login</title>
-        <link rel="stylesheet" href="{{ url_for('assets', filename='css/login-style.css') }}"> 
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login-style.css') }}"> 
         
     </head>
     <body>
-        <img class="main" href="{{ url_for('assets', filename='pictures/person-writing.png') }}"> 
+        <img class="main" src="{{ url_for('static', filename='pictures/person-writing.png') }}"> 
         
         <div class="login-box">
             <h1>Login</h1>
@@ -18,8 +18,10 @@
                     <button type="submit" name="login">Log in</button>
                 </div>
             </form>
-            <h4>Don't have an account?</h4>
-            <a href="register.html">Register!</a> <!-- TODO: Register.html path -->
+            <button type="submit" class="btn btn-primary">Log in!</button>
+            <h4>Don't have an account?<a href="/sign-up">Register!</a></h4>
+            
+            
         </div>
     </body>
 </html>

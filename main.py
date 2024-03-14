@@ -1,4 +1,4 @@
-from Izgubenite import create_app
+from Website import create_app
 
 app = create_app()
 
