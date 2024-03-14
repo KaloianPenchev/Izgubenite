@@ -82,13 +82,11 @@
     background: none;
 }
 
-.login-box .btn:hover {
-    
-    
+.isactive:hover {
     opacity: 0.5;
     cursor: pointer;
 }
 
-.login-box .btn:active {
+.isactive:active {
     background-color: #4F7DB1;
 }
