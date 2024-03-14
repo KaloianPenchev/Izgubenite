@@ -20,8 +20,11 @@ def login():
         
         if check_password_hash(user.password, password):
             login_user(user, remember=True)
+            if user.role == '1':
+                return redirect(url_for('auth.profile_teacher'))
+            elif user.role == '0':
+                return redirect(url_for('auth.profile_student'))
             
-            return redirect(url_for('auth.profile_student'))
                 #if current_user.role == '0':
                     #return redirect(url_for('auth.profile-student'))
                 #else:
@@ -31,7 +34,7 @@ def login():
             flash('Incorrect password, try again.', category='error')
         
 
-    return render_template('login.html', user=current_user)
+    return render_template('login.html', user=current_user )
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
@@ -40,21 +43,25 @@ def sign_up():
         first_name = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
-        
+        role = request.form.get('role')
+        print(request.form)
         user = User.query.filter_by(email=email).first()
         # if user:
         #     flash('Email already exists.', category='error')
         #     print("2")
         # else:
         new_user = User(first_name=first_name, email=email, password=generate_password_hash(
-            password, method='pbkdf2:sha256'))
+            password, method='pbkdf2:sha256') , role=role)
         db.session.add(new_user)
         db.session.commit()
         login_user(new_user, remember=True)
         flash('Account created!', category='success')
         
-        return redirect(url_for('auth.profile_student'))
-
+        if role == '1':
+            return redirect(url_for('auth.profile_teacher'))
+        elif role == '0':
+            return redirect(url_for('auth.profile_student'))
+    
     return render_template('register.html', user=current_user)
 
 
@@ -79,6 +86,7 @@ def profile_teacher():
 @login_required
 def logout():
     logout_user()
-    return render_template('login.html' , user=current_user)
+    return redirect(url_for('auth.login'))
+    #return render_template('login.html' , user=current_user)
     
 
