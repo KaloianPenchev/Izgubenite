@@ -3,13 +3,34 @@
     padding: 0px;
     margin: 0px;
 }
-.header{
-    width: 100%;
-    height: 10%;
+header {
     position: absolute;
     top: 0px;
     left: 0px;
+    height: 10%;
+    width: 100%;
     background-color: #6CA0ED;
+}
+#div-right {
+    position: absolute;
+    left: 82%;
+    top: 25%;
+    height: 100%;
+}
+.button1{
+    height: 50%;
+    width:200%; 
+    border-radius: 30px;
+}
+.button1:hover{
+    opacity: 0.5;
+}
+#logo {
+    width: 10%;
+    height: 100%;
+}
+#logo:hover{
+    opacity: 0.5;
 }
 .profilepage{
     width: 50%;
@@ -114,6 +135,9 @@
     width: 250px;
     height: 70px;
 }
+.button:hover{
+    opacity: 0.5;
+}
 .btn{
     list-style: none;
     background-color:#6CA0ED;
@@ -121,6 +145,9 @@
     border-radius: 43px;
     width: 50%;
     height: 20%;
+}
+.btn:hover{
+    opacity: 0.5;
 }
 .feedback{
     height: 50%;

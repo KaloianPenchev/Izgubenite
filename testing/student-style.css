@@ -114,6 +114,9 @@
     width: 250px;
     height: 70px;
 }
+.button:hover{
+    opacity: 0.5;
+}
 .btn{
     list-style: none;
     background-color:#6CA0ED;
@@ -121,6 +124,9 @@
     border-radius: 43px;
     width: 50%;
     height: 20%;
+}
+.btn:hover{
+    opacity: 0.5;
 }
 .feedback{
     height: 50%;

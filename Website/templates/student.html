@@ -9,13 +9,18 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="header"></div>
+    <header>
+        <div-left>
+            <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
+        </div-left>
+        <div-right id="div-right"><button type="submit" class="button1">Log out</button></div-right>
+    </header>
     <div class="profilepage">
         <img class="profilepic" src="{{ url_for('static', filename='pictures/user.png') }}"> 
         <div class="details">
             <h1 class="details-text">Role: Student</h1>
-            <h1 class="details-text">Name: {{name}}</h1>
-            <h1 class="details-text">Email: {{email}}</h1>
+            <h1 class="details-text">Name: {{studentname}}</h1>
+            <h1 class="details-text">Email: {{studentemail}}</h1>
         </div>
         <div class="bio">
             <div class="edit"></div>
