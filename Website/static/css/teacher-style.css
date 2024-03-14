@@ -80,6 +80,9 @@ header {
     height: 91px;
     font-size: 40px;
 }
+#teacher-students button:hover{
+    opacity: 0.5;
+}
 #teacher-students li {
      margin-top: 20px;
  }
@@ -89,6 +92,6 @@ header {
     font-size: 40px;
 }
 #profile-page{
-    height: 40%;
-    width: 40%;
+    height: 30%;
+    width: 30%;
 }
