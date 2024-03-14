@@ -59,9 +59,9 @@ def sign_up():
             login_user(new_user, remember=True)
             flash('Account created!', category='success')
             if current_user.role == '0':
-                    return redirect(url_for('auth.profile-student') , user=current_user)
-                else:
-                    return redirect(url_for('auth.profile-teacher') , user=current_user)
+                return redirect(url_for('auth.profile-student') , user=current_user)
+            else:
+                return redirect(url_for('auth.profile-teacher') , user=current_user)
             
 
     return render_template('sign_up.html', user=current_user)
