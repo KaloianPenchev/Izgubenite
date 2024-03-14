@@ -12,7 +12,16 @@ header {
     height: 11%;
     width: 100%;
     background-color: #6CA0ED;
-
+}
+#div-right {
+    position: absolute;
+    left: 82%;
+    top: 25%;
+    height: 100%;
+}
+#logo {
+    width: 10%;
+    height: 100%;
 }
 #side-teachers{
     position: absolute;
@@ -80,7 +89,7 @@ header {
     height: 91px;
     font-size: 40px;
 }
-#teacher-students button:hover{
+button:hover{
     opacity: 0.5;
 }
 #teacher-students li {

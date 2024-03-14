@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="{{ url_for('static', filename='css/teacher-style.css') }}">
-    <title>Title</title>
+    <title>Teacher Home Page</title>
 </head>
 <body>
     <header>
+        <div-left>
+            <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
+        </div-left>
+        <div-right id="div-right"><button type="submit" style="height: 50%; width:200%; border-radius: 30px;">Log out</button></div-right>
 
     </header>
     <div id="side-teachers">
