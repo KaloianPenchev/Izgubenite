@@ -54,13 +54,22 @@ header a{
     position: absolute;
     display: flex;
     align-content: space-between;
-    justify-content: center;
+    justify-content: flex-end;
     width: 100%;
     height: 40%;
     top: 10%;
     left: 0;
 }
-
+.circle-field{
+    position: absolute;
+    top:0;
+    right: 0;
+    display: flex;
+    height: 100%;
+    aspect-ratio: 1/1;
+    align-items: center;
+    justify-items: center;
+}
 .circle {
     display: flex;
     color: white;
@@ -68,9 +77,8 @@ header a{
     align-items: center;
     border-radius: 100%;
     aspect-ratio: 1/1;
-    height: 99%;
+    height: 60%;
     background-color: #D9D9D9;
-    margin-bottom: 20px;
     border-style: solid;
     border-width: 3px;
     border-color: black;
@@ -85,7 +93,6 @@ header a{
     display: flex;
     text-align: center;
 }
-
 .circle_outstanding {
     display: flex;
     color: white;
@@ -93,9 +100,8 @@ header a{
     align-items: center;
     border-radius: 100%;
     aspect-ratio: 1/1;
-    height: 99%;
+    height: 60%;
     background-color: #19E607;
-    margin-bottom: 20px;
     border-style: solid;
     border-width: 3px;
     border-color: black;
@@ -115,9 +121,8 @@ header a{
     align-items: center;
     border-radius: 100%;
     aspect-ratio: 1/1;
-    height: 99%;
+    height: 60%;
     background-color: yellow;
-    margin-bottom: 20px;
     border-style: solid;
     border-width: 3px;
     border-color: black;
@@ -137,9 +142,8 @@ header a{
     align-items: center;
     border-radius: 100%;
     aspect-ratio: 1/1;
-    height: 99%;
+    height: 60%;
     background-color: red;
-    margin-bottom: 20px;
     border-style: solid;
     border-width: 3px;
     border-color: black;
@@ -153,8 +157,11 @@ header a{
 }
 
 .feedback-histogram{
-    width: 100%;
+    position: absolute;
+    width: 70%;
     height: 100%;
+    top:0;
+    left: 0;
     display: flex;
     align-items: end;
     justify-content: start;
