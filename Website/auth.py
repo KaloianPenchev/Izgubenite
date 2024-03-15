@@ -84,5 +84,10 @@ def logout():
 @login_required
 def feedbackpage():
     return redirect(url_for('views.home'))
+
+@auth.route('/test')
+@login_required
+def test():
+    return render_template('questions.html', user=current_user)
     
 
