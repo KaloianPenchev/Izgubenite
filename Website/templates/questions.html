@@ -8,6 +8,22 @@
 </head>
 <body>
 
+    <header>
+        <div-left>
+            <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
+        </div-left>
+        
+        <div-right id="div-right">
+            <h1 class="username">User: {{current_user.first_name}}</h1>
+            <a href="/logout">
+                <button type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
+            </a>
+            <a href="/profile_student">
+                <button type="submit" class="button1"><h1 class="menu-text">Profile</h1></button>
+            </a>
+        </div-right>
+    </header>
+    
     <div class="main">
         <button class="btn" onclick="whenStart()">Start</button>
         <p id="question"></p>
