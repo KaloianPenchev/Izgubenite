@@ -33,7 +33,7 @@
             <ul id="teacher-students">
                 {% for student in students %}
                     <li>
-                        <button class="details-text" onclick="{{ url_for('views.reacting(student.email)') }}" type="submit">{{student.first_name}}</button>
+                        <button class="details-text" href="{{ url_for('views.reacting(student.email)') }}" type="submit">{{student.first_name}}</button>
                     </li>
                 {% endfor %}
             </ul>
