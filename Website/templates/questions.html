@@ -30,10 +30,10 @@
             <div id="main" style="display: none">
                 <p id="question"></p>
                 <div class="options">
-                    <div class="answer"><input type="checkbox" id="1" onclick="Release(id)"><p id="A"></p></div>
-                    <div class="answer"><input type="checkbox" id="2" onclick="Release(id)"><p id="B"></p></div>
-                    <div class="answer"><input type="checkbox" id="3" onclick="Release(id)"><p id="C"></p></div>
-                    <div class="answer"><input type="checkbox" id="4" onclick="Release(id)"><p id="D"></p></div>
+                    <input type="checkbox" id="1" onclick="Release(id)"><label class="answer" for="1" id="A"></label>
+                    <input type="checkbox" id="2" onclick="Release(id)"><label class="answer" for="2" id="B"></label>
+                    <input type="checkbox" id="3" onclick="Release(id)"><label class="answer" for="3" id="C"></label>
+                    <input type="checkbox" id="4" onclick="Release(id)"><label class="answer" for="4" id="D"></label>
                 </div>
                 <button id="subm" onclick="checkIfCorrect()">Submit</button>
             </div>
