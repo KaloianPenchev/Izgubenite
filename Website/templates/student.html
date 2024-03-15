@@ -28,9 +28,11 @@
             <h1 class="details-text">Email: {{studentemail}}</h1>
         </div>
         <div class="bio">
-            <div class="edit"></div>
+            <textarea type="text"></textarea>
+                <img class="edit" src="{{ url_for('static', filename='pictures/edit.jpg') }}">
+        
+            </div>
         </div>
-    </div>
     <div class="userpage">
         <div class="tests">
             <h1 class="test-text">Choose a test</h1>

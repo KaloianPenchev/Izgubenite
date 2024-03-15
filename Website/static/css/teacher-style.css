@@ -101,25 +101,28 @@ header {
     line-height: 45px;
     color: #FFFFFF;
 }
-.bio{
+.bio textarea{
     height: 40%;
     width: 90%;
     position: absolute;
-    top: 55%;
-    left: 5%;
+    top: 50%;
+    left: 2%;
     background: #D9D9D9;
     border-radius: 43px;
+    font-size: x-large;
+    padding: 20px;
+    resize: none;
+    
 }
 .edit{
     position: absolute;
-    top: 70%;
-    left: 87%;
+    top: 83%;
+    left: 86%;
     width: 8%;
-    height: 20%;
-    border-radius: 100%;
-    background: url('https://cdn3.vectorstock.com/i/1000x1000/66/27/pencil-icon-black-on-white-background-vector-9076627.jpg');
-    background-size: 150% 150%;
-    background-position: center;
+    height: auto;
+    border-radius: 50%;
+
+    
 }
 #right-side-teachers {
     position: absolute;
