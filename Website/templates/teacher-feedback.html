@@ -11,7 +11,7 @@
             </div-left>
             
             <div-right id="div-right">
-                <h1>{{fname}}</h1>
+                <h1>Student: {{fname}}</h1>
                 <a href="/logout">
                     <button type="submit" class="button1">Logout</button>
                 </a>
@@ -22,9 +22,16 @@
         </header>
         <div class="main">
             <div class="feedback-histogram">
-                <div class="green-block"></div>
-                <div class="yellow-block"></div>
-                <div class="red-block"></div>
+                {% for feedback in feedbacks %}
+                    {% if feedback.grade == "3"%}
+                        <div class="green-block"></div>
+                    {% elif feedback.grade == "2"%}
+                        <div class="yellow-block"></div>
+                    {% elif feedback.grade == "1"%}
+                        <div class="red-block"></div>
+                    {% endif %}
+                {% endfor %}
+                
             </div>
             <div class="line"></div>
         </div>
@@ -34,30 +41,21 @@
                     <div class="feedback"><p>{{ feedback.message }}</p></div>
                     {% if feedback.grade == "N/A" %}
                         <form class="reactions" method="POST">
-                            <ul>
-                                <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="3">
+                            <ul class="grades">
+                                <li class="reaction"><input type="radio" name="reaction" id="reaction" class="checkbox" value="3">
                                     <label class="reaction-text">Outstanding</label>
                                 </li>
-                                <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="2">
+                                <li class="reaction"><input type="radio" name="reaction" id="reaction" class="checkbox" value="2">
                                     <label class="reaction-text">Neutral</label>
                                 </li>
-                                <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="1">
+                                <li class="reaction"><input type="radio" name="reaction" id="reaction" class="checkbox" value="1">
                                     <label class="reaction-text">Need improvement</label>
                                 </li>
                             </ul>
-                            <button class="details-text" onclick="clicked('{{student_email}}', '{{feedback.id}}');" type="button">Confirm</button>
+                            <button class="details-text" onclick="clicked('{{student_email}}', '{{feedback.id}}'); " type="button">Confirm</button>
                             <script>
                                 function clicked(student_email, feedback_id) {
-                                    fetch(`/get_student/${student_email}`)
-                                    .then(response => response.json())
-                                    .then(data => {
-                                        const student = data.student;
-                                        console.log(student_email);
-                                        window.location = `/reaction/${student_email}/${feedback_id}`;
-                                    })
-                                    .catch(error => {
-                                        console.error('Error: ', error);
-                                    });
+                                    window.location = `/reaction/${student_email}/${feedback_id}`;
                                 }
                             </script>
                         </form>

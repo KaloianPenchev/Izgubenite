@@ -28,9 +28,15 @@
         </header>
         <div class="main">
             <div class="feedback-histogram">
-                <div class="green-block"></div>
-                <div class="yellow-block"></div>
-                <div class="red-block"></div>
+                {% for feedback in feedbacks %}
+                    {% if feedback.grade == "3"%}
+                        <div class="green-block"></div>
+                    {% elif feedback.grade == "2"%}
+                        <div class="yellow-block"></div>
+                    {% elif feedback.grade == "1"%}
+                        <div class="red-block"></div>
+                    {% endif %}
+                {% endfor %}
                 
             </div>
             <div class="circle"><h1>Outstanding</h1></div>

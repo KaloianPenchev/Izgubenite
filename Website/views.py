@@ -27,6 +27,7 @@ def home():
 def reacting(student_email, feedback_id):
     if request.method == 'POST' and feedback_id != -1:
         grade = request.form.get('reaction')
+        print(grade)
         if len(grade) < 1:
             flash('Please select a grade!', category='error')
         else:
@@ -36,4 +37,4 @@ def reacting(student_email, feedback_id):
             flash('Feedback graded!', category='success')
     feedbacks = Feedback.query.filter_by(student_email=student_email).all()
     student = User.query.filter_by(email=student_email).first()
-    return render_template("teacher-feedback.html",  user=current_user, feedbacks=feedbacks, fname=student.first_name, feedback_id=-1)
+    return render_template("teacher-feedback.html",  user=current_user, feedbacks=feedbacks, student_email=student.email, feedback_id=-1)
