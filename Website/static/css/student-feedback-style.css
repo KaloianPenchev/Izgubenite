@@ -2,6 +2,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    font-family: 'Comfortaa',sans-serif;
 }
 header {
     position: absolute;
@@ -33,7 +34,11 @@ header {
 }
 header h1{
     font-family: Comfortaa, sans-serif;
-    margin-right: 20px;
+    color: white;
+}
+
+.username {
+    margin-right: 60px;
 }
 .button1{
     background-color: #B4D1FD;
@@ -58,7 +63,7 @@ header a{
 
 .menu-text{
     text-align: center;
-    font-family: 'Comfortaa',sans-serif;
+    
     font-style: normal;
     font-weight: 400;
     font-size: 200%;
@@ -79,8 +84,8 @@ header a{
 
 }
 .feedback-histogram{
-    width: 1720px;
-    height: 400px;
+    width: 90%;
+    height: 40%;
     display: flex;
     align-items: end;
     justify-content: start;
