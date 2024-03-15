@@ -51,14 +51,26 @@ function checkIfCorrect() {
         }
     }
     if (ans) {
+        should_you_do[category][quest] = false;
         console.log("Correct");
     } else {
         console.log("Incorrect");
     }
+    quest++;
+    whenStart();
+    make_all_unchecked();
 }
 
 
 function whenStart(){
+    if(quest >= questions[category].length){
+        return;
+    }
+    if(should_you_do[category][quest] === false){
+        quest++;
+        whenStart();
+        return;
+    }
     printQuestion();
     printChoisses();
 
@@ -77,16 +89,15 @@ function make_should_you_do(){
         for(let j = 0; j < questions[i].length; j++){
             cur.push(true);
         }
-
         should_you_do[i] = cur;
-    }
-    for(let i =  0; i < should_you_do.length; i++){
-        for(let j = 0; j < should_you_do[i].length; j++){
-            console.log(should_you_do[i][j]);
-        }
-        console.log("!W");
     }
     return 0;
 }
 
 
+function make_all_unchecked(){
+    for (let i = 0; i <= 3; i++) {
+        let ch = String.fromCharCode(i + 49);
+        document.getElementById(ch).checked = false;
+    }
+}
