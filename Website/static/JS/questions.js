@@ -80,8 +80,19 @@ nuCategory.set(1, "Geometry");
 nuCategory.set(2, "History");
 nuCategory.set(3, "Geography");
 var should_you_do = [];
+var order = [];
 var quest = 0;
 var category;
+
+function makeOrder(){
+    for(let i = 0; i < questions[category].length; i++)order.push(i);
+    for (let i = order.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = order[i];
+        order[i] = order[j];
+        order[j] = temp;
+    }
+}
 
 function changeColor(s, num){
     for(let i = 1; i <= 4; i++){
@@ -115,7 +126,6 @@ function leaveOnlyMain3(){
     zum.style.display = "block";
 }
 function isAllCorrect(){
-    console.log(category);
     for(let i = 0; i < should_you_do[category].length; i++){
         if(should_you_do[category][i] === true)return false;
     }
@@ -132,15 +142,14 @@ function change_place(){
       yum.style.display = "flex";
     }
 }
-
 function printQuestion(){
     console.log(category);
-    document.getElementById("question").innerHTML = questions[category][quest];
+    document.getElementById("question").innerHTML = questions[category][order[quest]];
 }
 function printChoisses(){
     for (let i = 0; i <= 3; i++) {
         let char = String.fromCharCode(i + 65);
-        document.getElementById(char).innerHTML = pos_choisses[category][quest][i];
+        document.getElementById(char).innerHTML = pos_choisses[category][order[quest]][i];
     }
 }
 
@@ -156,20 +165,17 @@ function checkIfCorrect() {
     let ans = false;
     for (let i = 0; i <= 3; i++) {
         let ch = String.fromCharCode(i + 49);
-        console.log(answer[category][quest]);
+        console.log(answer[category][order[quest]]);
         if(document.getElementById(ch).checked) curr = i + 49 + 16;
-        if (answer[category][quest] === document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML) {
+        if (answer[category][order[quest]] === document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML) {
             tru = i + 49 + 16;
         }
     }
     returnIfCorrect( String.fromCharCode(curr) ,String.fromCharCode(tru));
 }
 function returnIfCorrect(ch, tru){
-
     if (ch === tru) {
-        should_you_do[category][quest] = false;
-        console.log(should_you_do[category][quest]);
-        console.log("Correct");
+        should_you_do[category][order[quest]] = false;
         let x = document.getElementById(ch);
         x.style.backgroundColor = "green";
         return true;
@@ -197,7 +203,7 @@ function whenStart(){
         change_place();
         return;
     }
-    if(should_you_do[category][quest] === false){
+    if(should_you_do[category][order[quest]] === false){
         quest++;
         whenStart();
         return;
