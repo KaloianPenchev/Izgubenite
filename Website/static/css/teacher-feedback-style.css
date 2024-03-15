@@ -159,7 +159,8 @@ header a{
     align-items: end;
     justify-content: start;
     flex-flow: row nowrap;
-    
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .green-block{
     width: 70px;
