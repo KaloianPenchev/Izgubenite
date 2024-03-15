@@ -119,6 +119,17 @@ header a{
     top: 50%;
     left: 0;
 }
+
+.options{
+    display: flex;
+    left: 50px;
+    justify-content: space-between;
+}
+
+.option{
+
+}
+
 .feedback {
     display: flex;
     flex-wrap: wrap;
@@ -151,13 +162,15 @@ header a{
     text-align: center;
     padding-left: 5px;
 }
-.reaction{
-    list-style: none;
-}
 
 .feedbackIdSpace input{
     width: 0;
     height: 0;
     border: none;
     outline: none;
+}
+
+.submit_grade{
+    border-radius: 43px;
+    background-color: #B4D1FD;
 }
