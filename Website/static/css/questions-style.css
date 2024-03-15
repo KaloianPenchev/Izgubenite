@@ -6,8 +6,6 @@
 }
 header {
     position: absolute;
-    
-
     top: 0px;
     left: 0px;
     height: 10%;
@@ -58,58 +56,82 @@ header a{
     width: 10%;
     height: 100%;
 }
-body {
+.center{
     display: flex;
-    justify-content: center;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 90%;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0; /* Промени цвета, ако е необходимо */
+    justify-content: center;
 }
-
 .main {
-    text-align: center;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    justify-content:space-between;
+    display: flex;
     background-color: white; /* Промени цвета, ако е необходимо */
-    padding: 20px;
     border-radius: 10px;
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: 60%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 .main h1{
     font-size: 40px;
 }
-.btn {
-    padding: 10px 20px;
-    background-color: #007bff; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
+.restart-button{
+    position: absolute;
+    width: 15%;
+    height: 10%;
+    top: 2%;
+    left: 82%;
+    border-radius: 43px;
+    background-color: green;
 }
-
-.options {
-    margin-top: 20px;
+.restart-button:active{
+    background-color: darkgreen;
 }
-
-.options p {
-    margin: 10px 0;
+.btn{
+    margin-top: 2%;
+    width: 15%;
+    height: 10%;
+    background-color: lightskyblue;
+    border-radius: 43px;
 }
-
-input[type="checkbox"] {
-    margin-right: 5px;
+.subm{
+    width: 15%;
+    height: 10%;
+    top: 2%;
+    left: 82%;
+    border-radius: 43px;
+    margin-bottom: 2%;
 }
-
-button {
-    padding: 10px 20px;
-    background-color: #28a745; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
+.options{
+    display: flex;
+    width: 50%;
+    height: 50%;
+    background-color: #6CA0ED;
 }
-
-button:hover {
-    background-color: #218838;
+.answer{
+    width: 50%;
+    height: 50%;
+    background-color: #B4D1FD;
+}
+.options #box1{
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+.options #box2{
+    align-self: flex-start;
+    justify-self: flex-end;
+}
+.options #box3{
+    align-self: flex-end;
+    justify-self: flex-start;
+}
+.options #box4{
+    align-self: flex-end;
+    justify-self: flex-end;
 }
