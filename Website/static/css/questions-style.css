@@ -29,7 +29,7 @@ header {
     top: 0%;
     height: 100%;
     width: 50%;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
 }
 header h1{
@@ -37,9 +37,7 @@ header h1{
     color: white;
 }
 
-.username {
-    margin-right: 60px;
-}
+
 .button1{
     background-color: #B4D1FD;
     
@@ -60,7 +58,6 @@ header a{
     width: 10%;
     height: 100%;
 }
-
 body {
     display: flex;
     justify-content: center;
@@ -74,9 +71,13 @@ body {
     background-color: white; /* Промени цвета, ако е необходимо */
     padding: 20px;
     border-radius: 10px;
+    width: 50%;
+    height: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
-
+.main h1{
+    font-size: 40px;
+}
 .btn {
     padding: 10px 20px;
     background-color: #007bff; 
