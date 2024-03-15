@@ -31,10 +31,10 @@
     <div id="right-side-teachers">
             <p id="Need-to-return-feedback">Need to return feedback?</p>
             {% for student in students %}
-                <button class="details-text" onclick="clicked('{{student.email}}', '{{student.first_name}}');" type="submit">{{student.first_name}}</button>
+                <button class="details-text" onclick="clicked('{{student.email}}', '{{ feedback_id }}');" type="submit">{{student.first_name}}</button>
                 <script>
-                    function clicked(student_email, student_first_name) {
-                         window.location = `/reaction/${student_first_name}/${student_email}`;
+                    function clicked(student_email, feedback_id) {
+                         window.location = `/reaction//${student_email}/${feedback_id}`;
                     }
                 </script>
             {% endfor %}

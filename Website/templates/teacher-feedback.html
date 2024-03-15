@@ -25,11 +25,6 @@
                 <div class="green-block"></div>
                 <div class="yellow-block"></div>
                 <div class="red-block"></div>
-                <!--TODO: 
-                1.fix border
-                2.put the blocks into a seperate div
-                3. Add bottom line
-                -->
             </div>
             <div class="line"></div>
         </div>
@@ -37,14 +32,41 @@
             {% for feedback in feedbacks %}
                 <section class="feedback-design">
                     <div class="feedback"><p>{{ feedback.message }}</p></div>
-                    <div class="reactions">
-                        <ul>
-                            <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="3"><label class="reaction-text">Outstanding</label></li>
-                            <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="2"><label class="reaction-text">Neutral</label></li>
-                            <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="1"><label class="reaction-text">Need improvement</label></li>
-                        </ul>
-                    </div>
-                    <button class="btn" type="submit">submit</button>
+                    {% if feedback.grade == "N/A" %}
+                        <form class="reactions" method="POST">
+                            <ul>
+                                <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="3">
+                                    <label class="reaction-text">Outstanding</label>
+                                </li>
+                                <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="2">
+                                    <label class="reaction-text">Neutral</label>
+                                </li>
+                                <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="1">
+                                    <label class="reaction-text">Need improvement</label>
+                                </li>
+                            </ul>
+                            <button class="details-text" onclick="clicked('{{student_email}}', '{{feedback.id}}');" type="button">Confirm</button>
+                            <script>
+                                function clicked(student_email, feedback_id) {
+                                    fetch(`/get_student/${student_email}`)
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        const student = data.student;
+                                        console.log(student_email);
+                                        window.location = `/reaction/${student_email}/${feedback_id}`;
+                                    })
+                                    .catch(error => {
+                                        console.error('Error: ', error);
+                                    });
+                                }
+                            </script>
+                        </form>
+                    {% endif %}
+                    {% if feedback.grade != "N/A" %}
+                        <div class="grade">
+                            <p>{{ feedback.grade }}</p>
+                        </div>
+                    {% endif %}
                 </section>
             {% endfor %}
         </div>

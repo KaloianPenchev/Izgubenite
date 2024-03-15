@@ -10,6 +10,6 @@ class User(db.Model, UserMixin):
 
 class Feedback(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    student_email = db.Column(db.Text)
+    student_email = db.Column(db.String(150))
     message = db.Column(db.Text)
     grade = db.Column(db.Text)

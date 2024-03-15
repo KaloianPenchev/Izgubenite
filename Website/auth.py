@@ -67,7 +67,7 @@ def profile_student():
 def profile_teacher():
     print("Successfully logged in!")
     students_list = User.query.filter_by(role='0').all()
-    return render_template('teacher.html', user=current_user, teachername=current_user.first_name , teacheremail=current_user.email, students=students_list)
+    return render_template('teacher.html', user=current_user, teachername=current_user.first_name , teacheremail=current_user.email, students=students_list, feedback_id=-1)
 
 @auth.route('/logout')
 @login_required
