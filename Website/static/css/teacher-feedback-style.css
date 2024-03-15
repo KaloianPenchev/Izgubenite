@@ -208,23 +208,39 @@ header a{
 }
 .feedbacks{
     position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+    border: none;
+    overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
     height: 48%;
     top: 52%;
     left: 0;
 }
-
+.checkbox{
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+.option{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 50%;
+}
 .options{
     display: flex;
-    left: 50px;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .feedback {
     display: flex;
+    justify-self: flex-start;
     flex-wrap: wrap;
     max-height: 100px;
     background-color: #D9D9D9;
-    width: 500px;
+    width: 70%;
     justify-content: space-around;
     align-items: center;
     border-radius: 43px;
@@ -243,15 +259,20 @@ header a{
 }
 .feedback-design{
     display: flex;
-    width: 50%;
+    width: 70%;
     margin-top: 10px;
-    justify-content: space-between;
 }
 .reaction-text{
     text-align: center;
+    font-size: 20px;
     padding-left: 5px;
 }
-
+.form{
+    display: flex;
+    margin-left: 2%;
+    flex-wrap: wrap;
+    justify-content:center;
+}
 .feedbackIdSpace input{
     width: 0;
     height: 0;
@@ -260,6 +281,10 @@ header a{
 }
 
 .submit_grade{
+    height: 50%;
+    width: 50%;
+    font-size: 20px;
+    justify-content: center;
     border-radius: 43px;
     background-color: #B4D1FD;
 }
