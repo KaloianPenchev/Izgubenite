@@ -124,14 +124,7 @@ header {
     top: 10%;
     background-color: #F5F5F5;
 }
-#teacher-students{
-    display: flex;
-    justify-content:space-evenly;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
-}
-#teacher-students button{
+#right-side-teachers button{
     background-color: #6CA0ED;
     border: solid;
     border-radius: 43px;
@@ -142,9 +135,6 @@ header {
 button:hover{
     opacity: 0.5;
 }
-#teacher-students li {
-     margin-top: 20px;
- }
 #Need-to-return-feedback{
     display: flex;
     justify-content: center;

@@ -30,18 +30,14 @@
     </div>
     <div id="right-side-teachers">
             <p id="Need-to-return-feedback">Need to return feedback?</p>
-            <ul id="teacher-students">
-                {% for student in students %}
-                    <li>
-                        <button class="details-text" onclick="clicked('{{student.email}}', '{{student.first_name}}');" type="submit">{{student.first_name}}</button>
-                        <script>
-                            function clicked(student_email, student_first_name) {
-                                window.location = `/reaction/${student_first_name}/${student_email}`;
-                            }
-                        </script>
-                    </li>
-                {% endfor %}
-            </ul>
+            {% for student in students %}
+                <button class="details-text" onclick="clicked('{{student.email}}', '{{student.first_name}}');" type="submit">{{student.first_name}}</button>
+                <script>
+                    function clicked(student_email, student_first_name) {
+                         window.location = `/reaction/${student_first_name}/${student_email}`;
+                    }
+                </script>
+            {% endfor %}
         </div>
 </body>
 </html>
