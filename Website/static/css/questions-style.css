@@ -126,6 +126,10 @@ header a{
     border-radius: 43px;
     margin-bottom: 2%;
 }
+#question{
+    font-size: 25px;
+    
+}
 .options{
     display: grid;
     grid-template-columns:20%,20%;
