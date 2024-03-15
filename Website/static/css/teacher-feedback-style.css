@@ -177,7 +177,7 @@ header a{
     border-color: black;
     border-width: 3px;
     border-bottom-width: 0;
-    
+    min-width: 70px;
     margin-left: 70px;
     
 }
@@ -191,6 +191,7 @@ header a{
     border-width: 3px;
     border-bottom-width: 0;
     border-color: black;
+    min-width: 70px;
 
 }
 
@@ -203,6 +204,7 @@ header a{
     border-bottom-width: 0;
     border-color: black;
     margin-left: 70px;
+    min-width: 70px;
 
 }
 .line {
