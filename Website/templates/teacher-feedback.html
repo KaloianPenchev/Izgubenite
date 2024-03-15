@@ -40,19 +40,22 @@
                 <section class="feedback-design">
                     <div class="feedback"><p>{{ feedback.message }}</p></div>
                     {% if feedback.grade == "N/A" %}
-                        <form class="reactions" method="POST">
-                            <ul class="grades">
-                                <li class="reaction"><input type="radio" name="reaction" id="reaction" class="checkbox" value="3">
-                                    <label class="reaction-text">Outstanding</label>
-                                </li>
-                                <li class="reaction"><input type="radio" name="reaction" id="reaction" class="checkbox" value="2">
-                                    <label class="reaction-text">Neutral</label>
-                                </li>
-                                <li class="reaction"><input type="radio" name="reaction" id="reaction" class="checkbox" value="1">
-                                    <label class="reaction-text">Need improvement</label>
-                                </li>
-                            </ul>
-                            <button class="details-text" onclick="clicked('{{student_email}}', '{{feedback.id}}'); " type="button">Confirm</button>
+                        <form method="POST">
+                            <div class="grades">
+                                <div class="option">
+                                    <input type="radio" id="outstanding" name="grade" class="checkbox" value="3">
+                                    <label>Outstanding</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" id="neutral" name="grade" class="checkbox" value="2">
+                                    <label>Neutral</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" id="need_improvement" name="grade" class="checkbox" value="1">
+                                    <label>Need improvement</label>
+                                </div>
+                            </div>
+                            <button class="details-text" onclick="clicked('{{student_email}}', '{{feedback.id}}'); " type="submit">Confirm</button>
                             <script>
                                 function clicked(student_email, feedback_id) {
                                     window.location = `/reaction/${student_email}/${feedback_id}`;

@@ -24,8 +24,9 @@ def home():
 @views.route('/reaction/<student_email>/<feedback_id>', methods=['GET','POST'])
 @login_required
 def reacting(student_email, feedback_id):
+    print(student_email, feedback_id, request.method)
     if request.method == 'POST' and feedback_id != -1:
-        grade = request.form.get('reaction')
+        grade = request.form.get('grade')
         print(grade)
         if len(grade) < 1:
             flash('Please select a grade!', category='error')
