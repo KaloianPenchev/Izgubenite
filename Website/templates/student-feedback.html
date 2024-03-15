@@ -44,19 +44,19 @@
             <div class="circle-field">
                 {% if cnt < 1 %}
                     <div class="circle">
-                        <h1>No feedback</h1>
+                        <h1 class="circle-text">No feedback</h1>
                     </div>
                 {% elif sum/cnt >= 2.50 %}
                     <div class="circle_outstanding">
-                        <h1>Outstanding</h1>
+                        <h1 class="circle-text">Outstanding</h1>
                     </div>
                 {% elif sum/cnt >= 1.75 %}
                     <div class="circle_neutral">
-                        <h1>Neutral</h1>
+                        <h1 class="circle-text">Neutral</h1>
                     </div>
                 {% else %}
                     <div class="circle_need_improvement">
-                        <h1>Need improvement</h1>
+                        <h1 class="circle-text">Need improvement</h1>
                     </div>
                 {% endif %}
             </div>
