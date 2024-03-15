@@ -24,6 +24,6 @@ def home():
 
 @views.route('/reaction', methods=['GET','POST'])
 @login_required
-def reacting(student_email):
-    feedbacks = Feedback.query.filter_by(student_email=student_email).all()
+def reacting(stud_email):
+    feedbacks = Feedback.query.filter_by(student_email=stud_email).all()
     return render_template("teacher-feedback.html",  user=current_user, feedbacks=feedbacks)

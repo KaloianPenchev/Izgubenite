@@ -37,7 +37,6 @@ def sign_up():
         email = request.form.get('email')
         password = request.form.get('password')
         role = request.form.get('role')
-        print(request.form)
         user = User.query.filter_by(email=email).first()
         
         new_user = User(first_name=first_name, email=email, password=generate_password_hash(
@@ -47,7 +46,6 @@ def sign_up():
         db.session.commit()
         
         login_user(new_user, remember=True)
-        
         
         if current_user.role == '1':
             return redirect(url_for('auth.profile_teacher'))
@@ -62,16 +60,14 @@ def sign_up():
 @auth.route('/profile_student')
 @login_required
 def profile_student():
-    
     return render_template('student.html', user=current_user, studentname=current_user.first_name , studentemail=current_user.email)
 
 @auth.route('/profile_teacher')
 @login_required
 def profile_teacher():
-    students = User.query.filter_by(role="0").all()
-    return render_template('teacher.html', user=current_user, teachername=current_user.first_name , teacheremail=current_user.email, students=students)
-
-
+    print("Successfully logged in!")
+    students_list = User.query.filter_by(role='0').all()
+    return render_template('teacher.html', user=current_user, teachername=current_user.first_name , teacheremail=current_user.email, students=students_list)
 
 @auth.route('/logout')
 @login_required
@@ -89,5 +85,3 @@ def feedbackpage():
 @login_required
 def test():
     return render_template('questions.html', user=current_user)
-    
-
