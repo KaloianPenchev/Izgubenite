@@ -19,7 +19,13 @@ def home():
             db.session.add(new_feedback)
             db.session.commit()
     feedbacks = Feedback.query.filter_by(student_email=current_user.email).all()
-    return render_template("student-feedback.html", user=current_user, feedbacks=feedbacks)
+    sum = 0
+    cnt = 0
+    for feedback in feedbacks:
+        if feedback.grade != "N/A":
+            sum += int(feedback.grade)
+            cnt += 1
+    return render_template("student-feedback.html", user=current_user, feedbacks=feedbacks, sum=sum, cnt=cnt)
 
 @views.route('/reactions/<student_email>', methods=['GET', 'POST'])
 @login_required
