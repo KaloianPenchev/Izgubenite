@@ -13,3 +13,6 @@ class Feedback(db.Model):
     student_email = db.Column(db.String(150))
     message = db.Column(db.Text)
     grade = db.Column(db.String(5))
+
+    def __repr__(self) -> str:
+        return f"{self.student_email} - {self.message} - {self.grade}"
