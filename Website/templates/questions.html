@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/questions.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/questions-style.css') }}">
     
 </head>
 <body>
@@ -13,12 +13,12 @@
         </div-left>
         
         <div-right id="div-right">
-            <h1>{{current_user.first_name}}</h1>
+            <h1>User: {{current_user.first_name}}</h1>
             <a href="/logout">
-                <button type="submit" class="button1">Logout</button>
+                <button type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
             </a>
             <a href="/profile_student">
-                <button type="submit" class="button1">Profile</button>
+                <button type="submit" class="button1"><h1 class="menu-text">Profile</h1></button>
             </a>
         </div-right>
     </header>
