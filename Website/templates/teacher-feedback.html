@@ -35,13 +35,13 @@
         </div>
         <div class="feedbacks">
             {% for feedback in feedbacks %}
-                <section class="feedback">
-                    <p>{{ feedback.message }}</p>
+                <section class="feedback-design">
+                    <div class="feedback"><p>{{ feedback.message }}</p></div>
                     <div class="reactions">
                         <ul>
-                            <li>duma</li>
-                            <li>duma</li>
-                            <li>duma</li>
+                            <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="3"><label class="reaction-text">Outstanding</label></li>
+                            <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="2"><label class="reaction-text">Neutral</label></li>
+                            <li class="reaction"><input type="radio" name="reaction" class="checkbox" value="1"><label class="reaction-text">Need improvement</label></li>
                         </ul>
                     </div>
                     <button class="btn" type="submit">submit</button>
