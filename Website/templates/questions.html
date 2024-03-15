@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/questions-style.css') }}">
 </head>
 <body>
-
     <header>
         <div-left>
             <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
@@ -22,22 +21,19 @@
             </a>
         </div-right>
     </header>
-    
-    <div class="main">
-        <button onclick="make_should_you_do()"> Make</button>
-        <button class="btn" onclick="whenStart()">Start</button>
-        <p id="question"></p>
-        <div class="options">
-            <p id="A"></p>
-            <p id="B"></p>
-            <p id="C"></p>
-            <p id="D"></p>
-            <input type="checkbox" id="1" onclick="Release(id)">
-            <input type="checkbox" id="2" onclick="Release(id)">
-            <input type="checkbox" id="3" onclick="Release(id)">
-            <input type="checkbox" id="4" onclick="Release(id)">
+    <div class="center">
+        <div class="main">
+            <button class="restart-button" onclick="make_should_you_do()">Restart</button>
+            <button class="btn" onclick="whenStart()">Start</button>
+            <p id="question"></p>
+            <div class="options">
+                <div class="answer" id="box1"><input type="checkbox" id="1" onclick="Release(id)"><p id="A"></p></div>
+                <div class="answer" id="box2"><input type="checkbox" id="2" onclick="Release(id)"><p id="B"></p></div>
+                <div class="answer" id="box3"><input type="checkbox" id="3" onclick="Release(id)"><p id="C"></p></div>
+                <div class="answer" id="box4"><input type="checkbox" id="4" onclick="Release(id)"><p id="D"></p></div>
+            </div>
+            <button class="subm" onclick="checkIfCorrect()">Submit</button>
         </div>
-        <button onclick="checkIfCorrect()">Submit</button>
     </div>
     <script src="{{ url_for('static', filename='JS/questions.js') }}"></script>
 </body>

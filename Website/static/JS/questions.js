@@ -32,9 +32,11 @@ var questions = [
         "Коя е най-голямата държава в света?",
         "В коя държава се намира връх Еверест?",
         "Коя е столицата на Австралия?",
+        "Каква част от повърхността на Земята е покрита от океан?"
         
     ]
 ];
+
 var pos_choisses = [
     [
 	    ["2", "5", "4", "7"], 
@@ -66,6 +68,7 @@ var pos_choisses = [
         ["Канада", "САЩ", "Индия", "Русия"],
         ["Непал", "Китай", "Бутан", "Япония"],
         ["Сидни", "Пърт", "Канбера", "Мелбърн"],
+        ["71%", "62%", "88%", "40.5%"]
 
     ]
 ];
@@ -73,12 +76,43 @@ var answer = [
     ["5", "13", "17", "1", "144", "16","3 и -3", "4 и -5", ], 
     ["π*r*r", "16π","36π","3","C(6, 4)", "няма реални корени"], 
     ["Херодот", "Търновска", "1878", "Борис I",], 
-    ["Индонезия", "Русия", "Непал", "Канбера"],
+    ["Индонезия", "Русия", "Непал", "Канбера", "71%"],
 
 ];
+const nuCategory = new Map();
+nuCategory.set(0, "Arithmetic");
+nuCategory.set(1, "Geometry");
+nuCategory.set(2, "History");
+nuCategory.set(3, "Geography");
 var should_you_do = []
 var quest = 0;
 var category = 0;
+
+function leaveOnlyMain3(){
+    var yum = document.getElementById("main");
+    var xum = document.getElementById("main2");
+    var zum = document.getElementById("main3");
+    xum.style.display = "none";
+    yum.style.display = "none";
+    zum.style.display = "block";
+}
+function isAllCorrect(){
+    for(let i = 0; i < should_you_do[category].length; i++){
+        if(should_you_do[category][i] === true)return false;
+    }
+    return true;
+}
+function change_place(){
+    var yum = document.getElementById("main");
+    var xum = document.getElementById("main2");
+    if (xum.style.display === "none") {
+      xum.style.display = "block";
+      yum.style.display = "none";
+    } else {
+      xum.style.display = "none";
+      yum.style.display = "block";
+    }
+}
 function printQuestion(){
     document.getElementById("question").innerHTML = questions[category][quest];
 }
@@ -99,6 +133,7 @@ function checkIfCorrect() {
     }
     if (ans) {
         should_you_do[category][quest] = false;
+        console.log(should_you_do[category][quest]);
         console.log("Correct");
     } else {
         console.log("Incorrect");
@@ -110,7 +145,16 @@ function checkIfCorrect() {
 
 
 function whenStart(){
+    if(quest === 0){
+        if(isAllCorrect()){
+            leaveOnlyMain3();
+            return;
+        }
+        change_place();
+    }
     if(quest >= questions[category].length){
+        quest = 0;
+        change_place();
         return;
     }
     if(should_you_do[category][quest] === false){
@@ -120,7 +164,6 @@ function whenStart(){
     }
     printQuestion();
     printChoisses();
-
 }
 
 function Release(s) {
