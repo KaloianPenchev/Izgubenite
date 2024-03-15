@@ -68,7 +68,8 @@ def profile_student():
 @auth.route('/profile_teacher')
 @login_required
 def profile_teacher():
-    return render_template('teacher.html', user=current_user, teachername=current_user.first_name , teacheremail=current_user.email)
+    students = User.query.filter_by(role="0").all()
+    return render_template('teacher.html', user=current_user, teachername=current_user.first_name , teacheremail=current_user.email, students=students)
 
 
 
@@ -84,7 +85,6 @@ def logout():
 def feedbackpage():
     if current_user.role == '1':
         return redirect(url_for('views.reacting'))
-        
     elif current_user.role == '0':
         return redirect(url_for('views.home'))
     

@@ -31,10 +31,11 @@
     <div id="right-side-teachers">
             <p id="Need-to-return-feedback">Need to return feedback?</p>
             <ul id="teacher-students">
-                <li><button class="details-text" onclick="window.location.href='/feedbackpage';" type="submit">student a</button></li>
-                <li><button class="details-text" onclick="window.location.href='/feedbackpage';" type="submit">student b</button></li>
-                <li><button class="details-text" onclick="window.location.href='/feedbackpage';" type="submit">student c</button></li>
-                <li><button class="details-text" onclick="window.location.href='/feedbackpage';" type="submit">student d</button></li>
+                {% for student in students %}
+                    <li>
+                        <button class="details-text" onclick="window.location.href='/feedbackpage';" type="submit">{{student.first_name}}</button>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
 </body>
