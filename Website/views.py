@@ -18,7 +18,6 @@ def home():
             new_feedback = Feedback(student_email=current_user.email, message=feedback, grade="N/A")
             db.session.add(new_feedback)
             db.session.commit()
-            flash('Feedback added!', category='success')
     feedbacks = Feedback.query.filter_by(student_email=current_user.email).all()
     return render_template("student-feedback.html", user=current_user, feedbacks=feedbacks)
 
@@ -34,7 +33,6 @@ def reacting(student_email, feedback_id):
             feedback = Feedback.query.filter_by(id=feedback_id).first()
             feedback.grade = grade
             db.session.commit()
-            flash('Feedback graded!', category='success')
     feedbacks = Feedback.query.filter_by(student_email=student_email).all()
     student = User.query.filter_by(email=student_email).first()
     return render_template("teacher-feedback.html",  user=current_user, feedbacks=feedbacks, student_email=student.email, feedback_id=-1)
