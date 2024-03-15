@@ -3,18 +3,19 @@
     <head>
         <title>Feedbacks</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/teacher-feedback-style.css') }}">
-        
     </head>
     <body>
         <header>
             <div-left>
                 <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
             </div-left>
+            
             <div-right id="div-right">
+                <h1>{{fname}}</h1>
                 <a href="/logout">
                     <button type="submit" class="button1">Logout</button>
                 </a>
-                <a href="/profile_student">
+                <a href="/profile_teacher">
                     <button type="submit" class="button1">Profile</button>
                 </a>
             </div-right>
