@@ -139,7 +139,7 @@ header a{
     font-size: 25px;
 
 }
-.options{
+.options{ /* ???? input */
     display: grid;
     grid-template-columns:20%,20%;
     grid-template-rows:20%,20%;
@@ -147,7 +147,11 @@ header a{
     width: 50%;
     height: 50%;
 }
-.answer{
+
+.options input {
+
+}
+.answer{ /*  Answer - label */
     background-color: #6CA0ED;
     display: flex;
     font-size: 25px;
@@ -182,6 +186,6 @@ header a{
 input {
     display: none;
 }
-input:checked + label {
+/*input:checked + label {
     background-color: yellow;
-}
+}*/
