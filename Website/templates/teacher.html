@@ -13,9 +13,12 @@
         <div-left>
             <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
         </div-left>
-        <div-right id="div-right">
+        <div class="div-mid">
+            <h1 class="header-text">Practicum</h1>
+        </div>
+        <div class="div-right" id="div-right">
             <button onclick="window.location.href='/logout';" type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
-        </div-right>
+        </div>
     </header>
     <div class="profilepage">
         <img class="profilepic" src="{{ url_for('static', filename='pictures/user.png') }}"> 
@@ -29,7 +32,7 @@
         </div>
     </div>
     <div id="right-side-teachers">
-            <p id="Need-to-return-feedback">Need to return feedback?</p>
+            <p id="Need-to-return-feedback">Need to return a feedback?</p>
             {% for student in students %}
             <button class="details-text" onclick="clicked('{{student.email}}');" type="submit">{{student.first_name}}</button>
             <script>

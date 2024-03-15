@@ -14,27 +14,37 @@ header {
 }
 .menu-text{
     text-align: center;
-    font-family: 'Comfortaa',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 200%;
     line-height: 45px;
     color: #FFFFFF;
 }
-#div-left{
+.div-mid {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0%;
+    left: 10%;
     height: 100%;
     width: 50%;
+    color: #000;
+}
+.div-mid h1 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    width:fit-content;
+    font-size: 48px;
+    color: #000;
 }
 #div-right {
     position: absolute;
     display: flex;
-    left: 50%;
+    left: 75%;
     top: 0%;
     height: 100%;
-    width: 50%;
+    width: 25%;
     justify-content: flex-end;
     align-items: center;
 }
@@ -52,7 +62,6 @@ header {
     opacity: 0.5;
 }
 #logo {
-    margin-left: 2%;
     width: 10%;
     height: 100%;
 }

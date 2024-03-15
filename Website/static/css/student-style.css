@@ -1,5 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/comfortaa');
 * {
+    font-family: 'Comfortaa',sans-serif;
     padding: 0px;
     margin: 0px;
 }
@@ -13,7 +14,6 @@ header {
 }
 .menu-text{
     text-align: center;
-    font-family: 'Comfortaa',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 200%;
@@ -26,6 +26,24 @@ header {
     left: 0px;
     height: 100%;
     width: 50%;
+}
+.div-mid {
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    height: 100%;
+    width: 50%;
+    color: #000;
+}
+.div-mid h1 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    width:fit-content;
+    font-size: 48px;
+    color: #000;
 }
 #div-right {
     position: absolute;
@@ -51,7 +69,6 @@ header {
     opacity: 0.5;
 }
 #logo {
-    margin-left: 2%;
     width: 10%;
     height: 100%;
 }
