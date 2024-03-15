@@ -24,7 +24,7 @@
     <div class="center">
         <div class="basing">
             <div id="main2">
-                <button id="restart---button" onclick="make_should_you_do();makeOrder()">Restart</button>
+                <button id="restart---button" onclick="make_should_you_do();makeOrder();submitCounter=0">Restart</button>
                 <button id="btn" onclick="whenStart()">Start</button>
             </div>
             <div id="main" style="display: none">
@@ -35,7 +35,7 @@
                     <input type="checkbox" id="3" onclick="Release(id);changeColor(id, 3)"><label class="answer" for="3" id="C"></label>
                     <input type="checkbox" id="4" onclick="Release(id);changeColor(id, 4)"><label class="answer" for="4" id="D"></label>
                 </div>
-                <button id="subm" onclick="checkIfCorrect()">Submit</button>
+                <button id="subm" onclick="checkIfCorrect();submitCounter++">Submit</button>
                 <button onclick="toTheNextQuestion()">Next</button>
             </div>
         </div>

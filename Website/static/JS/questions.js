@@ -2,10 +2,9 @@ var questions = [
     [
         "Корен квадрат от 25",
         "Корен квадрат от 169", "Корен от 289 е:",
-        "Колко е 1 на степен 0?", "Колко е 3 на степен 4?", "4 на 2 степен е?",
-        //"Кои са корените на уравнението: x*x - 3 * 3 = 0?",
-        //"Кои са корените на уравнението: 4*x*x + x - 5 = 0?",
-        //"Кои са корените на уравнението: 4*x*x + x + 3 + 8*x*x = 0?",
+        "Колко е 1 на степен 0?",
+        "Колко е 3 на степен 4?",
+        "4 на 2 степен е?",
     ],
     [
         "Каква е формулата за лице на кръг?",
@@ -38,7 +37,7 @@ var pos_choisses = [
         ["14", "13", "9", "28561"],
         ["17", "13", "21", "14"],
         ["1", "0", "0.5", "-1"],
-        ["126", "144", "12", "412"],
+        ["126", "81", "12", "412"],
         ["12", "8", "16", "32"],
         //["3и-3", "1и0", "2и3", "нямареалникорени"],
       //  ["2и4", "1и-1.25", "4и-5", "нямареалникорени"],
@@ -50,7 +49,7 @@ var pos_choisses = [
         ["16π", "8π", "256π", "72π"],
 	    ["12π", "36π", "126π", "218π"],
         ["0", "1", "2", "3"],
-        ["C(6, 4)", "C(2, 6)", "C(4, 6)", "C(8, 2)"],
+        ["C(6,4)", "C(2,6)", "C(4,6)", "C(8,2)"],
     ],
     [
         ["Платон", "Аристотел", "Херодот", "Сократ"],
@@ -68,8 +67,8 @@ var pos_choisses = [
     ]
 ];
 var answer = [
-    ["5", "13", "17", "1", "144", "16","3 и -3", "4 и -5", ],
-    ["π*r*r", "16π","36π","3","C(6, 4)", "няма реални корени"],
+    ["5", "13", "17", "1", "81", "16"],
+    ["π*r*r", "16π","36π","3","C(6,4)", "няма реални корени"],
     ["Херодот", "Търновска", "1878", "Борис I",],
     ["Индонезия", "Русия", "Непал", "Канбера", "71%"],
 
@@ -83,6 +82,7 @@ var should_you_do = [];
 var order = [];
 var quest = 0;
 var category;
+var submitCounter = 0;
 
 function makeOrder(){
     for(let i = 0; i < questions[category].length; i++)order.push(i);
@@ -97,9 +97,10 @@ function makeOrder(){
 function changeColor(s, num){
     for(let i = 1; i <= 4; i++){
         let x = document.getElementById(String.fromCharCode(i + 64));
+        if(x.style.backgroundColor === "green" || x.style.backgroundColor === "red")continue;
         x.style.backgroundColor = "lightblue";
     }
-    if(document.getElementById(s).checked){
+    if(document.getElementById(s).checked && submitCounter < 1){
         let x = document.getElementById(String.fromCharCode(num + 64));
         x.style.backgroundColor = "yellow";
     }
@@ -154,12 +155,14 @@ function printChoisses(){
 }
 
 function toTheNextQuestion(){
+    submitCounter = 0;
     quest++;
     whenStart();
     make_all_unchecked();
     makeAllDefaut();
 }
 function checkIfCorrect() {
+    if(submitCounter >= 1)return;
     let curr;
     let tru;
     let ans = false;
