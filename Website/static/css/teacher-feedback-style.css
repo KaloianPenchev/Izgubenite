@@ -20,6 +20,24 @@ header {
     height: 100%;
     width: 50%;
 }
+.div-mid {
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    height: 100%;
+    width: 50%;
+    color: #000;
+}
+.div-mid h1 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    width:fit-content;
+    font-size: 48px;
+    color: #000;
+}
 #div-right {
     position: absolute;
     display: flex;

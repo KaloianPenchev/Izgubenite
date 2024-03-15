@@ -19,6 +19,24 @@ header {
     height: 100%;
     width: 50%;
 }
+.div-mid {
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    height: 100%;
+    width: 50%;
+    color: #000;
+}
+.div-mid h1 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    width:fit-content;
+    font-size: 48px;
+    color: #000;
+}
 #div-right {
     position: absolute;
     display: flex;
@@ -60,52 +78,55 @@ header a{
     align-items: center;
     justify-content: center;
 }
-#main2{
-    position: absolute;
+#mainFirstTime{
+    width: 50%;
+    height: 25%;
     display: flex;
-    height: 100%;
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+#mainFirstTime h1{
+    text-align: center;
+}
+#mainFirstTime .first-button{
+    width: 25%;
+    height: 25%;
+}
+#main2{
+    display: flex;
+    height: 50%;
+    width: 50%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 #testfor {
-    position: absolute;
     display: flex;
     height: 30%;
-    top: 4%;
     justify-content: center;
 }
 #numOfRightAnswers {
-    position: absolute;
     display: flex;
     height: 26%;
-    top: 34%;
     width: 100%;
     font-size: 50px;
     justify-content: center;
 }
 #down {
-    position: absolute;
     display: flex;
     height: 30%;
     width: 100%;
-    top: 70%;
     justify-content: center;
-
+    align-items: center;
 }
 #main{
-    position: absolute;
     display: flex;
-    height: 80%;
-    width: 100%;
-    top: 20%;
-    left: 0;
+    height: 75%;
+    width: 75%;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
-
 button{
     margin-top: 2%;
     width: 15%;
@@ -120,11 +141,31 @@ button:hover{
     width: 15%;
     height: 10%;
     border-radius: 43px;
+}
+#Next{
+    width: 15%;
+    height: 10%;
+    border-radius: 43px;
+    margin-bottom: 2%;
+}
+#restart---button{
+    width: 25%;
+    height: 50%;
+    border-radius: 43px;
+    margin-bottom: 2%;
+}
+#btn{
+    width: 25%;
+    height: 50%;
+    border-radius: 43px;
     margin-bottom: 2%;
 }
 #question{
     font-size: 25px;
 
+}
+#numOfRightAnswers{
+    font-size: 30px;
 }
 .options{ /* ???? input */
     display: grid;
@@ -133,10 +174,6 @@ button:hover{
     gap: 10%;
     width: 50%;
     height: 50%;
-}
-
-.options input {
-
 }
 .answer{ /*  Answer - label */
     background-color: #6CA0ED;

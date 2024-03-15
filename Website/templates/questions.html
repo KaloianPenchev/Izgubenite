@@ -10,7 +10,9 @@
         <div-left>
             <img src="{{ url_for('static', filename='pictures/logo.png') }}" id="logo">
         </div-left>
-        
+        <div class="div-mid">
+            <h1 class="header-text">Practicum</h1>
+        </div>
         <div-right id="div-right">
             <h1 class="username">User: {{current_user.first_name}}</h1>
             <a href="/logout">
@@ -24,15 +26,7 @@
     <div id="center">
         <div id="mainFirstTime">
             <h1 id="testfor2"></h1>
-            <button onclick="make_should_you_do();makeOrder();submitCounter=0;whenStart();firstTimeButton()" style="width: 500px;height: 300px;">Start test</button>
-        </div>
-        <div id="main2" style="display: none">
-            <h1 id="testfor" style="font-size: 100px"></h1>
-            <h2 id="numOfRightAnswers"></h2>
-            <div id="down">
-                <button id="restart---button" onclick="make_should_you_do();makeOrder();submitCounter=0">Почни от начало</button>
-                <button id="btn" onclick="whenStart()">Продължи</button>
-            </div>
+            <button onclick="make_should_you_do();makeOrder();submitCounter=0;whenStart();firstTimeButton()" class="first-button">Start test</button>
         </div>
         <div id="main" style="display: none">
             <p id="question"></p>
@@ -43,11 +37,19 @@
                 <input type="checkbox" id="4" onclick="Release(id);changeColor(id, 4)"><label class="answer" for="4" id="D"></label>
             </div>
             <button id="subm" onclick="checkIfCorrect();submitCounter++">Submit</button>
-            <button id ="Next" onclick="toTheNextQuestion()">Next</button>
+            <button id="Next" onclick="toTheNextQuestion()">Next</button>
+        </div>
+        <div id="main2" style="display: none">
+            <h1 id="testfor" style="font-size: 40px"></h1>
+            <h2 id="numOfRightAnswers"></h2>
+            <div id="down">
+                <button id="restart---button" onclick="make_should_you_do();makeOrder();submitCounter=0">Започни от начало</button>
+                <button id="btn" onclick="whenStart()">Продължи</button>
+            </div>
         </div>
         <div id="main3" style="display: none">
             <h1>Успешно завършихте теста</h1>
-            <button onclick="window.location.href='/profile_student';"></button>
+            <!--<button onclick="window.location.href='/profile_student';"></button>-->
         </div>
     </div>
     <script src="{{ url_for('static', filename='JS/questions.js') }}"></script>
@@ -57,7 +59,6 @@
         let x = nuCategory[category];
         document.getElementById("testfor").innerHTML = x;
         let y = nuCategory[category];
-        console.log(y);
         document.getElementById("testfor2").innerHTML = y;
         pleaseWork();
         function firstTimeButton(){
