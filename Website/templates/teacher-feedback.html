@@ -11,12 +11,12 @@
             </div-left>
             
             <div-right id="div-right">
-                <h1>Student: {{fname}}</h1>
-                <a href="/logout">
-                    <button type="submit" class="button1">Logout</button>
-                </a>
+                <h1>Student: {{current_user.first_name}}</h1>
                 <a href="/profile_teacher">
                     <button type="submit" class="button1">Profile</button>
+                </a>
+                <a href="/logout">
+                    <button type="submit" class="button1">Logout</button>
                 </a>
             </div-right>
         </header>
@@ -31,10 +31,10 @@
                         <div class="red-block"></div>
                     {% endif %}
                 {% endfor %}
-                
             </div>
-            <div class="line"></div>
+            <div class="circle"><h1>Outstanding</h1></div>
         </div>
+        <div class="line"></div>
         <div class="feedbacks">
             {% for feedback in feedbacks %}
                 <section class="feedback-design">

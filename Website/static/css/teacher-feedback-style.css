@@ -53,14 +53,34 @@ header a{
 .main{
     position: absolute;
     display: flex;
-    align-items: end;
-    justify-content: start;
-    flex-flow: row wrap;
-    align-content: start;
+    align-content: space-between;
+    justify-content: center;
     width: 100%;
     height: 40%;
     top: 10%;
     left: 0;
+}
+.circle {
+    display: flex;
+    color: white;
+    justify-content: center;
+    font-size:36px;
+    align-items: center;
+    border-radius: 50%;
+    height: 99%;
+    aspect-ratio: 1/1;
+    background-color: #19E607;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    margin-right: 5%;
+}
+
+.circle h1{
+    -webkit-text-stroke: 1.5px black;
+    display: flex;
+    text-align: center;
+
 }
 .feedback-histogram{
     width: 100%;
@@ -108,6 +128,9 @@ header a{
 
 }
 .line {
+    position: absolute;
+    top: 50%;
+    left: 0;
     background: black;
     height: 3px;
     width: 100%;
@@ -115,8 +138,8 @@ header a{
 .feedbacks{
     position: absolute;
     width: 100%;
-    height: 50%;
-    top: 50%;
+    height: 48%;
+    top: 52%;
     left: 0;
 }
 
@@ -125,11 +148,6 @@ header a{
     left: 50px;
     justify-content: space-between;
 }
-
-.option{
-
-}
-
 .feedback {
     display: flex;
     flex-wrap: wrap;
