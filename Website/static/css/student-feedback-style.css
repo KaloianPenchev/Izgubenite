@@ -5,11 +5,14 @@
 }
 header {
     position: absolute;
+    
+
     top: 0px;
     left: 0px;
     height: 10%;
     width: 100%;
     background-color: #6CA0ED;
+    color:white;
 }
 #div-left{
     position: absolute;
@@ -27,6 +30,9 @@ header {
     width: 50%;
     justify-content: flex-end;
     align-items: center;
+}
+header h1{
+    font-family: Comfortaa, sans-serif;
 }
 .button1{
     background-color: #B4D1FD;
