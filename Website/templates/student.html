@@ -33,30 +33,30 @@
             <h1 class="test-text">Choose a test</h1>
             <ul class="buttons">
                 <li>
-                    <button class="button" onclick="window.location.href='/test';">
+                    <button class="button" onclick="window.location.href='/test'; category=0">
                         <h1 class="details-text">
-                            test 1
+                            Аритметика
                         </h1>
                     </button>
                 </li>
                 <li>
-                    <button class="button" onclick="window.location.href='/test';">
+                    <button class="button" onclick="window.location.href='/test';category=1">
                         <h1 class="details-text">
-                            test 2
+                            Геометрия
                         </h1>
                     </button>
                 </li>
                 <li>
-                    <button class="button" onclick="window.location.href='/test';">
+                    <button class="button" onclick="window.location.href='/test';category=2">
                         <h1 class="details-text">
-                            test 3
+                            История
                         </h1>
                     </button>
                 </li>
                 <li>
-                    <button class="button" onclick="window.location.href='/test';">
+                    <button class="button" onclick="window.location.href='/test';category=3">
                         <h1 class="details-text">
-                            test 4
+                            География
                         </h1>
                     </button>
                 </li>
@@ -68,6 +68,7 @@
             <button onclick="window.location.href='/feedbackpage';" type="submit" class="btn"><h1 class="details-text">Go to feedback page</h1></button>
         </div>
     </div>
+    <script src="{{ url_for('static', filename='JS/questions.js') }}"></script>
 </body>
 </html>
 {% endblock %}

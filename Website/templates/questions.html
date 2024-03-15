@@ -7,36 +7,23 @@
     
 </head>
 <body>
-    <header>
-        <div-left>
-            <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
-        </div-left>
-        
-        <div-right id="div-right">
-            <h1>User: {{current_user.first_name}}</h1>
-            <a href="/logout">
-                <button type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
-            </a>
-            <a href="/profile_student">
-                <button type="submit" class="button1"><h1 class="menu-text">Profile</h1></button>
-            </a>
-        </div-right>
-    </header>
-    <div class="container">
-        <button onclick="whenStart(0, 0)"></button>
-        <p id="p1"></p>
-        <p id="A"></p>
-        <p id="B"></p>
-        <p id="C"></p>
-        <p id="D"></p>
-        <input id="1" onclick="Release(id)" type="checkbox">
-        <input id="2" onclick="Release(id)" type="checkbox">
-        <input id="3" onclick="Release(id)" type="checkbox">
-        <input id="4" onclick="Release(id)" type="checkbox">
-    
-        <button onclick="Sub(0, quest)">Submit</button>
-        <p id="do"></p>
-        <script src="{{url_for('static', filename='JS/qestions.js')}}"></script>
+
+    <div class="main">
+        <button class="btn" onclick="whenStart()">Start</button>
+        <p id="question"></p>
+        <div class="options">
+            <p id="A"></p>
+            <p id="B"></p>
+            <p id="C"></p>
+            <p id="D"></p>
+            <input type="checkbox" id="1" onclick="Release(id)">
+            <input type="checkbox" id="2" onclick="Release(id)">
+            <input type="checkbox" id="3" onclick="Release(id)">
+            <input type="checkbox" id="4" onclick="Release(id)">
+        </div>
+        <button onclick="checkIfCorrect()">Submit</button>
+    </div>
+    <script src="{{ url_for('static', filename='JS/questions.js') }}"></script>
 </body>
 </html>
 

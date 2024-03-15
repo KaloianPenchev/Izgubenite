@@ -1,29 +1,28 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset=utf-8>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
-    <title>Question</title>
+    <title>Quiz</title>
+
 </head>
 <body>
-    <div>
-    <button onclick="whenStart(0, 0)"></button>
-    <p id="p1"></p>
-    <p id="A"></p>
-    <p id="B"></p>
-    <p id="C"></p>
-    <p id="D"></p>
-    <input id="1" onclick="Release(id)" type="checkbox">
-    <input id="2" onclick="Release(id)" type="checkbox">
-    <input id="3" onclick="Release(id)" type="checkbox">
-    <input id="4" onclick="Release(id)" type="checkbox">
-
-    <button onclick="Sub(0, Current)">Submit</button>
-    <p id="do"></p>
-</div>
-
+    <div class="main">
+        <button class="btn" onclick="whenStart()">Start</button>
+        <p id="question"></p>
+        <div class="options">
+            <p id="A"></p>
+            <p id="B"></p>
+            <p id="C"></p>
+            <p id="D"></p>
+            <input type="checkbox" id="1" onclick="Release(id)">
+            <input type="checkbox" id="2" onclick="Release(id)">
+            <input type="checkbox" id="3" onclick="Release(id)">
+            <input type="checkbox" id="4" onclick="Release(id)">
+        </div>
+        <button onclick="checkIfCorrect()">Submit</button>
+    </div>
 </body>
 </html>
 

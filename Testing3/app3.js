@@ -6,37 +6,39 @@ nuCategory.set(3, "Geography");
 var questions = [["Корен квадрат от 25", "Корен квадрат от 169", "Корен от 289 е:", "Колко е 1 на степен 0?", "Колко е 3 на степен 4?", "4 to the power of 2"], ["2"], ["5"]];
 var pos_choisses = [[["2", "5", "4", "7"], ["14", "13", "9", "28561"], ["17", "13", "21", "14"], ["1", "0", "0.5", "-1"], ["126", "144", "12", "412"], ["12", "8", "16", "32"]]];
 var answer = [["5", "13", "17", "1", "144", "16"]];
-var shoul_you_do = []
+var should_you_do = []
 var quest = 0;
-let currentQuestionIndex = 0;
-function make_should_you_do(){
-    for(let i = 0; i < questions.length; i++){
-        let cur = [];
-        for(let j = 0; j < questions[i].length; j++){
-            cur.push(true);
-        }
-        shoul_you_do[i] = cur;
-    }
+var category = 0;
+function printQuestion(){
+    document.getElementById("question").innerHTML = questions[category][quest];
 }
-
-
-function whenStart(category, quest){
-    while(shoul_you_do[category][quest] == false){
-        quest++;
-    )
-    if(quest === questions[category].length){
-        return;
-    }
-    document.getElementById("p1").innerHTML = questions[category][quest];
+function printChoisses(){
     for (let i = 0; i <= 3; i++) {
         let char = String.fromCharCode(i + 65);
         document.getElementById(char).innerHTML = pos_choisses[category][quest][i];
     }
-    console.log(quest);
-    document.getElementById("p1").innerHTML = questions[category][quest];
+}
+function checkIfCorrect() {
+    let ans = false;
+    for (let i = 0; i <= 3; i++) {
+        let ch = String.fromCharCode(i + 49);
+        console.log(answer[category][quest]);
+        if (document.getElementById(ch).checked && answer[category][quest] === document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML) {
+            ans = true;
+        }
+    }
+    if (ans) {
+        console.log("Correct");
+    } else {
+        console.log("Incorrect");
+    }
+}
 
-    // Update the global variable to reflect the current question index
-    currentQuestionIndex = quest;
+
+function whenStart(){
+    printQuestion();
+    printChoisses();
+
 }
 
 function Release(s) {
@@ -46,28 +48,22 @@ function Release(s) {
         document.getElementById(ch).checked = false;
     }
 }
-
-function Sub(category) {
-    let ans = false;
-    for (let i = 0; i <= 3; i++) {
-        let ch = String.fromCharCode(i + 49);
-        console.log(currentQuestionIndex);
-        console.log(answer[category][currentQuestionIndex]);
-        if (document.getElementById(ch).checked && answer[category][currentQuestionIndex] === document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML) {
-            ans = true;
+function make_should_you_do(){
+    for(let i = 0; i < questions.length; i++){
+        let cur = [];
+        for(let j = 0; j < questions[i].length; j++){
+            cur.push(true);
         }
+
+        should_you_do[i] = cur;
     }
-    if (ans) {
-        console.log("Correct");
-        shoul_you_do[category][currentQuestionIndex] = false;
-        currentQuestionIndex++;
-        whenStart(category, currentQuestionIndex);
-    } else {
-        console.log("Incorrect");
+    for(let i =  0; i < should_you_do.length; i++){
+        for(let j = 0; j < should_you_do[i].length; j++){
+            console.log(should_you_do[i][j]);
+        }
+        console.log("!W");
     }
+    return 0;
 }
-/*function addQuestion(s, i, a, b, c, d, j) {
-    questions[i].push(s);
-    pos_choisses[i].push({a, b, c, d});
-    answer.push(j);
-}*/
+
+
