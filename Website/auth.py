@@ -83,9 +83,6 @@ def logout():
 @auth.route('/feedbackpage')
 @login_required
 def feedbackpage():
-    if current_user.role == '1':
-        return redirect(url_for('views.reacting'))
-    elif current_user.role == '0':
-        return redirect(url_for('views.home'))
+    return redirect(url_for('views.home'))
     
 
