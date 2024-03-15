@@ -88,6 +88,8 @@ header a{
     align-items: end;
     justify-content: start;
     flex-flow: row nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
     
 }
 
@@ -184,7 +186,7 @@ header a{
 }
 
 .green-block{
-    width: 4%;
+    width: 70px;
     height: 66%;
     background-color: #19E607;
     border-style: solid;
@@ -197,7 +199,7 @@ header a{
 }
 
 .yellow-block{
-    width: 4%;
+    width: 70px;
     margin-left: 70px;
     height: 33%;
     background-color: yellow;
@@ -209,7 +211,7 @@ header a{
 }
 
 .red-block{
-    width: 4%;
+    width: 70px;
     height: 16%;
     background-color: red;
     border-style: solid;
