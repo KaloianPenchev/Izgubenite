@@ -33,7 +33,12 @@
             <ul id="teacher-students">
                 {% for student in students %}
                     <li>
-                        <button class="details-text" href="{{ url_for('views.reacting(student.email)') }}" type="submit">{{student.first_name}}</button>
+                        <button class="details-text" onclick="btnOnClick(student.email);" type="submit">{{student.first_name}}</button>
+                        <script>
+                            function btnOnClick(email) {
+                            window.location = `/reaction/${email}`;
+                        }
+                        </script>
                     </li>
                 {% endfor %}
             </ul>
