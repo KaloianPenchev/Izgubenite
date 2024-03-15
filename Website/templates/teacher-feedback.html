@@ -38,10 +38,12 @@
         <div class="feedbacks">
             {% for feedback in feedbacks %}
                 <section class="feedback-design">
-                    <div class="feedback"><p>{{ feedback.message }}</p></div>
+                    <div class="feedback">
+                        <p>{{ feedback.message }}</p>
+                    </div>
                     {% if feedback.grade == "N/A" %}
-                        <form method="POST">
-                            <div class="grades">
+                        <form class="form" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
+                            <div class="options">
                                 <div class="option">
                                     <input type="radio" id="outstanding" name="grade" class="checkbox" value="3">
                                     <label>Outstanding</label>
@@ -55,15 +57,12 @@
                                     <label>Need improvement</label>
                                 </div>
                             </div>
-                            <button class="details-text" onclick="clicked('{{student_email}}', '{{feedback.id}}'); " type="submit">Confirm</button>
-                            <script>
-                                function clicked(student_email, feedback_id) {
-                                    window.location = `/reaction/${student_email}/${feedback_id}`;
-                                }
-                            </script>
+                            <div class="feedbackIdSpace">
+                                <input type="text" name="ID" value="{{feedback.id}}"></input>
+                            </div>
+                            <button class="submit_grade" type="submit">Confirm</button>
                         </form>
-                    {% endif %}
-                    {% if feedback.grade != "N/A" %}
+                    {% else %}
                         <div class="grade">
                             <p>{{ feedback.grade }}</p>
                         </div>

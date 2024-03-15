@@ -21,19 +21,15 @@ def home():
     feedbacks = Feedback.query.filter_by(student_email=current_user.email).all()
     return render_template("student-feedback.html", user=current_user, feedbacks=feedbacks)
 
-@views.route('/reaction/<student_email>/<feedback_id>', methods=['GET','POST'])
+@views.route('/reactions/<student_email>', methods=['GET', 'POST'])
 @login_required
-def reacting(student_email, feedback_id):
-    print(student_email, feedback_id, request.method)
-    if request.method == 'POST' and feedback_id != -1:
+def reaction(student_email):
+    if request.method == 'POST':
         grade = request.form.get('grade')
-        print(grade)
-        if len(grade) < 1:
-            flash('Please select a grade!', category='error')
-        else:
-            feedback = Feedback.query.filter_by(id=feedback_id).first()
-            feedback.grade = grade
-            db.session.commit()
-    feedbacks = Feedback.query.filter_by(student_email=student_email).all()
-    student = User.query.filter_by(email=student_email).first()
-    return render_template("teacher-feedback.html",  user=current_user, feedbacks=feedbacks, student_email=student.email, feedback_id=-1)
+        id = request.form.get('ID')
+        
+        feedback = Feedback.query.filter_by(id=id).first()
+        feedback.grade = grade
+        db.session.commit()
+    
+    return render_template("teacher-feedback.html", user=current_user, student_email=student_email, feedbacks=Feedback.query.filter_by(student_email=student_email).all())
