@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/questions.css') }}">
+    
 </head>
 <body>
     <header>
@@ -21,7 +22,7 @@
             </a>
         </div-right>
     </header>
-    <div>
+    <div class="container">
         <button onclick="whenStart(0, 0)"></button>
         <p id="p1"></p>
         <p id="A"></p>
@@ -35,8 +36,7 @@
     
         <button onclick="Sub(0, quest)">Submit</button>
         <p id="do"></p>
+        <script src="{{url_for('static', filename='JS/qestions.js')}}"></script>
 </body>
 </html>
 
-<script src="{{ url_for('static', filename='JS/qestions.js') }}">
-</script>
