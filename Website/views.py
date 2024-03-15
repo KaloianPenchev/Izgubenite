@@ -13,7 +13,7 @@ def home():
         feedback = request.form.get('feedback')
 
         if len(feedback) < 1:
-            flash('Feedback is too short!', category='error')
+            pass
         else:
             new_feedback = Feedback(student_email=current_user.email, message=feedback, grade="N/A")
             db.session.add(new_feedback)
