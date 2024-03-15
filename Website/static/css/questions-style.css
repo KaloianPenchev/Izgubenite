@@ -1,4 +1,4 @@
-/*@import url('https://fonts.cdnfonts.com/css/comfortaa');
+@import url('https://fonts.cdnfonts.com/css/comfortaa');
 * {
     padding: 0px;
     margin: 0px;
@@ -66,85 +66,103 @@ header a{
     align-items: center;
     justify-content: center;
 }
-.main {
+.basing {
     position: absolute;
-    align-items: center;
-    flex-direction: column;
-    justify-content:space-between;
-    display: flex;
     background-color: white; /* Промени цвета, ако е необходимо */
     border-radius: 10px;
     width: 60%;
     height: 60%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
-.main h1{
+.basing h1{
     font-size: 40px;
 }
-.restart-button{
+#main2{
+    position: absolute;
+    display: flex;
+    height: 20%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+}
+#main{
+    position: absolute;
+    display: flex;
+    height: 80%;
+    width: 100%;
+    top: 20%;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#restart-button{
     position: absolute;
     width: 15%;
-    height: 10%;
-    top: 2%;
+    height: 50%;
+    top: 10%;
     left: 82%;
     border-radius: 43px;
     background-color: green;
 }
-.restart-button:active{
+#restart-button:active{
     background-color: darkgreen;
 }
-.btn{
+#btn{
     margin-top: 2%;
     width: 15%;
-    height: 10%;
+    height: 50%;
     background-color: lightskyblue;
     border-radius: 43px;
 }
-.btn:hover{
+#btn:hover{
     opacity: 0.5;
 }
-.subm{
+#subm{
     width: 15%;
     height: 10%;
-    top: 2%;
-    left: 82%;
     border-radius: 43px;
     margin-bottom: 2%;
 }
 .options{
     display: grid;
-    grid-template-columns:25%,25%;
-    grid-template-rows:25%,25%;
-    gap: 0px;
+    grid-template-columns:20%,20%;
+    grid-template-rows:20%,20%;
+    gap: 10%;
     width: 50%;
     height: 50%;
 }
 .answer{
+    background-color: #6CA0ED;
     display: flex;
+    font-size: 25px;
+    border-radius: 43px;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
-.options #box1{
+.answer:nth-child(1){
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
 }
-.options #box2{
+.answer:nth-child(2){
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
 }
-.options #box3{
+.answer:nth-child(3){
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
 }
-.options #box4{
+.answer:nth-child(4){
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
-}*/
+}

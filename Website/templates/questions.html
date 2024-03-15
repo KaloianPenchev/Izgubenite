@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/questions-style.css') }}">
 </head>
 <body>
-    <!--<header>
+    <header>
         <div-left>
             <img src="{{ url_for('static', filename='pictures/Plugin icon - 3.svg') }}" id="logo">
         </div-left>
@@ -20,27 +20,32 @@
                 <button type="submit" class="button1"><h1 class="menu-text">Profile</h1></button>
             </a>
         </div-right>
-    </header>-->
+    </header>
     <div class="center">
-        <div id="main" style="display: none">
-            <p id="question"></p>
-            <div class="options">
-                <div><input type="checkbox" id="1" onclick="Release(id)"><p id="A"></p></div>
-                <div><input type="checkbox" id="2" onclick="Release(id)"><p id="B"></p></div>
-                <div><input type="checkbox" id="3" onclick="Release(id)"><p id="C"></p></div>
-                <div><input type="checkbox" id="4" onclick="Release(id)"><p id="D"></p></div>
+        <div class="basing">
+            <div id="main2">
+                <button id="restart-button" onclick="make_should_you_do()">Restart</button>
+                <button id="btn" onclick="whenStart()">Start</button>
             </div>
-            <button  onclick="checkIfCorrect()">Submit</button>
-        </div>
-        <div id="main2">
-            <button id="restart-button" onclick="make_should_you_do()">Restart</button>
-            <button id="btn" onclick="whenStart()">Start</button>
+            <div id="main" style="display: none">
+                <p id="question"></p>
+                <div class="options">
+                    <div class="answer"><input type="checkbox" id="1" onclick="Release(id)"><p id="A"></p></div>
+                    <div class="answer"><input type="checkbox" id="2" onclick="Release(id)"><p id="B"></p></div>
+                    <div class="answer"><input type="checkbox" id="3" onclick="Release(id)"><p id="C"></p></div>
+                    <div class="answer"><input type="checkbox" id="4" onclick="Release(id)"><p id="D"></p></div>
+                </div>
+                <button id="subm" onclick="checkIfCorrect()">Submit</button>
+            </div>
         </div>
         <div id="main3" style="display: none">
             <p style="width: 1920px;height:1080px;background-color: red"></p>
         </div>
     </div>
     <script src="{{ url_for('static', filename='JS/questions.js') }}"></script>
+    <script>
+        recieveCategory('{{ category }}');
+    </script>
 </body>
 </html>
 
