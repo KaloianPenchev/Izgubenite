@@ -83,6 +83,13 @@ var should_you_do = []
 var quest = 0;
 var category;
 
+function makeAllDefaut(){
+    for (let i = 0; i <= 3; i++) {
+        let ch = String.fromCharCode(i + 49 + 16);
+        let x = document.getElementById(ch);
+        x.style.backgroundColor = "#6CA0ED";
+    }
+}
 function receiveCategory(num) {
     console.log(num);
     category = num;
@@ -115,13 +122,13 @@ function change_place(){
       yum.style.display = "flex";
     }
 }
-function canYouSubmit(){
+/*function canYouSubmit(){
     for(let i = 0; i <= 3; i++){
         let ch = String.fromCharCode(i + 49);
         if(document.getElementById(ch).checked)return true;
     }
     return false;
-}
+}*/
 function printQuestion(){
     console.log(category);
     document.getElementById("question").innerHTML = questions[category][quest];
@@ -132,28 +139,45 @@ function printChoisses(){
         document.getElementById(char).innerHTML = pos_choisses[category][quest][i];
     }
 }
+
+function toTheNextQuestion(){
+    quest++;
+    whenStart();
+    make_all_unchecked();
+    makeAllDefaut();
+}
 function checkIfCorrect() {
-    if(canYouSubmit() === false)return;
+    let curr;
+
     let ans = false;
     for (let i = 0; i <= 3; i++) {
         let ch = String.fromCharCode(i + 49);
         console.log(answer[category][quest]);
+        if(document.getElementById(ch).checked) curr = i + 49;
         if (document.getElementById(ch).checked && answer[category][quest] === document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML) {
             ans = true;
         }
     }
+    returnIfCorrect(ans, String.fromCharCode(curr + 16));
+
+
+}
+function returnIfCorrect(ans, ch){
+    console.log(ch);
     if (ans) {
         should_you_do[category][quest] = false;
         console.log(should_you_do[category][quest]);
         console.log("Correct");
+        let x = document.getElementById(ch);
+        x.style.backgroundColor = "green";
+        return true;
     } else {
+        let x = document.getElementById(ch);
+        x.style.backgroundColor = "red";
         console.log("Incorrect");
+        return false;
     }
-    quest++;
-    whenStart();
-    make_all_unchecked();
 }
-
 
 function whenStart(){
     if(quest === 0){
