@@ -81,7 +81,12 @@ nuCategory.set(2, "History");
 nuCategory.set(3, "Geography");
 var should_you_do = []
 var quest = 0;
-var category = 0;
+var category;
+
+function receiveCategory(num) {
+    category = num;
+    console.log(category);
+}
 
 function leaveOnlyMain3(){
     var yum = document.getElementById("main");
@@ -92,6 +97,7 @@ function leaveOnlyMain3(){
     zum.style.display = "block";
 }
 function isAllCorrect(){
+    console.log(category);
     for(let i = 0; i < should_you_do[category].length; i++){
         if(should_you_do[category][i] === true)return false;
     }
@@ -101,14 +107,22 @@ function change_place(){
     var yum = document.getElementById("main");
     var xum = document.getElementById("main2");
     if (xum.style.display === "none") {
-      xum.style.display = "block";
+      xum.style.display = "flex";
       yum.style.display = "none";
     } else {
       xum.style.display = "none";
-      yum.style.display = "block";
+      yum.style.display = "flex";
     }
 }
+function canYouSubmit(){
+    for(let i = 0; i <= 3; i++){
+        let ch = String.fromCharCode(i + 49);
+        if(document.getElementById(ch).checked)return true;
+    }
+    return false;
+}
 function printQuestion(){
+    console.log(category);
     document.getElementById("question").innerHTML = questions[category][quest];
 }
 function printChoisses(){
@@ -118,6 +132,7 @@ function printChoisses(){
     }
 }
 function checkIfCorrect() {
+    if(canYouSubmit() === false)return;
     let ans = false;
     for (let i = 0; i <= 3; i++) {
         let ch = String.fromCharCode(i + 49);
