@@ -100,6 +100,9 @@ header a{
     background-color: lightskyblue;
     border-radius: 43px;
 }
+.btn:hover{
+    opacity: 0.5;
+}
 .subm{
     width: 15%;
     height: 10%;
@@ -109,29 +112,39 @@ header a{
     margin-bottom: 2%;
 }
 .options{
-    display: flex;
+    display: grid;
+    grid-template-columns:25%,25%;
+    grid-template-rows:25%,25%;
+    gap: 0px;
     width: 50%;
     height: 50%;
-    background-color: #6CA0ED;
 }
 .answer{
-    width: 50%;
-    height: 50%;
-    background-color: #B4D1FD;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 .options #box1{
-    align-self: flex-start;
-    justify-self: flex-start;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 .options #box2{
-    align-self: flex-start;
-    justify-self: flex-end;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 .options #box3{
-    align-self: flex-end;
-    justify-self: flex-start;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 .options #box4{
-    align-self: flex-end;
-    justify-self: flex-end;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
