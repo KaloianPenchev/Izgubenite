@@ -51,9 +51,23 @@
         </form>
         <div class="feedbacks">
             {% for feedback in feedbacks %}
+                {% if feedback.grade == "3"%}
+                    <section class="feedback_outstanding">
+                        <p>{{ feedback.message }}</p>
+                    </section>
+                {% elif feedback.grade == "2"%}
+                    <section class="feedback_neutral">
+                        <p>{{ feedback.message }}</p>
+                    </section>
+                {% elif feedback.grade == "1"%}
+                    <section class="feedback_need_improvement">
+                        <p>{{ feedback.message }}</p>
+                    </section>
+                {% else %}
                 <section class="feedback">
                     <p>{{ feedback.message }}</p>
                 </section>
+                {% endif %}
             {% endfor %}
         </div>
     </body>

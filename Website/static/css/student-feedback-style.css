@@ -185,12 +185,9 @@ input {
 .feedback {
     display: flex;
     flex-wrap: wrap;
-
     max-height: 100px;
     background-color: #D9D9D9;
     width: 900px;
-    
-    
     border-radius: 43px;
     font-size: 28px;
     padding-left: 20px;
@@ -198,7 +195,51 @@ input {
     border-style: solid;
     border-width: 1px;
     border-color: black;
-    
+}
+
+.feedback_outstanding {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 100px;
+    background-color: #19E607;
+    width: 900px;
+    border-radius: 43px;
+    font-size: 28px;
+    padding-left: 20px;
+    margin-top: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.feedback_neutral {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 100px;
+    background-color: yellow;
+    width: 900px;
+    border-radius: 43px;
+    font-size: 28px;
+    padding-left: 20px;
+    margin-top: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.feedback_need_improvement {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 100px;
+    background-color: red;
+    width: 900px;
+    border-radius: 43px;
+    font-size: 28px;
+    padding-left: 20px;
+    margin-top: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
 }
 
 .feedback p {
