@@ -6,6 +6,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.flashes {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    list-style: none;
+    z-index: 1;
+    font-size: 32px;
+    position: absolute;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    color: red;
+}
+
 img {
     height: 100%;
     width: 50%;
@@ -16,6 +33,7 @@ img {
 
 .register-box {
     position: absolute;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
