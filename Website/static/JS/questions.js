@@ -39,10 +39,6 @@ var pos_choisses = [
         ["1", "0", "0.5", "-1"],
         ["126", "81", "12", "412"],
         ["12", "8", "16", "32"],
-        //["3и-3", "1и0", "2и3", "нямареалникорени"],
-      //  ["2и4", "1и-1.25", "4и-5", "нямареалникорени"],
-        //["6и-2", "-1и3", "-4и3", "нямареалникорени"],
-
     ],
     [
         ["π*r*r", "π*π*r", "2*π*r", "4*r*r"],
@@ -73,17 +69,27 @@ var answer = [
     ["Индонезия", "Русия", "Непал", "Канбера", "71%"],
 
 ];
-const nuCategory = new Map();
-nuCategory.set(0, "Arithmetic");
-nuCategory.set(1, "Geometry");
-nuCategory.set(2, "History");
-nuCategory.set(3, "Geography");
+var nuCategory = ["Аритметика", "Геометрия", "История", "География"];
 var should_you_do = [];
 var order = [];
 var quest = 0;
 var category;
 var submitCounter = 0;
 
+function pleaseWork(){
+    make_should_you_do();
+    let rightAns = 0;
+    const q = questions[category].length;
+    for (let i = 0; i < should_you_do[category].length; i++) {
+        if (should_you_do[category][i] === false) {
+            rightAns++;
+            console.log("WHY DOES IT NOT WORK");
+        }
+    }
+    console.log(rightAns);
+    console.log(q);
+    document.getElementById("numOfRightAnswers").innerHTML = ("Твоите верни отговори са " + rightAns + "/" + q);
+}
 function makeOrder(){
     for(let i = 0; i < questions[category].length; i++)order.push(i);
     for (let i = order.length - 1; i > 0; i--) {
@@ -113,12 +119,11 @@ function makeAllDefaut(){
     }
 }
 function receiveCategory(num) {
-    console.log(num);
     category = num;
-    console.log(category);
 }
 
 function leaveOnlyMain3(){
+    console.log("JOINED");
     var yum = document.getElementById("main");
     var xum = document.getElementById("main2");
     var zum = document.getElementById("main3");
@@ -128,11 +133,16 @@ function leaveOnlyMain3(){
 }
 function isAllCorrect(){
     for(let i = 0; i < should_you_do[category].length; i++){
-        if(should_you_do[category][i] === true)return false;
+        console.log(should_you_do[category].length);
+        if(should_you_do[category][i] === true){
+            console.log("PSWPQWQ");
+            return false;
+        }
     }
     return true;
 }
 function change_place(){
+    pleaseWork();
     var yum = document.getElementById("main");
     var xum = document.getElementById("main2");
     if (xum.style.display === "none") {
@@ -144,7 +154,6 @@ function change_place(){
     }
 }
 function printQuestion(){
-    console.log(category);
     document.getElementById("question").innerHTML = questions[category][order[quest]];
 }
 function printChoisses(){
@@ -157,6 +166,11 @@ function printChoisses(){
 function toTheNextQuestion(){
     submitCounter = 0;
     quest++;
+    if(isAllCorrect()){
+        console.log("QPPWPEDPW");
+        leaveOnlyMain3();
+        return;
+    }
     whenStart();
     make_all_unchecked();
     makeAllDefaut();
@@ -196,6 +210,7 @@ function returnIfCorrect(ch, tru){
 function whenStart(){
     if(quest === 0){
         if(isAllCorrect()){
+            console.log("QPPWPEDPW");
             leaveOnlyMain3();
             return;
         }
@@ -223,14 +238,13 @@ function Release(s) {
     }
 }
 function make_should_you_do(){
+    if(should_you_do.length != 0) return;
     for(let i = 0; i < questions.length; i++){
-        let cur = [];
+        should_you_do.push([]);
         for(let j = 0; j < questions[i].length; j++){
-            cur.push(true);
+            should_you_do[i].push(true);
         }
-        should_you_do[i] = cur;
     }
-    return 0;
 }
 
 

@@ -4,19 +4,9 @@
     margin: 0px;
     font-family: 'Comfortaa',sans-serif;
 }
-.check {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
+
 header {
     position: absolute;
-    top: 0px;
-    left: 0px;
     height: 10%;
     width: 100%;
     background-color: #6CA0ED;
@@ -43,18 +33,13 @@ header h1{
     font-family: Comfortaa, sans-serif;
     color: white;
 }
-
-
 .button1{
     background-color: #B4D1FD;
-    
     height: 100%; 
     width: 100%;
     border-radius: 30px;
 }
-.button1:hover{
-    opacity: 0.5;
-}
+
 header a{
     margin-right: 10%;
     height: 50%; 
@@ -65,7 +50,7 @@ header a{
     width: 10%;
     height: 100%;
 }
-.center{
+#center{
     display: flex;
     position: absolute;
     top: 10%;
@@ -75,26 +60,39 @@ header a{
     align-items: center;
     justify-content: center;
 }
-.basing {
-    position: absolute;
-    background-color: white; /* Промени цвета, ако е необходимо */
-    border-radius: 10px;
-    width: 60%;
-    height: 60%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-}
-.basing h1{
-    font-size: 40px;
-}
 #main2{
     position: absolute;
     display: flex;
-    height: 20%;
+    height: 100%;
     width: 100%;
-    top: 0;
-    left: 0;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+#testfor {
+    position: absolute;
+    display: flex;
+    height: 30%;
+    top: 4%;
+    justify-content: center;
+}
+#numOfRightAnswers {
+    position: absolute;
+    display: flex;
+    height: 26%;
+    top: 34%;
+    width: 100%;
+    font-size: 50px;
+    justify-content: center;
+}
+#down {
+    position: absolute;
+    display: flex;
+    height: 30%;
+    width: 100%;
+    top: 70%;
+    justify-content: center;
+
 }
 #main{
     position: absolute;
@@ -107,26 +105,15 @@ header a{
     align-items: center;
     justify-content: space-around;
 }
-#restart-button{
-    position: absolute;
-    width: 15%;
-    height: 50%;
-    top: 10%;
-    left: 82%;
-    border-radius: 43px;
-    background-color: green;
-}
-#restart-button:active{
-    background-color: darkgreen;
-}
-#btn{
+
+button{
     margin-top: 2%;
     width: 15%;
     height: 50%;
     background-color: lightskyblue;
     border-radius: 43px;
 }
-#btn:hover{
+button:hover{
     opacity: 0.5;
 }
 #subm{
