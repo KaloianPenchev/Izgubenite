@@ -166,3 +166,9 @@ header a{
     grid-row-start: 2;
     grid-row-end: 3;
 }
+input {
+    display: none;
+}
+input:checked + label {
+    background-color: lightblue;
+}
