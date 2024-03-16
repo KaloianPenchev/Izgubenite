@@ -237,8 +237,18 @@ function Release(s) {
         document.getElementById(ch).checked = false;
     }
 }
+function make_should_you_do2(){
+    if(should_you_do.length === 0)make_should_you_do();
+    else{
+        for(let i = 0; i < should_you_do.length; i++){
+            for(let j = 0; j < should_you_do[i].length; j++){
+                should_you_do[i][j] = true;
+            }
+        }
+    }
+}
 function make_should_you_do(){
-    if(should_you_do.length != 0) return;
+    if(should_you_do.length != 0)return;
     for(let i = 0; i < questions.length; i++){
         should_you_do.push([]);
         for(let j = 0; j < questions[i].length; j++){

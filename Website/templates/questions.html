@@ -26,7 +26,7 @@
     <div id="center">
         <div id="mainFirstTime">
             <h1 id="testfor2"></h1>
-            <button onclick="make_should_you_do();makeOrder();submitCounter=0;whenStart();firstTimeButton()" class="first-button">Start test</button>
+            <button onclick="make_should_you_do2();makeOrder();submitCounter=0;whenStart();firstTimeButton()" class="first-button">Start test</button>
         </div>
         <div id="main" style="display: none">
             <p id="question"></p>
@@ -43,7 +43,7 @@
             <h1 id="testfor" style="font-size: 40px"></h1>
             <h2 id="numOfRightAnswers"></h2>
             <div id="down">
-                <button id="restart---button" onclick="make_should_you_do();makeOrder();submitCounter=0">Започни от начало</button>
+                <button id="restart---button" onclick="startOver()">Започни от начало</button>
                 <button id="btn" onclick="whenStart()">Продължи</button>
             </div>
         </div>
@@ -68,6 +68,14 @@
             hum.style.display = "none";
             let jum = document.getElementById("main");
             jum.style.display = "flex";
+        }
+        function startOver(){
+            let aum = document.getElementById("mainFirstTime");
+            aum.style.display = "flex";
+            let hum = document.getElementById("main2");
+            hum.style.display = "none";
+            let jum = document.getElementById("main");
+            jum.style.display = "none";
         }
     </script>
 </body>
