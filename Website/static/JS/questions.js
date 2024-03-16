@@ -83,7 +83,6 @@ function pleaseWork(){
     for (let i = 0; i < should_you_do[category].length; i++) {
         if (should_you_do[category][i] === false) {
             rightAns++;
-            console.log("WHY DOES IT NOT WORK");
         }
     }
     document.getElementById("numOfRightAnswers").innerHTML = ("Твоите верни отговори са " + rightAns + "/" + q);
@@ -231,8 +230,8 @@ function Release(s) {
 function make_should_you_do2(){
     if(should_you_do.length === 0)make_should_you_do();
     else{
-        for(let i = 0; i < should_you_do.length; i++){
-            for(let j = 0; j < should_you_do[i].length; j++){
+        for(let i = 0; i < questions.length; i++){
+            for(let j = 0; j < questions[i].length; j++){
                 should_you_do[i][j] = true;
             }
         }
