@@ -46,3 +46,11 @@ def reaction(student_email):
             sum += int(feedback.grade)
             cnt += 1
     return render_template("teacher-feedback.html", user=current_user, student_email=student_email, feedbacks=feedbacks, sum=sum, cnt=cnt)
+
+@views.route('/addbio/<user_email>' , methods=['GET', 'POST'])
+@login_required
+def biography(user_email):
+    if request.method == 'POST':
+        bio = request.form.get('bio')
+        
+        
