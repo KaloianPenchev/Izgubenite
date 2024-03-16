@@ -6,6 +6,21 @@
     box-sizing: border-box;
     font-family: Comfortaa, sans-serif;
 }
+.flashes {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    list-style: none;
+    z-index: 1;
+    font-size: 32px;
+    position: absolute;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    color: red;
+}
 .main {
     position: absolute;
     top: 0;

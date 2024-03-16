@@ -14,6 +14,9 @@ def login():
         password = request.form.get('password')
         user = User.query.filter_by(email=email).first()
 
+        if user is None:
+            flash('Account does not exist.', category='error')
+
         if check_password_hash(user.password, password):
             login_user(user, remember=True)
             if current_user.role == '1':
