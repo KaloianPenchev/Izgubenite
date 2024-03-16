@@ -69,7 +69,7 @@ var answer = [
     ["Индонезия", "Русия", "Непал", "Канбера", "71%"],
 
 ];
-var nuCategory = ["Аритметика", "Геометрия", "История", "География"];
+var nuCategory = ["Алгебра", "Геометрия", "История", "География"];
 var should_you_do = [];
 var order = [];
 var quest = 0;
@@ -104,7 +104,7 @@ function changeColor(s, num){
     for(let i = 1; i <= 4; i++){
         let x = document.getElementById(String.fromCharCode(i + 64));
         if(x.style.backgroundColor === "green" || x.style.backgroundColor === "red")continue;
-        x.style.backgroundColor = "lightblue";
+        x.style.backgroundColor = "#6CA0ED";
     }
     if(document.getElementById(s).checked && submitCounter < 1){
         let x = document.getElementById(String.fromCharCode(num + 64));
@@ -123,7 +123,6 @@ function receiveCategory(num) {
 }
 
 function leaveOnlyMain3(){
-    console.log("JOINED");
     var yum = document.getElementById("main");
     var xum = document.getElementById("main2");
     var zum = document.getElementById("main3");
@@ -133,9 +132,7 @@ function leaveOnlyMain3(){
 }
 function isAllCorrect(){
     for(let i = 0; i < should_you_do[category].length; i++){
-        console.log(should_you_do[category].length);
-        if(should_you_do[category][i] === true){
-            console.log("PSWPQWQ");
+        if(should_you_do[category][i] === true) {
             return false;
         }
     }
@@ -167,7 +164,6 @@ function toTheNextQuestion(){
     submitCounter = 0;
     quest++;
     if(isAllCorrect()){
-        console.log("QPPWPEDPW");
         leaveOnlyMain3();
         return;
     }
