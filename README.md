@@ -20,7 +20,8 @@
 - [JavaScript](https://www.javascript.com)
 
 ## Ресурси
-- [Папка на уебсайта](https://github.com/KaloianPenchev/Izgubenite/Website)
+- [Папка на уебсайта](https://github.com/KaloianPenchev/Izgubenite/tree/main/Website)
+- [Презентации](https://github.com/KaloianPenchev/Izgubenite/tree/main/resources)
 
 ## Контакти
 - [GitHub](https://github.com/MRT-09)
