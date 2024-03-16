@@ -86,8 +86,6 @@ function pleaseWork(){
             console.log("WHY DOES IT NOT WORK");
         }
     }
-    console.log(rightAns);
-    console.log(q);
     document.getElementById("numOfRightAnswers").innerHTML = ("Твоите верни отговори са " + rightAns + "/" + q);
 }
 function makeOrder(){
@@ -173,18 +171,18 @@ function toTheNextQuestion(){
 }
 function checkIfCorrect() {
     if(submitCounter >= 1)return;
-    let curr;
+    let current;
     let tru;
     let ans = false;
     for (let i = 0; i <= 3; i++) {
         let ch = String.fromCharCode(i + 49);
         console.log(answer[category][order[quest]]);
-        if(document.getElementById(ch).checked) curr = i + 49 + 16;
+        if(document.getElementById(ch).checked) current = i + 49 + 16;
         if (answer[category][order[quest]] === document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML) {
             tru = i + 49 + 16;
         }
     }
-    returnIfCorrect( String.fromCharCode(curr) ,String.fromCharCode(tru));
+    returnIfCorrect( String.fromCharCode(current) ,String.fromCharCode(tru));
 }
 function returnIfCorrect(ch, tru){
     if (ch === tru) {
@@ -195,9 +193,7 @@ function returnIfCorrect(ch, tru){
     } else {
         let x = document.getElementById(ch);
         x.style.backgroundColor = "red";
-        console.log("1" + ch);
         let y = document.getElementById(tru);
-        console.log(tru);
         y.style.backgroundColor = "green";
         return false;
     }
@@ -206,7 +202,6 @@ function returnIfCorrect(ch, tru){
 function whenStart(){
     if(quest === 0){
         if(isAllCorrect()){
-            console.log("QPPWPEDPW");
             leaveOnlyMain3();
             return;
         }
