@@ -167,7 +167,7 @@ button:hover{
 #numOfRightAnswers{
     font-size: 30px;
 }
-.options{ /* ???? input */
+.options{ 
     display: grid;
     grid-template-columns:20%,20%;
     grid-template-rows:20%,20%;
@@ -175,7 +175,7 @@ button:hover{
     width: 50%;
     height: 50%;
 }
-.answer{ /*  Answer - label */
+.answer{ 
     background-color: #6CA0ED;
     display: flex;
     font-size: 25px;
@@ -210,6 +210,3 @@ button:hover{
 input {
     display: none;
 }
-/*input:checked + label {
-    background-color: yellow;
-}*/
