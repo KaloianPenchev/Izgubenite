@@ -203,7 +203,7 @@ header a{
     align-items: end;
     justify-content: start;
     flex-flow: row nowrap;
-    overflow-x:scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     
 }
@@ -299,6 +299,7 @@ input {
     justify-content: center;
     flex-wrap: wrap;
     max-height: 100px;
+    min-height: 50px;
     background-color: #D9D9D9;
     width: 50%;
     border-radius: 43px;
@@ -308,6 +309,8 @@ input {
     border-style: solid;
     border-width: 1px;
     border-color: black;
+    overflow-y: auto;
+    overflow-x:hidden;
 }
 
 .feedback_outstanding {
@@ -315,6 +318,7 @@ input {
     justify-content: center;
     flex-wrap: wrap;
     max-height: 100px;
+    min-height: 50px;
     background-color: #19E607;
     width: 50%;
     border-radius: 43px;
@@ -324,6 +328,8 @@ input {
     border-style: solid;
     border-width: 1px;
     border-color: black;
+    overflow-y: auto;
+    overflow-x:hidden;
 }
 
 .feedback_neutral {
@@ -331,6 +337,7 @@ input {
     justify-content: center;
     flex-wrap: wrap;
     max-height: 100px;
+    min-height: 50px;
     background-color: yellow;
     width: 50%;
     border-radius: 43px;
@@ -340,6 +347,8 @@ input {
     border-style: solid;
     border-width: 1px;
     border-color: black;
+    overflow-y: auto;
+    overflow-x:hidden;
 }
 
 .feedback_need_improvement {
@@ -347,6 +356,7 @@ input {
     justify-content: center;
     flex-wrap: wrap;
     max-height: 100px;
+    min-height: 50px;
     background-color: red;
     width: 50%;
     border-radius: 43px;
@@ -356,6 +366,8 @@ input {
     border-style: solid;
     border-width: 1px;
     border-color: black;
+    overflow-y: auto;
+    overflow-x:hidden;
 }
 
 .feedback p {
