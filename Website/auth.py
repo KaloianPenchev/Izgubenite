@@ -50,7 +50,7 @@ def sign_up():
         elif len(password) < 7:
             flash('Password must be at least 7 characters.', category='error')
         else:
-            new_user = User(first_name=first_name, email=email, password=generate_password_hash(password, method='pbkdf2:sha256'), role=role, bio="")
+            new_user = User(first_name=first_name, email=email, password=generate_password_hash(password, method='pbkdf2:sha256'), role=role)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
@@ -65,8 +65,7 @@ def sign_up():
 @auth.route('/profile_student')
 @login_required
 def profile_student():
-    return render_template('student.html', user=current_user, studentname=current_user.first_name,
-                           studentemail=current_user.email)
+    return render_template('student.html', user=current_user, studentname=current_user.first_name, studentemail=current_user.email)
 
 
 @auth.route('/profile_teacher')
@@ -74,8 +73,7 @@ def profile_student():
 def profile_teacher():
     print("Successfully logged in!")
     students_list = User.query.filter_by(role='0').all()
-    return render_template('teacher.html', user=current_user, teachername=current_user.first_name,
-                           teacheremail=current_user.email, students=students_list, feedback_id=-1)
+    return render_template('teacher.html', user=current_user, teachername=current_user.first_name, teacheremail=current_user.email, students=students_list, feedback_id=-1)
 
 
 @auth.route('/logout')

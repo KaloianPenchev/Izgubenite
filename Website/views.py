@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, render_template, request
 from flask_login import login_required, current_user
-from .models import Feedback, User
+from .models import Feedback
 from . import db
 import json
 
@@ -46,11 +46,3 @@ def reaction(student_email):
             sum += int(feedback.grade)
             cnt += 1
     return render_template("teacher-feedback.html", user=current_user, student_email=student_email, feedbacks=feedbacks, sum=sum, cnt=cnt)
-
-@views.route('/addbio/<user_email>' , methods=['GET', 'POST'])
-@login_required
-def biography(user_email):
-    if request.method == 'POST':
-        bio = request.form.get('bio')
-        
-        
