@@ -11,239 +11,124 @@ header {
     height: 10%;
     width: 100%;
     background-color: #36517C;
-    color: white;
 }
-#div-left{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 50%;
-}
-.div-mid {
-    position: absolute;
-    top: 0%;
-    left: 10%;
-    height: 100%;
-    width: 50%;
-    color: #000;
-}
-.div-mid h1 {
+.div-left {
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
+    top: 0%;
+    left: 0%;
     height: 100%;
-    width:fit-content;
-    font-size: 48px;
-    color: #000;
+    width: 40%;
+    color: white
+}
+.div-left h1{
+    font-size: 3vw;
+    margin-left: 10%;
 }
 #div-right {
     position: absolute;
     display: flex;
-    left: 50%;
+    left: 40%;
     top: 0%;
     height: 100%;
-    width: 50%;
-    justify-content: flex-end;
+    width: 60%;
+    justify-content: space-evenly;
     align-items: center;
 }
+.username{
+    color: white;
+    font-size: 2vw;
+}
 .button1{
-    background-color: #B4D1FD;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #36517C;
+    border: 0.3vw solid rgba(108, 160, 237, 0.4);
     height: 100%; 
     width: 100%;
     border-radius: 30px;
+    z-index: 2;
+    overflow: hidden;
 }
 .button1:hover{
     opacity: 0.5;
+    cursor: pointer;
 }
 header a{
-    margin-right: 10%;
-    height: 50%; 
-    width: 30%;
+    text-decoration: none;
+    height: 50%;
+    width: 20%;
+    z-index: 1;
+    border-radius: 30px;
 }
-
+.menu-text{
+    text-align: center;
+    font-style: normal;
+    font-size: 2vw;
+    color: #FFFFFF;
+    
+}
 #logo {
     aspect-ratio: 1/1;
     height: 100%;
 }
-.main{
-    position: absolute;
-    display: flex;
-    align-content: space-between;
-    justify-content: flex-end;
-    width: 100%;
-    height: 40%;
-    top: 10%;
-    left: 0;
-}
-.circle-field{
-    position: absolute;
-    top:0;
-    right: 0;
-    display: flex;
-    height: 100%;
-    aspect-ratio: 1/1;
-    align-items: center;
-    justify-items: center;
-}
-.circle {
-    display: flex;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    aspect-ratio: 1/1;
-    height: 60%;
-    background-color: #D9D9D9;
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
-
-}
-.circle-text{
-    text-align: center;
-    font-size: 40px;
-}
-.circle h1{
-    -webkit-text-stroke: 1.5px black;
-    display: flex;
-    text-align: center;
-}
-.circle_outstanding {
-    display: flex;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    aspect-ratio: 1/1;
-    height: 60%;
-    background-color: #19E607;
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
-
-}
-
-.circle_outstanding h1{
-    -webkit-text-stroke: 1.5px black;
-    display: flex;
-    text-align: center;
-}
-
-.circle_neutral {
-    display: flex;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    aspect-ratio: 1/1;
-    height: 60%;
-    background-color: yellow;
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
-
-}
-
-.circle_neutral h1{
-    -webkit-text-stroke: 1.5px black;
-    display: flex;
-    text-align: center;
-}
-
-.circle_need_improvement {
-    display: flex;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    aspect-ratio: 1/1;
-    height: 60%;
-    background-color: red;
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
-
-}
-
-.circle_need_improvement h1{
-    -webkit-text-stroke: 1.5px black;
-    display: flex;
-    text-align: center;
-}
-
 .feedback-histogram{
     position: absolute;
-    width: 70%;
-    height: 100%;
-    top:0;
+    width: 50%;
+    height: 75%;
+    top:10%;
     left: 0;
     display: flex;
-    align-items: end;
-    justify-content: start;
-    flex-flow: row nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column-reverse nowrap;
+    overflow:auto;
 }
 .green-block{
-    width: 70px;
-    height: 200px;
+    margin-top: 5%;
+    min-height: 5%;
+    margin-left: 10%;
+    width: 66%;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
     background-color: #19E607;
-    border-style: solid;
-    border-color: black;
-    border-width: 3px;
-    border-bottom-width: 0;
-    min-width: 70px;
-    margin-left: 70px;
-    
 }
-
 .yellow-block{
-    width: 70px;
-    margin-left: 70px;
-    height: 100px;
+    margin-top: 5%;
+    min-height: 5%;
+    margin-left: 10%;
+    width: 33%;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
     background-color: yellow;
-    border-style: solid;
-    border-width: 3px;
-    border-bottom-width: 0;
-    border-color: black;
-    min-width: 70px;
-
 }
-
 .red-block{
-    width: 70px;
-    height: 50px;
-    background-color: red;
+    margin-top: 5%;
+    min-height: 5%;
+    margin-left: 10%;
+    width: 16%;
     border-style: solid;
-    border-width: 3px;
-    border-bottom-width: 0;
     border-color: black;
-    margin-left: 70px;
-    min-width: 70px;
-
+    border-width: 3px;
+    background-color: red;
 }
-.line {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    background: black;
-    height: 3px;
-    width: 100%;
-}
-.feedbacks{
+.feedbacks {
     position: absolute;
     display: flex;
+    align-items: flex-start;
     flex-direction: column-reverse;
     border: none;
     overflow-x: hidden;
     overflow-y: auto;
-    width: 100%;
-    height: 48%;
-    top: 52%;
-    left: 0;
+    width: 50%;
+    height: 75%;
+    top: 10%;
+    left: 50%;
 }
 .checkbox{
     height: 100%;
@@ -263,31 +148,25 @@ header a{
 }
 .feedback {
     display: flex;
-    justify-self: flex-start;
+    height: auto;
+    justify-content: center;
     flex-wrap: wrap;
-    max-height: 100px;
     background-color: #D9D9D9;
-    width: 70%;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 43px;
-    font-size: 28px;
-    padding-left: 20px;
+    max-width: 50%;
+    width: auto;
+    margin-top:1vw;
+    padding: 1% 3% 1% 3%;
+    border-radius: 3vw;
+    font-size: 2vw;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0.1vw;
     border-color: black;
-    
 }
 .feedback p {
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 100px;
     max-width: 500px;
-}
-.feedback-design{
-    display: flex;
-    width: 70%;
-    margin-top: 10px;
 }
 .reaction-text{
     text-align: center;
@@ -296,8 +175,8 @@ header a{
 }
 .form{
     display: flex;
+    width: 50%;
     margin-left: 2%;
-    flex-wrap: wrap;
     justify-content:center;
 }
 .feedbackIdSpace input{
@@ -314,4 +193,18 @@ header a{
     justify-content: center;
     border-radius: 43px;
     background-color: #B4D1FD;
+}
+footer{
+    position: absolute;
+    top: 90%;
+    left: 0%;
+    height: 10%;
+    width: 100%;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .contact{
+    font-size: 2vw;
 }
