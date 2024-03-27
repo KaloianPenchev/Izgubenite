@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing-sytle.css') }}">
 </head>
 <body>
     <header>
@@ -11,26 +11,33 @@
             <h1 class="header-text">Practicum</h1>
         </div>
         <div-right id="div-right">
-            <button onclick="window.location.href='/login';" type="submit" class="btn"><h1 class="menu-text">Login</h1></button>
-            <button onclick="window.location.href='/sign-up';" type="submit" class="btn"><h1 class="menu-text">Register</h1></button>
+           
+            <a href="/login">
+                <button type="submit" class="button1"><h1 class="menu-text">Log in</h1></button>
+            </a>
+            <a href="/sign-up">
+                <button type="submit" class="button1"><h1 class="menu-text">Register</h1></button>
+            </a>
+            
         </div-right>
     </header>
     
     <div class="main">
-        <p>
-            <h2>Най-добрата 
-                платформа</h2>
-            <span>за самообучение и обратна 
-                връзка с учител</span>
-        </p>
         
-      </div>
-      <div class="img">
+            <h2>Най-добрата платформа</h2>
+            <span>
+                за самообучение и обратна връзка с учител
+            </span>
+        
+
+    </div>
+    <div class="img">
         <img src="{{ url_for('static', filename='pictures/mainpic.png') }}"/>
+        </div>
     </div>
     
     <footer>
-
+        <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
     </footer>
 </body>
 </html>
