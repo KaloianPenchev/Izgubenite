@@ -38,6 +38,7 @@
             </div>
             <button id="subm" onclick="checkIfCorrect();submitCounter++">Submit</button>
             <button id="Next" onclick="toTheNextQuestion()">Next</button>
+            <button id="expl" style=" display: none; width: 1000px; background-color: red; height: 1000px;" onclick="showSolution()">Workjkkkkksfddddddsdf</button>
         </div>
         <div id="main2" style="display: none">
             <h1 id="testfor" style="font-size: 40px"></h1>
@@ -50,6 +51,9 @@
         <div id="main3" style="display: none">
             <h1>Успешно завършихте теста</h1>
             <!--<button onclick="window.location.href='/profile_student';"></button>-->
+        </div>
+        <div id="sol" style="display: none;">
+            <p id="soltext"></p>
         </div>
     </div>
     <script src="{{ url_for('static', filename='JS/questions.js') }}"></script>

@@ -27,7 +27,6 @@ var questions = [
         "В коя държава се намира връх Еверест?",
         "Коя е столицата на Австралия?",
         "Каква част от повърхността на Земята е покрита от океан?"
-
     ]
 ];
 
@@ -69,6 +68,36 @@ var answer = [
     ["Индонезия", "Русия", "Непал", "Канбера", "71%"],
 
 ];
+var explanations = [
+    [
+        "The square root of 25 is 5 because 5 * 5 = 25.",
+        "The square root of 169 is 13 because 13 * 13 = 169.",
+        "The square root of 289 is 17 because 17 * 17 = 289.",
+        "Any nonzero number raised to the power of 0 is 1.",
+        "3 raised to the power of 4 is 81 because 3 * 3 * 3 * 3 = 81.",
+        "4 raised to the power of 2 is 16 because 4 * 4 = 16."
+    ],
+    [
+        "The formula for the area of a circle is π * r^2, where r is the radius.",
+        "The diameter of the circle is 16cm, so the radius is half of that, which is 8cm. Substituting into the formula, the area is π * (8)^2 = 64π cm^2.",
+        "The radius of the circle is given as 6cm. Substituting into the formula, the area is π * (6)^2 = 36π cm^2.",
+        "Three points are required to define a plane in 3D space.",
+        "To find the coordinates of point C, we take the average of the x-coordinates and the average of the y-coordinates of points A and B, resulting in (4, 6)."
+    ],
+    [
+        "Herodotus is often referred to as the 'Father of History' for his work 'The Histories'.",
+        "The first Bulgarian Constitution is known as the Tarnovo Constitution, adopted in 1879.",
+        "Bulgaria was liberated from Ottoman rule in 1878 after the Russo-Turkish War.",
+        "The Bulgarians were baptized during the reign of Khan Boris I (Boris-Mikhail) in the 9th century."
+    ],
+    [
+        "Bali is located in Indonesia.",
+        "Russia is the largest country in the world by land area.",
+        "Mount Everest is located on the border between Nepal and China (Tibet).",
+        "Canberra is the capital city of Australia.",
+        "Approximately 71% of the Earth's surface is covered by oceans."
+    ]
+]
 var nuCategory = ["Алгебра", "Геометрия", "История", "География"];
 var should_you_do = [];
 var order = [];
@@ -181,7 +210,16 @@ function checkIfCorrect() {
             tru = i + 49 + 16;
         }
     }
+    var xum = document.getElementById("expl");
+    xum.style.display = "block";
     returnIfCorrect( String.fromCharCode(current) ,String.fromCharCode(tru));
+}
+function showSolution(){
+    var xum = document.getElementById("main");
+    xum.style.display = "none";
+    var yum = document.getElementById("sol");
+    yum.style.display = "block";
+    document.getElementById("soltext").innerHTML = explanations[category][order[quest]];
 }
 function returnIfCorrect(ch, tru){
     if (ch === tru) {
