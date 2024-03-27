@@ -11,31 +11,21 @@
             <h1 class="header-text">Practicum</h1>
         </div>
         <div-right id="div-right">
-           
             <a href="/login">
                 <button type="submit" class="button1"><h1 class="menu-text">Log in</h1></button>
             </a>
             <a href="/sign-up">
                 <button type="submit" class="button1"><h1 class="menu-text">Register</h1></button>
             </a>
-            
         </div-right>
     </header>
-    
     <div class="main">
-        
-            <h2>Най-добрата платформа</h2>
-            <span>
-                за самообучение и обратна връзка с учител
-            </span>
-        
-
+        <h2>Най-добрата платформа</h2>
+        <span>
+            за самообучение и обратна връзка с учител
+        </span>
     </div>
-    <div class="img">
-        <img src="{{ url_for('static', filename='pictures/mainpic.png') }}"/>
-        </div>
-    </div>
-    
+    <img class="img" src="{{ url_for('static', filename='pictures/mainpic.png') }}"/>
     <footer>
         <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
     </footer>
