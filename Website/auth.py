@@ -76,7 +76,7 @@ def profile_student():
 @login_required
 def profile_teacher():
     print("Successfully logged in!")
-    students_list = User.query.filter_by(role='0', my_teacher=current_user.first_name).all()
+    students_list = User.query.filter_by(role='0').all()
     return render_template('teacher.html', user=current_user, teachername=current_user.first_name, teacheremail=current_user.email, students=students_list, feedback_id=-1)
 
 
