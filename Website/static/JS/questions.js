@@ -104,7 +104,6 @@ var order = [];
 var quest = 0;
 var category;
 var submitCounter = 0;
-
 function pleaseWork(){
     make_should_you_do();
     let rightAns = 0;
@@ -214,6 +213,7 @@ function checkIfCorrect() {
     xum.style.display = "block";
     returnIfCorrect( String.fromCharCode(current) ,String.fromCharCode(tru));
 }
+
 function showSolution(){
     var xum = document.getElementById("main");
     xum.style.display = "none";
@@ -221,6 +221,7 @@ function showSolution(){
     yum.style.display = "block";
     document.getElementById("soltext").innerHTML = explanations[category][order[quest]];
 }
+
 function returnIfCorrect(ch, tru){
     if (ch === tru) {
         should_you_do[category][order[quest]] = false;
@@ -265,6 +266,7 @@ function Release(s) {
         document.getElementById(ch).checked = false;
     }
 }
+
 function make_should_you_do2(){
     if(should_you_do.length === 0)make_should_you_do();
     else{
@@ -275,6 +277,7 @@ function make_should_you_do2(){
         }
     }
 }
+
 function make_should_you_do(){
     if(should_you_do.length != 0)return;
     for(let i = 0; i < questions.length; i++){
@@ -290,4 +293,11 @@ function make_all_unchecked(){
         let ch = String.fromCharCode(i + 49);
         document.getElementById(ch).checked = false;
     }
+}
+
+function addQuestion(cat, que, c1, c2, c3, c4, s, exp){
+    questions[cat].push(que);
+    pos_choisses[cat].push([c1, c2, c3, c4]);
+    answer[cat].push(s);
+    explanations[cat].push(exp);
 }
