@@ -15,20 +15,22 @@
     {% endwith %}
 </head>
 <body>
-    <img src="{{ url_for('static', filename='pictures/person-writing.png') }}"> 
+    <div class="img"></div> 
     <div class="register-box">
         <h1>Register</h1>
         <form method="POST">
             <input type="text" id="username" name="username" placeholder="Name">
             <input type="email" id="email" name="email" placeholder="Email">
-            <input type="password" id="password" name="password" placeholder="Password "><br>
+            <input type="password" id="password" name="password" placeholder="Password ">
             <div class="checkboxes">
                 <div class="option"><input type="radio" id="teacher" name="role" class="checkbox" value="1"><label>Teacher</label></div>
                 <div class="option"><input type="radio" id="student" name="role" class="checkbox" value="0"><label>Student</label></div>
             </div>
             <div class="btn-center"><button type="submit">Register</button></div>
         </form>
-        <h2>Already have an account?<a class="btn link" href="{{ url_for('auth.login') }}"> Log in!</a></h2>
+        <div class="noacc">
+            <h2>Already have an account?<a class="btn link" href="{{ url_for('auth.login') }}"> Log in!</a></h2>
+        </div>
     </div>
 </body>
 </html>
