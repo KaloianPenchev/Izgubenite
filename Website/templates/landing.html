@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+</head>
+<body>
+    <header>
+        <div class="div-left">
+            <h1 class="header-text">Practicum</h1>
+        </div>
+        <div-right id="div-right">
+            <button onclick="window.location.href='/login';" type="submit" class="btn"><h1 class="menu-text">Login</h1></button>
+            <button onclick="window.location.href='/sign-up';" type="submit" class="btn"><h1 class="menu-text">Register</h1></button>
+        </div-right>
+    </header>
+    
+    <div class="main">
+        <p>
+            <h2>Най-добрата 
+                платформа</h2>
+            <span>за самообучение и обратна 
+                връзка с учител</span>
+        </p>
+        
+      </div>
+      <div class="img">
+        <img src="{{ url_for('static', filename='pictures/mainpic.png') }}"/>
+    </div>
+    
+    <footer>
+
+    </footer>
+</body>
+</html>

@@ -12,14 +12,8 @@ header {
     background-color: #6CA0ED;
     color:white;
 }
-#div-left{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 50%;
-}
-.div-mid {
+
+.div-left {
     position: absolute;
     top: 0%;
     left: 10%;
@@ -27,7 +21,7 @@ header {
     width: 50%;
     color: #000;
 }
-.div-mid h1 {
+.div-left h1 {
     position: absolute;
     display: flex;
     align-items: center;

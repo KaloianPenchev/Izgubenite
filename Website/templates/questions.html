@@ -8,11 +8,8 @@
 <body >
     <header>
         <div-left>
-            <img src="{{ url_for('static', filename='pictures/logo.png') }}" id="logo">
-        </div-left>
-        <div class="div-mid">
             <h1 class="header-text">Practicum</h1>
-        </div>
+        </div-left>
         <div-right id="div-right">
             <h1 class="username">User: {{current_user.first_name}}</h1>
             <a href="/logout">
