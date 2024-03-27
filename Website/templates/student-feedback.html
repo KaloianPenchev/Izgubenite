@@ -11,10 +11,7 @@
 <script src="/Testing2/app.js"></script>
     <body>
         <header>
-            <div-left>
-                <img src="{{ url_for('static', filename='pictures/logo.png') }}" id="logo">
-            </div-left>
-            <div class="div-mid">
+            <div class="div-left">
                 <h1 class="header-text">Practicum</h1>
             </div>
             <div-right id="div-right">
@@ -40,29 +37,9 @@
                     {% endif %}
                 {% endfor %}
             </div>
-            <div class="circle-field">
-                {% if cnt < 1 %}
-                    <div class="circle">
-                        <h1 class="circle-text">No feedback</h1>
-                    </div>
-                {% elif sum/cnt >= 2.50 %}
-                    <div class="circle_outstanding">
-                        <h1 class="circle-text">Outstanding</h1>
-                    </div>
-                {% elif sum/cnt >= 1.75 %}
-                    <div class="circle_neutral">
-                        <h1 class="circle-text">Neutral</h1>
-                    </div>
-                {% else %}
-                    <div class="circle_need_improvement">
-                        <h1 class="circle-text">Need improvement</h1>
-                    </div>
-                {% endif %}
-            </div>
         </div>
-        <div class="line"></div>
         <form method="POST">
-            <input type="text" name="feedback" class="fedback" id="feedback" placeholder="feedback">
+            <input type="text" name="feedback" id="feedback" placeholder="feedback">
             <button href="/feedback" class="btn">
                 <img type="submit" class="img-btn" src="{{ url_for('static', filename='pictures/Add btn.png') }}">
             </button>
