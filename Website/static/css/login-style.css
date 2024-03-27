@@ -21,82 +21,105 @@
     background-color: #fff;
     color: red;
 }
+body{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
 .main {
+    height: 100%;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 100%;
+    z-index: 0;
+    background-image: url('../pictures/person-writing.png');
+    background-repeat: no-repeat;
+    background-position: auto;
+    background-size: cover;
+    filter: blur(0.6vw);
+    -webkit-filter: blur(0.6vw);
 }
-
 .login-box {
-    position: absolute;
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    left: 50%;
+    width: 30%;
+    height: 60%;
     background-color: #fff;
+    border-radius: 10%;
+    z-index: 1;
 }
 
 .login-box h1 {
-    margin-bottom: 20px;
-    font-size: 96px;
+    font-size: 3vw;
 }
-
-.login-box h4 {
-    margin-top: 40px;
-    font-size: 24px;
-}
-
-.login-box a {
-    font-size: 24px;
-}
-
 .login-box input {
     display: flex;
-    width: 478px;
-    height: 114px;
+    align-items: center;
+    width: 100%;
+    height: 30%;
     border: none;
-    border-radius: 43px;
+    border-radius: 3vw;
     outline: none;
-    margin-bottom: 20px;
     background-color: #6CA0ED;
-    font-size: 28px;
-    padding-left: 20px;
+    font-size: 2vw;
+    padding-left: 9%;
     color: #fff;
 }
 
 .login-box input::placeholder {
     display: flex;
     align-items: center;
-    font-size: 28px;
+    font-size: 2vw;
     color: #fff;
 }
 
 .login-box .btn button {
-    width: 247px;
-    height: 81px;
+    width: 100%;
+    height: 100%;
     border: none;
-    border-radius: 43px;
+    border-radius: 3vw;
     outline: none;
     background-color: #6CA0ED;
-    font-size: 28px;
+    font-size: 2vw;
     color: #fff;
 }
 
 .login-box .btn {
     display: flex;
+    width: 100%;
+    height: 30%;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     border: none;
     background: none;
 }
-
+form{
+    display: flex;
+    height: 60%;
+    width: 70%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.noacc{
+    display: flex;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.noacc h4,.noacc a{
+    font-size: 1.8vw;
+}
 .isactive:hover {
     opacity: 0.5;
     cursor: pointer;
