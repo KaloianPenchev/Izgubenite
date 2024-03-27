@@ -247,7 +247,6 @@ function make_should_you_do(){
     }
 }
 
-
 function make_all_unchecked(){
     for (let i = 0; i <= 3; i++) {
         let ch = String.fromCharCode(i + 49);
