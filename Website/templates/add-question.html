@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/add-question-style.css') }}">
+    <link rel="stylesheet" href="../static/css/add-question-style.css">
     <title>Teacher Home Page</title>
 </head>
 <body>
@@ -23,7 +23,16 @@
         </div-right>
     </header>
     <div class="main">
-         
+         <form>
+            <input type="text" class="question" placeholder="Question">
+            <div class="options">
+                <div class="option"><label>A:</label><input type="text" class="answer" placeholder="option 1"></div>
+                <div class="option"><label>B:</label><input type="text" class="answer" placeholder="option 2"></div>
+                <div class="option"><label>C:</label><input type="text" class="answer" placeholder="option 3"></div>
+                <div class="option"><label>D:</label><input type="text" class="answer" placeholder="option 4"></div>
+            </div>
+            <button type="submit" class="btn">Add</button>
+         </form>
     </div>
     <footer>
         <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
