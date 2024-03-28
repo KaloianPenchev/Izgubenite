@@ -8,7 +8,7 @@
         {% if messages %}
             <ul class="flashes">
                 {% for message in messages %}
-                    <li>{{ message }}</li>
+                    <li class="flash">{{ message }}</li>
                 {% endfor %}
             </ul>
         {% endif %}
@@ -21,34 +21,42 @@
         <form method="POST">
             <input type="text" id="username" name="username" placeholder="Name">
             <input type="email" id="email" name="email" placeholder="Email">
-            <input type="password" id="password" name="password" placeholder="Password ">
+            <input type="password" id="password" name="password" placeholder="Password">
             <div class="checkboxes">
-                <div class="option"><input type="radio" id="teacher" name="role" class="checkbox" value="1"><label>Teacher</label></div>
-                <div class="option"><input type="radio" id="student" name="role" class="checkbox" value="0"><label>Student</label></div>
-            </div>
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Choose a teacher</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
+                <div class="option"><input type="radio" onclick="teacherChoice()" id="teacher" name="role" class="checkbox" value="1">
+                    <label>Teacher</label>
+                </div>
+                <div class="option"><input type="radio" onclick="studentChoice()" id="student" name="role" class="checkbox" value="0">
+                    <label>Student</label>
                 </div>
             </div>
+                <div class="dropdown" id="myDropdown" style="display: none;">
+                    <select onclick="myFunction()" class="dropbtn" type="button">
+                        <option selected disabled>Choose a teacher</option>
+                        {% for teacher in teacher_list %}
+                            <option value="{{ teacher.first_name }}">{{ teacher.first_name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
             <script>
-                function myFunction() {
-                document.getElementById("myDropdown").classList.toggle("show");
+                function teacherChoice() {
+                    document.getElementById("myDropdown").style.display = "none";
                 }
-                window.onclick = function(event) {
-                if (!event.target.matches('.dropbtn')) {
-                    var dropdowns = document.getElementsByClassName("dropdown-content");
-                    var i;
-                    for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
+                function studentChoice() {
+                    document.getElementById("myDropdown").style.display = "block";
+                    document.getElementById("myDropdown").classList.toggle("show");
+                    window.onclick = function(event) {
+                        if (!event.target.matches('.dropbtn')) {
+                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                            var i;
+                            for (i = 0; i < dropdowns.length; i++) {
+                                var openDropdown = dropdowns[i];
+                                if (openDropdown.classList.contains('show')) {
+                                    openDropdown.classList.remove('show');
+                                }
+                            }
+                        }
                     }
-                    }
-                }
                 }
             </script>
             <div class="btn-center"><button type="submit">Register</button></div>

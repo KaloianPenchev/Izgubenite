@@ -9,7 +9,7 @@
 .flashes {
     display: flex;
     justify-content: end;
-    align-items: center;
+    align-items: flex-end;
     list-style: none;
     z-index: 1;
     font-size: 32px;

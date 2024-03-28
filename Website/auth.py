@@ -66,7 +66,7 @@ def sign_up():
             elif current_user.role == '0':
                 return redirect(url_for('auth.profile_student'))
 
-    return render_template('register.html', user=current_user)
+    return render_template('register.html', user=current_user, teacher_list=User.query.filter_by(role='1').all())
 
 
 @auth.route('/profile_student')
