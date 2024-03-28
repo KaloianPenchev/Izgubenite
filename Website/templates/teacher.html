@@ -10,15 +10,17 @@
 </head>
 <body>
     <header>
-        <div-left>
-            <img src="{{ url_for('static', filename='pictures/logo.png') }}" id="logo">
-        </div-left>
-        <div class="div-mid">
+        <div class="div-left">
             <h1 class="header-text">Practicum</h1>
         </div>
-        <div class="div-right" id="div-right">
-            <button onclick="window.location.href='/logout';" type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
-        </div>
+        <div-right id="div-right">
+            
+           
+            <a href="/logout">
+                <button type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
+            </a>
+            
+        </div-right>
     </header>
     <div class="profilepage">
         <img class="profilepic" src="{{ url_for('static', filename='pictures/user.png') }}"> 
@@ -27,16 +29,10 @@
             <h1 class="details-text">Name: {{teachername}}</h1>
             <h1 class="details-text">Email: {{teacheremail}}</h1>
         </div>
-        <div class="bio">
-            <textarea type="text"></textarea>
-                <img class="edit" src="{{ url_for('static', filename='pictures/edit.jpg') }}">
-            </div>
-        </div>
-    </div>
-    <div id="right-side-teachers">
+        <div id="right-side-teachers">
             <p id="Need-to-return-feedback">Need to return a feedback?</p>
             {% for student in students %}
-            <button class="details-text" onclick="clicked('{{student.email}}');" type="submit">{{student.first_name}}</button>
+            <button class="button" onclick="clicked('{{student.email}}');" type="submit"><h1 class="details-text">{{student.first_name}}</h1></button>
             <script>
                 function clicked(student_email) {
                      window.location = `/reactions/${student_email}`;
@@ -44,6 +40,11 @@
             </script>
             {% endfor %}
         </div>
+
+    </div>
+    <footer>
+        <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
+    </footer>
 </body>
 </html>
 {% endblock %}
