@@ -7,10 +7,10 @@
 </head>
 <body >
     <header>
-        <div-left>
-            <h1 class="header-text">Practicum</h1>
-        </div-left>
-        <div-right id="div-right">
+        <div class="div-left">
+            <h1>Practicum</h1>
+        </div>
+        <div class="div-right">
             <h1 class="username">User: {{current_user.first_name}}</h1>
             <a href="/logout">
                 <button type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
@@ -18,7 +18,7 @@
             <a href="/profile_student">
                 <button type="submit" class="button1"><h1 class="menu-text">Profile</h1></button>
             </a>
-        </div-right>
+        </div>
     </header>
     <div id="center">
         <div id="mainFirstTime">
@@ -35,7 +35,7 @@
             </div>
             <button id="subm" onclick="checkIfCorrect();submitCounter++">Submit</button>
             <button id="Next" onclick="toTheNextQuestion()">Next</button>
-            <button id="expl" style=" display: none; width: 1000px; background-color: red; height: 1000px;" onclick="showSolution();make_should_you_do();makeOrder();submitCounter=0;whenStart();firstTimeButton();quest=0;">Workjkkkkksfddddddsdf</button>
+            <button id="expl" style=" display: none; width: 300px; background-color: red; height: 200px;" onclick="showSolution();make_should_you_do();makeOrder();submitCounter=0;whenStart();firstTimeButton();quest=0;">Workjkkkkksfddddddsdf</button>
         </div>
         <div id="main2" style="display: none">
             <h1 id="testfor" style="font-size: 40px"></h1>
