@@ -164,6 +164,23 @@ header a{
 .button .details-text{
     color: #FFFFFF;
 }
+
+.add-test{
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    list-style: none;
+    background-color:#36517C;
+    margin-bottom: 2.083vw;
+    border: solid rgba(108, 160, 237, 0.4) 0.417vw;
+    border-radius: 2.24vw;
+    height: 30%;
+    width: 40%;
+}
+.add-test h1{
+    color: white;
+    font-size: 5vw;
+}
 .btn{
     list-style: none;
     background-color:#36517C;

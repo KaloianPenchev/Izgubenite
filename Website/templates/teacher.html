@@ -29,6 +29,9 @@
             <h1 class="details-text">Name: {{teachername}}</h1>
             <h1 class="details-text">Email: {{teacheremail}}</h1>
         </div>
+        <a href="{{ url_for('static', filename='add-question.html') }}">
+            <button class="add-test"><h1>Add Test</h1></button>
+         </a>
         <div id="right-side-teachers">
             <p id="Need-to-return-feedback">Need to return a feedback?</p>
             {% for student in students %}
