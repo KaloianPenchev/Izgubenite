@@ -128,19 +128,24 @@ header a{
 #main{
     position: relative;
     display: flex;
-    height: 75%;
+    height: 70%;
     width: 80%;
     align-items: flex-end;
     justify-content: space-evenly;
     background-color: lightgray;
     border-radius: 3vw;
+    padding-bottom: 1vw;
 }
 button{
     margin-top: 2%;
-    width: 15%;
-    height: 50%;
-    background-color: lightskyblue;
-    border-radius: 43px;
+    width: fit-content;
+    min-width: 15%;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    height: 10%;
+    background-color: yellow;
+    font-size: 2vw;
+    border-radius: 3vw;
 }
 button:hover{
     opacity: 0.5;
@@ -152,7 +157,7 @@ button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20%;
+    height: 18%;
     width: 100%;
     font-size: 2vw;
     text-align: center;
@@ -185,7 +190,7 @@ button:hover{
 .options{
     display: grid;
     position: absolute;
-    top: 20%;
+    top: 18%;
     left: 0;
     grid-template-columns:1fr,1fr;
     grid-template-rows:1fr,1fr;
@@ -206,6 +211,7 @@ button:hover{
     align-items: center;
     text-align: center;
     font-size: 2vw;
+    color: #6CA0ED;
 }
 
 .answer:nth-child(1){
@@ -234,4 +240,18 @@ button:hover{
 }
 input {
     display: none;
+}
+#sol{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vw;
+    bottom: 2%;
+    font-size: 2vw;
+    height: 10%;
+    width: fit-content;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: lightgrey;
 }

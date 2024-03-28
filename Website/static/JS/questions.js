@@ -217,10 +217,8 @@ function checkIfCorrect() {
 }
 
 function showSolution(){
-    var xum = document.getElementById("main");
-    xum.style.display = "none";
     var yum = document.getElementById("sol");
-    yum.style.display = "block";
+    yum.style.display = "flex";
     console.log(order[quest] + "Please work");
     document.getElementById("soltext").innerHTML = explanations[category][order[quest]];
     var zum = document.getElementById("expl");
@@ -264,6 +262,10 @@ function whenStart(){
     }
     printQuestion();
     printChoisses();
+    let xum = document.getElementById("sol");
+    xum.style.display="none";
+    let yum = document.getElementById("expl");
+    yum.style.display="none";
 }
 
 function Release(s) {
