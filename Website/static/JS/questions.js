@@ -1,7 +1,8 @@
 var questions = [
     [
         "Корен квадрат от 25",
-        "Корен квадрат от 169", "Корен от 289 е:",
+        "Корен квадрат от 169", 
+        "Корен от 289 е:",
         "Колко е 1 на степен 0?",
         "Колко е 3 на степен 4?",
         "4 на 2 степен е?",
@@ -129,12 +130,12 @@ function makeOrder(){
 function changeColor(s, num){
     for(let i = 1; i <= 4; i++){
         let x = document.getElementById(String.fromCharCode(i + 64));
-        if(x.style.backgroundColor === "green" || x.style.backgroundColor === "red")continue;
-        x.style.backgroundColor = "#6CA0ED";
+        if(x.style.color === "green" || x.style.color === "red")continue;
+        x.style.color = "#6CA0ED";
     }
     if(document.getElementById(s).checked && submitCounter < 1){
         let x = document.getElementById(String.fromCharCode(num + 64));
-        x.style.backgroundColor = "yellow";
+        x.style.color = "yellow";
     }
 }
 function makeAllDefaut(){
@@ -182,7 +183,7 @@ function printQuestion(){
 function printChoisses(){
     for (let i = 0; i <= 3; i++) {
         let char = String.fromCharCode(i + 65);
-        document.getElementById(char).innerHTML = pos_choisses[category][order[quest]][i];
+        document.getElementById(char).innerHTML = char + ") " + pos_choisses[category][order[quest]][i];
     }
 }
 
@@ -200,13 +201,13 @@ function toTheNextQuestion(){
 function checkIfCorrect() {
     if(submitCounter >= 1)return;
     let current;
-    let tru;
+    let tru = 0;
     let ans = false;
     for (let i = 0; i <= 3; i++) {
         let ch = String.fromCharCode(i + 49);
         console.log(answer[category][order[quest]]);
         if(document.getElementById(ch).checked) current = i + 49 + 16;
-        if (answer[category][order[quest]] === document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML) {
+        if ((String.fromCharCode(i + 65)) + ") "  + answer[category][order[quest]] === document.getElementById(String.fromCharCode((i + 49 + 16))).innerHTML) {
             tru = i + 49 + 16;
         }
     }
@@ -220,20 +221,25 @@ function showSolution(){
     xum.style.display = "none";
     var yum = document.getElementById("sol");
     yum.style.display = "block";
+    console.log(order[quest] + "Please work");
     document.getElementById("soltext").innerHTML = explanations[category][order[quest]];
+    var zum = document.getElementById("expl");
+    zum.style.display = "none";
 }
 
 function returnIfCorrect(ch, tru){
     if (ch === tru) {
         should_you_do[category][order[quest]] = false;
         let x = document.getElementById(ch);
-        x.style.backgroundColor = "green";
+        x.style.color = "green";
         return true;
     } else {
+        console.log("CHU = " + ch);
         let x = document.getElementById(ch);
-        x.style.backgroundColor = "red";
+        x.style.color = "red";
+        console.log("TRU = " + tru);
         let y = document.getElementById(tru);
-        y.style.backgroundColor = "green";
+        y.style.color = "green";
         return false;
     }
 }
