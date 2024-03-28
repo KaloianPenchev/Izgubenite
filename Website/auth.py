@@ -39,17 +39,14 @@ def sign_up():
         email = request.form.get('email')
         password = request.form.get('password')
         role = request.form.get('role')
-        # teach_forstudent = request.form.get('my_teacher')
+        teach_forstudent = request.form.get('my_teacher')
         user = User.query.filter_by(email=email).first()
         usern = User.query.filter_by(first_name=first_name).first()
-        # usert = User.query.filter_by(first_name=teach_forstudent).first()
 
         if user:
             flash('Email already exists.', category='error')
         elif usern:
             flash('Username already exists.', category='error')
-        #elif not usert:
-        #    flash('Teacher does not exist.', category='error')
         elif len(email) < 4:
             flash('Email must be greater than 3 characters.', category='error')
         elif len(first_name) < 2:
@@ -57,7 +54,7 @@ def sign_up():
         elif len(password) < 7:
             flash('Password must be at least 7 characters.', category='error')
         else:
-            new_user = User(first_name=first_name, email=email, password=generate_password_hash(password, method='pbkdf2:sha256'), role=role) #, my_teacher=teach_forstudent
+            new_user = User(first_name=first_name, email=email, password=generate_password_hash(password, method='pbkdf2:sha256'), role=role, my_teacher=teach_forstudent)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
@@ -72,7 +69,7 @@ def sign_up():
 @auth.route('/profile_student')
 @login_required
 def profile_student():
-    return render_template('student.html', user=current_user, studentname=current_user.first_name, studentemail=current_user.email)
+    return render_template('student.html', user=current_user, studentname=current_user.first_name, studentemail=current_user.email, teachername=current_user.my_teacher)
 
 
 @auth.route('/profile_teacher')

@@ -30,14 +30,14 @@
                     <label>Student</label>
                 </div>
             </div>
-                <div class="dropdown" id="myDropdown" style="display: none;">
-                    <select onclick="myFunction()" class="dropbtn" type="button">
-                        <option selected disabled>Choose a teacher</option>
-                        {% for teacher in teacher_list %}
-                            <option value="{{ teacher.first_name }}">{{ teacher.first_name }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
+            <div class="dropdown" id="myDropdown" style="display: none;">
+                <select onclick="myFunction()" name="my_teacher" class="dropbtn" type="button">
+                    <option selected disabled>Choose a teacher</option>
+                    {% for teacher in teacher_list %}
+                        <option value="{{ teacher.first_name }}">{{ teacher.first_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
             <script>
                 function teacherChoice() {
                     document.getElementById("myDropdown").style.display = "none";
