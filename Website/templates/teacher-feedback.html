@@ -33,31 +33,23 @@
         </div>
         <div class="feedbacks">
             {% for feedback in feedbacks %}
+                <div class="field">
                     <div class="feedback">
                         <p>{{ feedback.message }}</p>
                     </div>
                     {% if feedback.grade == "N/A" %}
                         <form class="form" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
-                            <div class="options">
-                                <div class="option">
-                                    <input type="radio" id="outstanding" name="grade" class="checkbox" value="3">
-                                    <label class="reaction-text">Outstanding</label>
-                                </div>
-                                <div class="option">
-                                    <input type="radio" id="neutral" name="grade" class="checkbox" value="2">
-                                    <label class="reaction-text">Neutral</label>
-                                </div>
-                                <div class="option">
-                                    <input type="radio" id="need_improvement" name="grade" class="checkbox" value="1">
-                                    <label class="reaction-text">Need improvement</label>
+                            <div class="dropdown">
+                                <button class="dropbtn">Choose a reaction</button>
+                                <div class="dropdown-content">
+                                  <a href="#">Outstanding</a>
+                                  <a href="#">Neutral</a>
+                                  <a href="#">Needs improvement</a>
                                 </div>
                             </div>
-                            <div class="feedbackIdSpace">
-                                <input type="text" name="ID" value="{{feedback.id}}">
-                            </div>
-                            <button class="submit_grade" type="submit">Confirm</button>
                         </form>
                     {% endif %}
+                </div>
             {% endfor %}
         </div>
         <footer>
