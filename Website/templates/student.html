@@ -10,14 +10,16 @@
 </head>
 <body>
     <header>
-        <div-left>
-            <img src="{{ url_for('static', filename='pictures/logo.png') }}" id="logo">
-        </div-left>
-        <div class="div-mid">
+        <div class="div-left">
             <h1 class="header-text">Practicum</h1>
         </div>
         <div-right id="div-right">
-            <button onclick="window.location.href='/logout';" type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
+            
+           
+            <a href="/logout">
+                <button type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
+            </a>
+            
         </div-right>
     </header>
     <div class="profilepage">
@@ -27,50 +29,48 @@
             <h1 class="details-text">Name: {{studentname}}</h1>
             <h1 class="details-text">Email: {{studentemail}}</h1>
         </div>
-        <div class="bio">
-            <textarea type="text"></textarea>
-                <img class="edit" src="{{ url_for('static', filename='pictures/edit.jpg') }}">
+       
+        
+        
+            <div class="tests">
+                <h1 class="test-text">Choose a test</h1>
+                <ul class="buttons">
+                    <li>
+                        <button class="button" onclick="window.location.href='/test/0';">
+                            <h1 class="details-text">
+                                Алгебра
+                            </h1>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="button" onclick="window.location.href='/test/1';">
+                            <h1 class="details-text">
+                                Геометрия
+                            </h1>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="button" onclick="window.location.href='/test/2';">
+                            <h1 class="details-text">
+                                История
+                            </h1>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="button" onclick="window.location.href='/test/3';">
+                            <h1 class="details-text">
+                                География
+                            </h1>
+                        </button>
+                    </li>
+                    
+                </ul>
             </div>
-        </div>
-    <div class="userpage">
-        <div class="tests">
-            <h1 class="test-text">Choose a test</h1>
-            <ul class="buttons">
-                <li>
-                    <button class="button" onclick="window.location.href='/test/0';">
-                        <h1 class="details-text">
-                            Алгебра
-                        </h1>
-                    </button>
-                </li>
-                <li>
-                    <button class="button" onclick="window.location.href='/test/1';">
-                        <h1 class="details-text">
-                            Геометрия
-                        </h1>
-                    </button>
-                </li>
-                <li>
-                    <button class="button" onclick="window.location.href='/test/2';">
-                        <h1 class="details-text">
-                            История
-                        </h1>
-                    </button>
-                </li>
-                <li>
-                    <button class="button" onclick="window.location.href='/test/3';">
-                        <h1 class="details-text">
-                            География
-                        </h1>
-                    </button>
-                </li>
+                <div class="feedback">
                 
-            </ul>
-        </div>
-        <div class="feedback">
-            <h1 class="feedback-text">Need feedback?</h1>
-            <button onclick="window.location.href='/feedbackpage';" type="submit" class="btn"><h1 class="details-text">Go to feedback page</h1></button>
-        </div>
+                <button onclick="window.location.href='/feedbackpage';" type="submit" class="btn"><h1 class="feedback-text">Feedback page</h1></button>
+            </div>
+        
     </div>
     <script src="{{ url_for('static', filename='JS/questions.js') }}"></script>
 </body>
