@@ -100,3 +100,8 @@ def feedbackpage():
 @login_required
 def test(category):
     return render_template('questions.html', user=current_user, category=category)
+
+@auth.route('/addtest')
+@login_required
+def addtest():
+    return render_template('add-question.html', user=current_user)
