@@ -142,7 +142,7 @@ function makeAllDefaut(){
     for (let i = 0; i <= 3; i++) {
         let ch = String.fromCharCode(i + 49 + 16);
         let x = document.getElementById(ch);
-        x.style.backgroundColor = "#6CA0ED";
+        x.style.color = "#6CA0ED";
     }
 }
 function receiveCategory(num) {
