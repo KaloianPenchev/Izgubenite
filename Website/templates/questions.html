@@ -23,7 +23,7 @@
     <div id="center">
         <div id="mainFirstTime">
             <h1 id="testfor2"></h1>
-            <button onclick="make_should_you_do2();makeOrder();submitCounter=0;whenStart();firstTimeButton()" class="first-button">Start test</button>
+            <button onclick="make_should_you_do();makeOrder();submitCounter=0;whenStart();firstTimeButton();quest=0;" class="first-button">Start test</button>
         </div>
         <div id="main" style="display: none">
             <p id="question"></p>
@@ -35,7 +35,7 @@
             </div>
             <button id="subm" onclick="checkIfCorrect();submitCounter++">Submit</button>
             <button id="Next" onclick="toTheNextQuestion()">Next</button>
-            <button id="expl" style=" display: none; width: 1000px; background-color: red; height: 1000px;" onclick="showSolution()">Workjkkkkksfddddddsdf</button>
+            <button id="expl" style=" display: none; width: 1000px; background-color: red; height: 1000px;" onclick="showSolution();make_should_you_do();makeOrder();submitCounter=0;whenStart();firstTimeButton();quest=0;">Workjkkkkksfddddddsdf</button>
         </div>
         <div id="main2" style="display: none">
             <h1 id="testfor" style="font-size: 40px"></h1>

@@ -108,6 +108,7 @@ function pleaseWork(){
     make_should_you_do();
     let rightAns = 0;
     const q = questions[category].length;
+    console.log(should_you_do[category]);
     for (let i = 0; i < should_you_do[category].length; i++) {
         if (should_you_do[category][i] === false) {
             rightAns++;
@@ -279,7 +280,7 @@ function make_should_you_do2(){
 }
 
 function make_should_you_do(){
-    if(should_you_do.length != 0)return;
+    should_you_do = [];
     for(let i = 0; i < questions.length; i++){
         should_you_do.push([]);
         for(let j = 0; j < questions[i].length; j++){
