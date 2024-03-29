@@ -23,7 +23,7 @@
     <div id="center">
         <div id="mainFirstTime">
             <h1 id="testfor2"></h1>
-            <button onclick="make_should_you_do();makeOrder();submitCounter=0;whenStart();firstTimeButton();quest=0;" class="first-button">Start test</button>
+            <button onclick="make_should_you_do();makeOrder();submitCounter=0;whenStart();quest=0;firstTimeButton();" class="first-button">Start test</button>
         </div>
         <div id="main" style="display: none">
             <p id="question"></p>
@@ -61,6 +61,7 @@
         let y = nuCategory[category];
         document.getElementById("testfor2").innerHTML = y;
         pleaseWork();
+
         function firstTimeButton(){
             let aum = document.getElementById("mainFirstTime");
             aum.style.display = "none";
@@ -68,6 +69,7 @@
             hum.style.display = "none";
             let jum = document.getElementById("main");
             jum.style.display = "flex";
+            console.log("wrgbrol");
         }
         function startOver(){
             let aum = document.getElementById("mainFirstTime");

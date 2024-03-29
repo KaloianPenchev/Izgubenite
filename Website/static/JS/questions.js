@@ -58,8 +58,7 @@ var pos_choisses = [
         ["Канада", "САЩ", "Индия", "Русия"],
         ["Непал", "Китай", "Бутан", "Япония"],
         ["Сидни", "Пърт", "Канбера", "Мелбърн"],
-        ["71%", "62%", "88%", "40.5%"]
-
+        ["71%", "62%", "88%", "40.5%"],
     ]
 ];
 var answer = [
@@ -98,11 +97,11 @@ var explanations = [
         "Canberra is the capital city of Australia.",
         "Approximately 71% of the Earth's surface is covered by oceans."
     ]
-]
+];
 var nuCategory = ["Алгебра", "Геометрия", "История", "География"];
 var should_you_do = [];
 var order = [];
-var quest;
+var quest = 0;
 var category;
 var submitCounter = 0;
 function pleaseWork(){
@@ -177,9 +176,11 @@ function change_place(){
       yum.style.display = "flex";
     }
 }
+
 function printQuestion(){
     document.getElementById("question").innerHTML = questions[category][order[quest]];
 }
+
 function printChoisses(){
     for (let i = 0; i <= 3; i++) {
         let char = String.fromCharCode(i + 65);
