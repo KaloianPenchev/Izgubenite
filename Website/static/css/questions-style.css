@@ -99,7 +99,6 @@ header a{
     height: 25%;
 }
 #main2{
-    display: flex;
     height: 50%;
     width: 50%;
     align-items: center;

@@ -102,14 +102,14 @@ var explanations = [
 var nuCategory = ["Алгебра", "Геометрия", "История", "География"];
 var should_you_do = [];
 var order = [];
-var quest = 0;
+var quest;
 var category;
 var submitCounter = 0;
 function pleaseWork(){
-    make_should_you_do();
     let rightAns = 0;
     const q = questions[category].length;
     console.log(should_you_do[category]);
+    console.log("quest = " + quest + "order[quest] = " + order[quest]);
     for (let i = 0; i < should_you_do[category].length; i++) {
         if (should_you_do[category][i] === false) {
             rightAns++;
@@ -197,6 +197,7 @@ function toTheNextQuestion(){
     whenStart();
     make_all_unchecked();
     makeAllDefaut();
+    pleaseWork();
 }
 function checkIfCorrect() {
     if(submitCounter >= 1)return;
@@ -213,7 +214,7 @@ function checkIfCorrect() {
     }
     var xum = document.getElementById("expl");
     xum.style.display = "block";
-    returnIfCorrect( String.fromCharCode(current) ,String.fromCharCode(tru));
+    return returnIfCorrect( String.fromCharCode(current) ,String.fromCharCode(tru));
 }
 
 function showSolution(){
@@ -248,10 +249,12 @@ function whenStart(){
             leaveOnlyMain3();
             return;
         }
+        console.log("quest = " + quest + "isAllCorrect() = " + isAllCorrect());
         change_place();
     }
     if(quest >= questions[category].length){
         quest = 0;
+        console.log("STE POLUDEQ");
         change_place();
         return;
     }
