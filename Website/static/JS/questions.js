@@ -152,9 +152,11 @@ function leaveOnlyMain3(){
     var yum = document.getElementById("main");
     var xum = document.getElementById("main2");
     var zum = document.getElementById("main3");
+    var aum = document.getElementById("sol");
     xum.style.display = "none";
     yum.style.display = "none";
     zum.style.display = "block";
+    aum.style.display = "none";
 }
 function isAllCorrect(){
     for(let i = 0; i < should_you_do[category].length; i++){
@@ -168,6 +170,7 @@ function change_place(){
     pleaseWork();
     var yum = document.getElementById("main");
     var xum = document.getElementById("main2");
+    var aum = document.getElementById("sol");
     if (xum.style.display === "none") {
       xum.style.display = "flex";
       yum.style.display = "none";
@@ -175,6 +178,7 @@ function change_place(){
       xum.style.display = "none";
       yum.style.display = "flex";
     }
+    aum.style.display = "none";
 }
 
 function printQuestion(){
