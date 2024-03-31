@@ -43,9 +43,9 @@
                             <select class="dropdown">
                                 <option selected disabled>Choose a reaction</option>
                                 <div class="dropdown-content">
-                                  <option onclick="Outstanding()" value="3">Outstanding</option>
-                                  <option onclick="Neutral()" value="2">Neutral</option>
-                                  <option onclick="Need_improvement()" value="1">Need improvement</option>
+                                  <option onclick="Outstanding(feedback)" value="3">Outstanding</option>
+                                  <option onclick="Neutral(feedback)" value="2">Neutral</option>
+                                  <option onclick="Need_improvement(feedback)" value="1">Need improvement</option>
                                 </div>
                             </select>
                         </form>
@@ -53,21 +53,19 @@
                 </div>
             {% endfor %}
         </div>
-        
         <script>
-            function Outstanding(){
-                
+            function Outstanding(feedback){
+                feedback.grade = "3";
             }
             
-            function Nautral(){
-
+            function Nautral(feedback){
+                feedback.grade = "2";
             }
 
-            function Need_improvement(){
-
+            function Need_improvement(feedback){
+                feedback.grade = "1";
             }
         </script>
-        
         <footer>
             <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
         </footer>
