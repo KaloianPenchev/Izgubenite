@@ -49,7 +49,7 @@ header {
     border: 0.3vw solid rgba(108, 160, 237, 0.4);
     height: 100%; 
     width: 100%;
-    border-radius: 30px;
+    border-radius: 3vw;
     z-index: 2;
     overflow: hidden;
 }
@@ -62,7 +62,7 @@ header a{
     height: 50%;
     width: 20%;
     z-index: 1;
-    border-radius: 30px;
+    border-radius: 3vw;
 }
 .menu-text{
     text-align: center;

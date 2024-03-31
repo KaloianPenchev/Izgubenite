@@ -16,7 +16,7 @@
     position: absolute;
     margin: 20px;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 3vw;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     background-color: #fff;
     color: red;
@@ -53,7 +53,7 @@ body{
     width: 30%;
     height: 60%;
     background-color: #fff;
-    border-radius: 10%;
+    border-radius: 3vw;
     z-index: 1;
 }
 
