@@ -39,19 +39,35 @@
                     </div>
                     {% if feedback.grade == "N/A" %}
                         <form class="form" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
-                            <div class="dropdown">
-                                <button class="dropbtn">Choose a reaction</button>
+                            
+                            <select class="dropdown">
+                                <option selected disabled>Choose a reaction</option>
                                 <div class="dropdown-content">
-                                  <a href="#">Outstanding</a>
-                                  <a href="#">Neutral</a>
-                                  <a href="#">Needs improvement</a>
+                                  <option onclick="Outstanding()" value="3">Outstanding</option>
+                                  <option onclick="Neutral()" value="2">Neutral</option>
+                                  <option onclick="Need_improvement()" value="1">Need improvement</option>
                                 </div>
-                            </div>
+                            </select>
                         </form>
                     {% endif %}
                 </div>
             {% endfor %}
         </div>
+        
+        <script>
+            function Outstanding(){
+                
+            }
+            
+            function Nautral(){
+
+            }
+
+            function Need_improvement(){
+
+            }
+        </script>
+        
         <footer>
             <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
         </footer>
