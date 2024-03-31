@@ -35,12 +35,14 @@
         <div id="right-side-teachers">
             <p id="Need-to-return-feedback">Need to return a feedback?</p>
             {% for student in students %}
-            <button class="button" onclick="clicked('{{student.email}}');" type="submit"><h1 class="details-text">{{student.first_name}}</h1></button>
-            <script>
-                function clicked(student_email) {
-                     window.location = `/reactions/${student_email}`;
-                }
-            </script>
+                {% if student.my_teacher == teachername %}
+                    <button class="button" onclick="clicked('{{student.email}}');" type="submit"><h1 class="details-text">{{student.first_name}}</h1></button>
+                    <script>
+                        function clicked(student_email) {
+                            window.location = `/reactions/${student_email}`;
+                        }
+                    </script>
+                {% endif %}
             {% endfor %}
         </div>
 
