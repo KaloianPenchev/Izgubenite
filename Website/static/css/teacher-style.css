@@ -50,7 +50,7 @@ header {
     border: 0.3vw solid rgba(108, 160, 237, 0.4);
     height: 100%; 
     width: 100%;
-    border-radius: 30px;
+    border-radius: 3vw;
     z-index: 2;
     overflow: hidden;
 }
@@ -63,7 +63,7 @@ header a{
     height: 50%;
     width: 30%;
     z-index: 1;
-    border-radius: 30px;
+    border-radius: 3vw;
 }
 .menu-text{
     text-align: center;
@@ -85,7 +85,7 @@ header a{
     top: 20%;
     left: 10%;
     background-color: #D9D9D9;
-    border-radius: 2vw;
+    border-radius: 3vw;
 }
 .profilepic{
     width: 15%;
@@ -153,7 +153,7 @@ header a{
     background-color:#36517C;
     margin-bottom: 2.083vw;
     border: solid rgba(108, 160, 237, 0.4) 0.417vw;
-    border-radius: 2.24vw;
+    border-radius: 3vw;
     width: 14.021vw;
     height: 4vw;
 }
@@ -173,7 +173,7 @@ header a{
     background-color:#36517C;
     margin-bottom: 2.083vw;
     border: solid rgba(108, 160, 237, 0.4) 0.417vw;
-    border-radius: 2.24vw;
+    border-radius: 3vw;
     height: 30%;
     width: 40%;
 }
@@ -185,7 +185,7 @@ header a{
     list-style: none;
     background-color:#36517C;
     border: solid rgba(108, 160, 237, 0.4) 0.417vw;
-    border-radius: 2.24vw;
+    border-radius: 3vw;
     width: 50%;
     height: 40%;
     color: white;
