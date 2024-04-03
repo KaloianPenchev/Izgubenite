@@ -314,7 +314,9 @@ function make_all_unchecked(){
 
 function addQuestion(cat, que, c1, c2, c3, c4, s, exp){
     questions[cat].push(que);
+    console.log("R#@$R#$");
     pos_choisses[cat].push([c1, c2, c3, c4]);
     answer[cat].push(s);
     explanations[cat].push(exp);
+    console.log(questions[cat].length);
 }

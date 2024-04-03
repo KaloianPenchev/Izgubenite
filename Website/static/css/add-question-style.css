@@ -87,7 +87,7 @@ header a{
     border-radius: 3vw;
 }
 
-.question{
+#que{
     position: absolute;
 
     top: 10%;
@@ -121,7 +121,7 @@ header a{
     align-items: center;
     height: 40%;
 }
-.answer{
+#aqr{
     width: 50%;
     background-color: #D9D9D9;
     height: 80%;
