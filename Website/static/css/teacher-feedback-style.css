@@ -142,7 +142,7 @@ header a{
     height: 100%;
     aspect-ratio: 1/1;
 }
-.option{
+.gradeOption{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -179,7 +179,7 @@ header a{
     display: flex;
     width: 50%;
     height: auto;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
 .dropbtn {
@@ -232,4 +232,7 @@ footer{
 }
 footer .contact{
     font-size: 2vw;
+}
+.feedbackIdSpace {
+    visibility: hidden;
 }

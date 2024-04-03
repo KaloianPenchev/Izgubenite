@@ -34,15 +34,8 @@ def reaction(student_email):
         grade = request.form.get('grade')
         if grade and grade != "N/A":
             id = request.form.get('ID')
-            
             feedback = Feedback.query.filter_by(id=id).first()
             feedback.grade = grade
             db.session.commit()
     feedbacks = Feedback.query.filter_by(student_email=student_email).all()
-    sum = 0
-    cnt = 0
-    for feedback in feedbacks:
-        if feedback.grade != "N/A":
-            sum += int(feedback.grade)
-            cnt += 1
-    return render_template("teacher-feedback.html", user=current_user, student_email=student_email, feedbacks=feedbacks, sum=sum, cnt=cnt)
+    return render_template("teacher-feedback.html", user=current_user, student_email=student_email, feedbacks=feedbacks)
