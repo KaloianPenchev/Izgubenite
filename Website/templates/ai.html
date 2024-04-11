@@ -23,54 +23,86 @@
             
         </div-right>
     </header>
-
-    <div class="questions-form">
-        <form action="/chatbot" method="post">
-            <div class="text">
-                <h1>Enter your text</h1>
-                <label for="context" placeholder="Type your text..."><br>
-                <textarea id="context" name="context" rows="4" cols="50"></textarea><br><br>
-            </div>
-            <label for="num_questions">Num:</label>
-            <select id="num_questions" name="num_questions">
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
-              
-            </select>
-            <label for="difficulty">Изберете трудност:</label>
-            <select id="difficulty" name="difficulty">
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-            <label for="language">Language:</label>
-            <select id="language" name="language">
-              <option value="english">English</option>
-            </select>
-            <label for="questiontype">Type:</label>
-            <select id="questiontype" name="questiontype">
-                <option value="shortans">Short answer</option>
-              </select>
-            <button type="submit">Generate</button>
-          </form>
-    </div>
-          
-          
-    <div>
-        <h2>Questions:</h2>
-        <ul>
-        {% for question in questions %}
-            <li class="question">{{ question }}</li>
-        {% endfor %}
-        </ul>
-        <h2>Answers:</h2>
-        <ul>
-        {% for answer in answers %}
-            <li class="answer">{{ answer }}</li>
-        {% endfor %}
-        </ul>
-    </div>
+    <div id="main"><
+        <div id="questions-form">
+            <form action="/chatbot" method="post">
+                <div class="text">
+                    <h2>Enter your text</h2>
+                    <label for="context" placeholder="Type your text..."><br>
+                    <textarea id="context" name="context" rows="9" cols="80"></textarea><br><br>
+                </div>
+                <div id="choose">
+                    <div id="left-choose">
+                        <div id="quest-type">
+                            <div>
+                                <h3>Question type:</h3>
+                            </div>    
+                            <div>    
+                                <select id="questiontype" name="questiontype" class="option">
+                                    <option value="shortans">Short answer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="diff" style="margin-top: 10%;">
+                            <div>
+                                <h3>Difficulty: </h3>
+                            </div>
+                            <div>
+                                <select id="difficulty" name="difficulty" class="option">
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="right-choose">
+                        <div id="lang">
+                            <div>
+                                <h3>Language:</h3>
+                            </div>    
+                            <div>
+                                <select id="language" name="language" class="option">
+                                <option value="english">English</option>
+                                </select>
+                            </div>    
+                        </div>
+                        <div id="max" style="margin-top: 10%;">
+                            <div>
+                                <h3>Max questions:</h3>
+                            </div>
+                            <div>
+                                <select id="num_questions" name="num_questions" class="option">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <button type="submit">Generate</button>
+            </form>
+        </div>
+            
+            
+        <div>
+            <h2>Questions:</h2>
+            <ul>
+            {% for question in questions %}
+                <li class="question">{{ question }}</li>
+            {% endfor %}
+            </ul>
+            <h2>Answers:</h2>
+            <ul>
+            {% for answer in answers %}
+                <li class="answer">{{ answer }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>    
     
     
     
