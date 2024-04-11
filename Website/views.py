@@ -4,8 +4,8 @@ from flask_login import login_required, current_user
 from .models import Feedback
 from . import db
 import random
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+# from sklearn.feature_extraction.text import TfidfVectorizer
+# from sklearn.metrics.pairwise import cosine_similarity
 
 views = Blueprint('views', __name__)
 
