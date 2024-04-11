@@ -85,6 +85,14 @@ input::placeholder {
     font-size: 2vw;
     color: #fff;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus{
+    background-color: #6CA0ED;
+    color: initial;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #FFFFFF;
+}
 .checkboxes {
     display:flex;
     height: 15%;
