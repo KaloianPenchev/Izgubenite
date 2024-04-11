@@ -26,8 +26,11 @@
 
     <div class="questions-form">
         <form action="/chatbot" method="post">
-            <label for="context" placeholder="Type your text..."><br>
-            <textarea id="context" name="context" rows="4" cols="50"></textarea><br><br>
+            <div class="text">
+                <h1>Enter your text</h1>
+                <label for="context" placeholder="Type your text..."><br>
+                <textarea id="context" name="context" rows="4" cols="50"></textarea><br><br>
+            </div>
             <label for="num_questions">Num:</label>
             <select id="num_questions" name="num_questions">
               <option value="5">5</option>
@@ -51,20 +54,22 @@
               </select>
             <button type="submit">Generate</button>
           </form>
-        
-          <!-- Изгенерирани въпроси -->
-          <h2>Генерирани въпроси:</h2>
-          <ul>
-            {% for question in questions %}
+    </div>
+          
+          
+    <div>
+        <h2>Questions:</h2>
+        <ul>
+        {% for question in questions %}
             <li class="question">{{ question }}</li>
-            {% endfor %}
-          </ul>
-          <h2>Генерирани otgowori:</h2>
-          <ul>
-            {% for answer in answers %}
+        {% endfor %}
+        </ul>
+        <h2>Answers:</h2>
+        <ul>
+        {% for answer in answers %}
             <li class="answer">{{ answer }}</li>
-            {% endfor %}
-          </ul>
+        {% endfor %}
+        </ul>
     </div>
     
     
