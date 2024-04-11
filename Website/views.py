@@ -1,8 +1,11 @@
-from flask import Blueprint, render_template, request
+from transformers import AutoModelForQuestionAnswering, AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
+from flask import Blueprint, render_template, request, session
 from flask_login import login_required, current_user
 from .models import Feedback
 from . import db
-import json
+import random
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 views = Blueprint('views', __name__)
 
@@ -39,3 +42,63 @@ def reaction(student_email):
             db.session.commit()
     feedbacks = Feedback.query.filter_by(student_email=student_email).all()
     return render_template("teacher-feedback.html", user=current_user, student_email=student_email, feedbacks=feedbacks)
+
+
+@views.route('/chatbot', methods=['GET', 'POST'])
+@login_required
+def ai():
+    questions = []
+    answers = []
+    if request.method == 'POST':
+        context = request.form.get('context')
+        num_questions = int(request.form.get('num_questions'))
+
+        if num_questions > context.count('.') + 1:
+            num_questions = context.count('.') + 1
+
+    
+        question_tokenizer = AutoTokenizer.from_pretrained("voidful/context-only-question-generator", max_new_tokens=60)
+        question_model = AutoModelForSeq2SeqLM.from_pretrained("voidful/context-only-question-generator")
+
+        
+        answer_model_name = "deepset/roberta-base-squad2"
+        answer_nlp = pipeline('question-answering', model=answer_model_name, tokenizer=answer_model_name)
+
+        for _ in range(num_questions):
+            random_sentence = random.choice(context.split('.')).strip()
+            input_text = random_sentence
+
+            
+            question_inputs = question_tokenizer.encode(input_text, return_tensors="pt", max_length=512, truncation=True)
+            generated_question = question_model.generate(question_inputs, max_new_tokens=200, num_return_sequences=1, num_beams=2, early_stopping=True)
+            new_question = question_tokenizer.decode(generated_question[0], skip_special_tokens=True)
+
+            
+            similarity_scores = [calculate_similarity(new_question, prev_question) for prev_question in questions]
+            while any(score > 0.8 for score in similarity_scores):
+                random_sentence = random.choice(context.split('.')).strip()
+                input_text = random_sentence
+                question_inputs = question_tokenizer.encode(input_text, return_tensors="pt", max_length=512, truncation=True)
+                generated_question = question_model.generate(question_inputs, max_new_tokens=200, num_return_sequences=1, num_beams=2, early_stopping=True)
+                new_question = question_tokenizer.decode(generated_question[0], skip_special_tokens=True)
+                new_question = new_question.capitalize()
+                similarity_scores = [calculate_similarity(new_question, prev_question) for prev_question in questions]
+
+            
+            input_for_ans = {'question': new_question, 'context': random_sentence}
+            
+            #new_answer = answer_nlp(input_for_ans)['answer']
+            new_answer = random_sentence
+            
+            questions.append(new_question)
+            answers.append(new_answer)
+
+    return render_template('ai.html', questions=questions, answers=answers)
+    
+
+def calculate_similarity(question1, question2):
+    vectorizer = TfidfVectorizer()
+    vectors = vectorizer.fit_transform([question1, question2])
+    similarity = cosine_similarity(vectors[0], vectors[1])
+    return similarity[0][0]
+
