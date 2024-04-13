@@ -38,6 +38,23 @@ def reaction(student_email):
     feedbacks = Feedback.query.filter_by(student_email=student_email).all()
     return render_template("teacher-feedback.html", user=current_user, student_email=student_email, feedbacks=feedbacks)
 
+@views.route('/comment/<student_email>', methods=['GET', 'POST'])
+@login_required
+def comment(student_email):
+    if request.method == 'POST':
+        comment = request.form.get('comment')
+
+        if len(comment) < 1:
+            pass
+        else:
+            new_comment = Feedback(student_email=student_email, comment=comment)
+            db.session.add(new_comment)
+            db.session.commit()
+    
+    comments = Feedback.query.filter_by(student_email=student_email).all()
+    
+    return render_template("teacher-feedback.html", user=current_user, comments=comments, student_email=student_email)
+
 
 @views.route('/chatbot', methods=['GET', 'POST'])
 @login_required

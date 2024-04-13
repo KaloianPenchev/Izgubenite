@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='pictures/fav.png') }}">
-        <title>Feedbacks</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/teacher-feedback-style.css') }}">
-    </head>
-    <body>
-        <header>
-            <div class="div-left">
-                <h1 class="header-text">Practicum</h1>
-            </div>
-            <div-right id="div-right">
-                <h1 class="username">Student: {{current_user.first_name}}</h1>
-                <a href="/profile_teacher">
-                    <button type="submit" class="button1"><h1 class="menu-text">Profile</h1></button>
-                </a>
-                <a href="/logout">
-                    <button type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
-                </a>
-                
-            </div-right>
-        </header>
-        <div class="feedbacks">
-            {% for feedback in feedbacks[::-1]%}
-                <div class="field">
-                    <div class="feedback-grade">
-                    {% if feedback.grade == "3"%}
+<head>
+    <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='pictures/fav.png') }}">
+    <title>Feedbacks</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/teacher-feedback-style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="div-left">
+            <h1 class="header-text">Practicum</h1>
+        </div>
+        <div-right id="div-right">
+            <h1 class="username">Student: {{current_user.first_name}}</h1>
+            <a href="/profile_teacher">
+                <button type="submit" class="button1"><h1 class="menu-text">Profile</h1></button>
+            </a>
+            <a href="/logout">
+                <button type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
+            </a>
+        </div-right>
+    </header>
+    
+    <div class="feedbacks">
+        {% for feedback in feedbacks[::-1] %}
+            <div class="field">
+                {% if feedback.grade == "3" %}
                     <div class="green-block"></div>
-                    {% elif feedback.grade == "2"%}
+                {% elif feedback.grade == "2" %}
                     <div class="yellow-block"></div>
-                    {% elif feedback.grade == "1"%}
+                {% elif feedback.grade == "1" %}
                     <div class="red-block"></div>
-                    {% endif %}
-                    </div>
-                    <div class="feedback-field">
-                        <button class="feedback">
-                            <p>{{ feedback.message }}</p>
-                        </button>
-                        {% if feedback.grade == "N/A" %}
+                {% endif %}
+                <div class="feedback-field">
+                    <button class="feedback">
+                        <p>{{ feedback.message }}</p>
+                    </button>
+                    {% if feedback.grade == "N/A" %}
                         <form class="form" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
                             <select class="dropdown" name="grade">
                                 <option selected disabled>Choose a reaction</option>
@@ -52,29 +50,58 @@
                                 <h1 class="button-text">Confirm</h1>
                             </button>
                         </form>
-                        {% endif %}
-                    </div>
+                    {% endif %}
                 </div>
-            {% endfor %}
-        </div>
-        <script>
-            var acc = document.getElementsByClassName("feedback");
-            var i;
+                <div class="comment-field" style="display: none;">
+                    <form class="form" method="POST" action="/comment/{{ student_email }}">
+                        <h2>Comment</h2>
+                        <input type="text" placeholder="Type your comment..." name="comment">
+                        <button type="submit" class="button">
+                            <h1 class="button-text">Confirm</h1>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
-            for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
+    <script>
+        var accFeedback = document.querySelectorAll(".feedback");
+        accFeedback.forEach(function(feedback) {
+            feedback.addEventListener("click", function() {
                 this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "flex") {
-                panel.style.display = "none";
+                var panelFeedback = this.nextElementSibling;
+                if (panelFeedback && panelFeedback.style.display === "flex") {
+                    panelFeedback.style.display = "none";
+                } else if (panelFeedback) {
+                    panelFeedback.style.display = "flex";
+                }
+                // Hide other comment panels when expanding a feedback
+                var commentPanels = document.querySelectorAll(".comment-field");
+                commentPanels.forEach(function(panel) {
+                    if (panel !== feedback.nextElementSibling) {
+                        panel.style.display = "none";
+                    }
+                });
+            });
+        });
+
+        var accComment = document.querySelectorAll(".comment");
+        accComment.forEach(function(comment) {
+            comment.addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panelComment = this.nextElementSibling;
+                if (panelComment.style.display === "flex") {
+                    panelComment.style.display = "none";
                 } else {
-                panel.style.display = "flex";
+                    panelComment.style.display = "flex";
                 }
             });
-            }
-        </script>
-        <footer>
-            <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
-        </footer>
-    </body>
+        });
+    </script>
+
+    <footer>
+        <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
+    </footer>
+</body>
 </html>

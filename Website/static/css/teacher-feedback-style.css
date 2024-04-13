@@ -176,6 +176,10 @@ header a{
     font-size: 20px;
     padding-left: 5px;
 }
+.comment.active, .comment:hover {
+    background-color: #ccc;
+  }
+
 .form{
     display: none;
     width: 100%;
