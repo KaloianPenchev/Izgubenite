@@ -92,9 +92,6 @@ def ai():
             questions.append(new_question)
             answers.append(new_answer)
 
-    
-        
-
         for q, a in zip(questions, answers):
     
             if q.strip()[-1] != '?':
@@ -107,13 +104,7 @@ def ai():
             data.append({'question': q.capitalize() if q[0].islower() else q, 'answer': a})
 
     return render_template('ai.html', questions_answers=data)
-
-
-
-
-
     
-
 def calculate_similarity(question1, question2):
     vectorizer = TfidfVectorizer()
     vectors = vectorizer.fit_transform([question1, question2])
