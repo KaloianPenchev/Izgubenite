@@ -24,6 +24,7 @@
     <div class="feedbacks">
         {% for feedback in feedbacks[::-1] %}
             <div class="field">
+                <div class="feedback-grade">
                 {% if feedback.grade == "3" %}
                     <div class="green-block"></div>
                 {% elif feedback.grade == "2" %}
@@ -31,6 +32,7 @@
                 {% elif feedback.grade == "1" %}
                     <div class="red-block"></div>
                 {% endif %}
+                </div>
                 <div class="feedback-field">
                     <button class="feedback">
                         <p>{{ feedback.message }}</p>
@@ -64,42 +66,6 @@
             </div>
         {% endfor %}
     </div>
-
-    <script>
-        var accFeedback = document.querySelectorAll(".feedback");
-        accFeedback.forEach(function(feedback) {
-            feedback.addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panelFeedback = this.nextElementSibling;
-                if (panelFeedback && panelFeedback.style.display === "flex") {
-                    panelFeedback.style.display = "none";
-                } else if (panelFeedback) {
-                    panelFeedback.style.display = "flex";
-                }
-                // Hide other comment panels when expanding a feedback
-                var commentPanels = document.querySelectorAll(".comment-field");
-                commentPanels.forEach(function(panel) {
-                    if (panel !== feedback.nextElementSibling) {
-                        panel.style.display = "none";
-                    }
-                });
-            });
-        });
-
-        var accComment = document.querySelectorAll(".comment");
-        accComment.forEach(function(comment) {
-            comment.addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panelComment = this.nextElementSibling;
-                if (panelComment.style.display === "flex") {
-                    panelComment.style.display = "none";
-                } else {
-                    panelComment.style.display = "flex";
-                }
-            });
-        });
-    </script>
-
     <footer>
         <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
     </footer>
