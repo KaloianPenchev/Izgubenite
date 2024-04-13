@@ -61,9 +61,7 @@ def ai():
         question_tokenizer = AutoTokenizer.from_pretrained("voidful/context-only-question-generator", max_new_tokens=60)
         question_model = AutoModelForSeq2SeqLM.from_pretrained("voidful/context-only-question-generator")
 
-        
-        answer_model_name = "deepset/roberta-base-squad2"
-        answer_nlp = pipeline('question-answering', model=answer_model_name, tokenizer=answer_model_name)
+    
 
         for _ in range(num_questions):
             random_sentence = random.choice(context.split('.')).strip()
@@ -88,7 +86,7 @@ def ai():
             
             input_for_ans = {'question': new_question, 'context': random_sentence}
             
-            #new_answer = answer_nlp(input_for_ans)['answer']
+        
             new_answer = random_sentence
             
             questions.append(new_question)
