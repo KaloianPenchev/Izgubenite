@@ -49,6 +49,7 @@ def reaction(student_email):
 def ai():
     questions = []
     answers = []
+    data = []
     if request.method == 'POST':
         context = request.form.get('context')
         num_questions = int(request.form.get('num_questions'))
@@ -93,7 +94,26 @@ def ai():
             questions.append(new_question)
             answers.append(new_answer)
 
-    return render_template('ai.html', questions=questions, answers=answers)
+    
+        
+
+        for q, a in zip(questions, answers):
+    
+            if q.strip()[-1] != '?':
+                q += ','
+
+    
+            if a.strip()[-1] != '.':
+                a += '.'
+
+            data.append({'question': q.capitalize() if q[0].islower() else q, 'answer': a})
+
+    return render_template('ai.html', questions_answers=data)
+
+
+
+
+
     
 
 def calculate_similarity(question1, question2):

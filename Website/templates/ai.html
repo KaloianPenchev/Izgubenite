@@ -66,6 +66,7 @@
                                 <h3>Max questions:</h3>
                             </div>
                                 <select id="num_questions" name="num_questions" class="option">
+                                <option value="1">1</option>
                                 <option value="5">5</option>
                                 <option value="10">10</option>
                                 <option value="15">15</option>
@@ -78,19 +79,21 @@
             
             
         <div class="ai_result">
-            <h2>Questions:</h2>
-            <ul class="questions">
-            {% for question in questions %}
-                <li class="question">{{ question }}</li>
-            {% endfor %}
-            </ul>
-            <h2>Answers:</h2>
-            <ul class=>
-            {% for answer in answers %}
-                <li class="answer">{{ answer }}</li>
-            {% endfor %}
+            <h2>Questions & Answers:</h2>
+            
+            <ul class="questions_answers">
+                {% for item in questions_answers %}
+                    <li>
+                        <p><strong>Question {{ loop.index }}:</strong> {{ item['question'] }}</p>
+                        <p><strong>Answer:</strong> {{ item['answer'] }}</p>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
+        
+        
+        
+        
     </div>    
     
     

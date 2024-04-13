@@ -186,6 +186,9 @@ header a{
     color: white;
     font-size: 1.5vw;
 }
+.button:hover{
+    opacity: 0.5;
+}
 footer{
     position: absolute;
     top: 90%;
