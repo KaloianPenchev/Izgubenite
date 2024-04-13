@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='pictures/fav.png') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/ai.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ai-style.css') }}">
     
     <title>Chatbot</title>
 </head>
@@ -79,13 +79,14 @@
             
             
         <div class="ai_result">
-            <h2>Questions & Answers:</h2>
+            
             
             <ul class="questions_answers">
                 {% for item in questions_answers %}
                     <li>
-                        <p><strong>Question {{ loop.index }}:</strong> {{ item['question'] }}</p>
-                        <p><strong>Answer:</strong> {{ item['answer'] }}</p>
+                        <p style="decoration:none;">{{ loop.index }}. {{ item['question'] }}</p><br>
+                        <input type="text" placeholder="Type your answer here..." >
+                        <p>Answer: {{ item['answer'] }}</p>
                     </li>
                 {% endfor %}
             </ul>

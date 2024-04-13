@@ -170,8 +170,34 @@ header a{
 }
 .ai_result{
     position: absolute;
-    margin-top: 10%;
-    margin-left: 60%;
+    top: 10%;
+    left: 50%;
+    width: 50%;
+    height: 80%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+ .questions_answers{
+    height: auto;
+    overflow-y: auto;
+    width: 70%;
+    background-color: #F3F4F6;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.questions_answers li{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    padding: 2%;
+    border-radius: 0.5vw;
 }
 .button{
     position: absolute;
