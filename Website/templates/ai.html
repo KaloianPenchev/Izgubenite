@@ -46,9 +46,9 @@
                                 <h3>Difficulty: </h3>
                             </div>
                                 <select id="difficulty" name="difficulty" class="option">
-                                <option value="easy">Easy</option>
-                                <option value="medium">Medium</option>
-                                <option value="hard">Hard</option>
+                                    <option value="easy">Easy</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="hard">Hard</option>
                                 </select>
                         </div>
                     </div>
@@ -79,13 +79,13 @@
             
         <div class="ai_result">
             <h2>Questions:</h2>
-            <ul>
+            <ul class="questions">
             {% for question in questions %}
                 <li class="question">{{ question }}</li>
             {% endfor %}
             </ul>
             <h2>Answers:</h2>
-            <ul>
+            <ul class=>
             {% for answer in answers %}
                 <li class="answer">{{ answer }}</li>
             {% endfor %}

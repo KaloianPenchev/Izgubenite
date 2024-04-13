@@ -87,11 +87,6 @@ header a{
     height: 50%;
     width: 100%;
 }
-#choose .option{
-    border-radius: 0.5vw;
-    margin-top: 3%;
-    border-color:rgba(0, 0, 0, 0.153);
-}
 #left-choose{
     position: absolute;
     left:0;
@@ -124,7 +119,7 @@ header a{
     height: 50%;
 }
 #quest-type,#diff{
-    margin-right: 8%;
+    margin-right: 7.5%;
 }
 #lang,#max{
     margin-left: 15%;
@@ -132,6 +127,16 @@ header a{
 .option{
     width: 100%;
     height: 30%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 1.25vw;
+    border-radius: 0.5vw;
+    margin-top: 3%;
+    border-color:rgba(0, 0, 0, 0.153);
+}
+.option:focus{
+    outline: none;
+    border-color:rgba(0, 0, 0, 0.153);
 }
 #context {
     width: 80%;
@@ -156,6 +161,10 @@ header a{
     border-radius: 0.5vw;
     border-color:rgba(0, 0, 0, 0.153);
 }
+.text textarea:focus{
+    outline: none;
+    border-color:rgba(0, 0, 0, 0.153);
+}
 .text h2{
     margin-left: 8%;
 }
@@ -171,7 +180,8 @@ header a{
     height: 15%;
     width: 82%;
     margin-left: 8%;
-    background-color: mediumslateblue;
+    background-color: #6366F1;
+    border: none;
     border-radius: 0.5vw;
     color: white;
     font-size: 1.5vw;
