@@ -84,9 +84,11 @@
             <ul class="questions_answers">
                 {% for item in questions_answers %}
                     <li>
-                        <p style="decoration:none;">{{ loop.index }}. {{ item['question'] }}</p><br>
-                        <input type="text" placeholder="Type your answer here..." >
-                        <p>Answer: {{ item['answer'] }}</p>
+                        <p>{{ loop.index }}. {{ item['question'] }}</p>
+                        <br>
+                        <textarea placeholder="Type your answer here..." ></textarea>
+                        <button class="revansw">Reveal Answer</button>
+                        <!-- <p>Answer: {{ item['answer'] }}</p> -->
                     </li>
                 {% endfor %}
             </ul>

@@ -183,21 +183,57 @@ header a{
 
  .questions_answers{
     height: auto;
+    max-height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     width: 70%;
     background-color: #F3F4F6;
     padding: 1%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .questions_answers li{
-    height: 100%;
-    width: 100%;
+    margin-top: 1%;
+    height: auto;
+    min-height: 12vw;
+    width: 96%;
     background-color: white;
     padding: 2%;
     border-radius: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: flex-start;
+    font-size: 1.5vw;
+}
+li textarea{
+    width: 99%;
+    height: auto;
+    word-wrap:break-word;
+    overflow-y: hidden;
+    min-height: 50%;
+    border-radius: 0.5vw;
+    padding: 1%;
+    resize: none;
+    font-size: 1.5vw;
+    border-color:rgba(0, 0, 0, 0.153);
+}
+li textarea:focus{
+    outline: none;
+    border-color:rgba(0, 0, 0, 0.153);
+}
+.revansw{
+    height: 18%;
+    width: 35%;
+    font-size: 1.5vw;
+    margin-top: 1%;
+    color: white;
+    background-color: #6366F1;
+    border-radius: 0.5vw;
+    border: none;
+    padding: 1%;
 }
 .button{
     position: absolute;
