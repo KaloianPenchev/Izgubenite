@@ -24,6 +24,7 @@
         <div class="feedbacks">
             {% for feedback in feedbacks[::-1]%}
                 <div class="field">
+                    <div class="feedback-grade">
                     {% if feedback.grade == "3"%}
                     <div class="green-block"></div>
                     {% elif feedback.grade == "2"%}
@@ -31,6 +32,7 @@
                     {% elif feedback.grade == "1"%}
                     <div class="red-block"></div>
                     {% endif %}
+                    </div>
                     <div class="feedback-field">
                         <button class="feedback">
                             <p>{{ feedback.message }}</p>
