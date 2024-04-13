@@ -9,7 +9,7 @@
 
     </head>
 
-<script src="/Testing2/app.js"></script>
+
     <body>
         <header>
             <div class="div-left">
@@ -26,44 +26,46 @@
                 
             </div-right>
         </header>
-        <div class="feedback-histogram">
-            {% for feedback in feedbacks %}
-                {% if feedback.grade == "3"%}
-                    <div class="green-block"></div>
-                {% elif feedback.grade == "2"%}
-                    <div class="yellow-block"></div>
-                {% elif feedback.grade == "1"%}
-                    <div class="red-block"></div>
-                {% endif %}
-            {% endfor %}
-        </div>
-        <form method="POST">
-            <input type="text" name="feedback" id="feedback" placeholder="feedback">
-            <button href="/feedback" class="btn">
-                <img type="submit" class="img-btn" src="{{ url_for('static', filename='pictures/Add btn.png') }}">
-            </button>
-        </form>
-        <div class="feedbacks">
-            {% for feedback in feedbacks %}
-                {% if feedback.grade == "3"%}
-                    <section class="feedback_outstanding">
-                        <p>{{ feedback.message }}</p>
-                    </section>
-                {% elif feedback.grade == "2"%}
-                    <section class="feedback_neutral">
-                        <p>{{ feedback.message }}</p>
-                    </section>
-                {% elif feedback.grade == "1"%}
-                    <section class="feedback_need_improvement">
-                        <p>{{ feedback.message }}</p>
-                    </section>
-                {% else %}
-                    <section class="feedback">
-                        <p>{{ feedback.message }}</p>
-                    </section>
-                {% endif %}
-            {% endfor %}
-        </div>
+        <section class="main">
+            <div class="feedback-histogram">
+                {% for feedback in feedbacks %}
+                    {% if feedback.grade == "3"%}
+                        <div class="green-block"></div>
+                    {% elif feedback.grade == "2"%}
+                        <div class="yellow-block"></div>
+                    {% elif feedback.grade == "1"%}
+                        <div class="red-block"></div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <form method="POST">
+                <input type="text" name="feedback" id="feedback" placeholder="Type you feedback...">
+                <button href="/feedback" class="btn">
+                    <img type="submit" class="img-btn" src="{{ url_for('static', filename='pictures/Add btn.png') }}">
+                </button>
+            </form>
+            <div class="feedbacks">
+                {% for feedback in feedbacks %}
+                    {% if feedback.grade == "3"%}
+                        <section class="feedback_outstanding">
+                            <p>{{ feedback.message }}</p>
+                        </section>
+                    {% elif feedback.grade == "2"%}
+                        <section class="feedback_neutral">
+                            <p>{{ feedback.message }}</p>
+                        </section>
+                    {% elif feedback.grade == "1"%}
+                        <section class="feedback_need_improvement">
+                            <p>{{ feedback.message }}</p>
+                        </section>
+                    {% else %}
+                        <section class="feedback">
+                            <p>{{ feedback.message }}</p>
+                        </section>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
         <footer>
             <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
         </footer>
