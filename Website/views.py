@@ -30,10 +30,16 @@ def home():
 def reaction(student_email):
     if request.method == 'POST':
         grade = request.form.get('grade')
+        comment = request.form.get('comment')
         if grade and grade != "N/A":
             id = request.form.get('ID')
             feedback = Feedback.query.filter_by(id=id).first()
             feedback.grade = grade
+            db.session.commit()
+        elif comment and comment != "N/A":
+            id = request.form.get('ID')
+            feedback = Feedback.query.filter_by(id=id).first()
+            feedback.comment = comment
             db.session.commit()
     feedbacks = Feedback.query.filter_by(student_email=student_email).all()
     return render_template("teacher-feedback.html", user=current_user, student_email=student_email, feedbacks=feedbacks)
@@ -104,4 +110,3 @@ def calculate_similarity(question1, question2):
     vectors = vectorizer.fit_transform([question1, question2])
     similarity = cosine_similarity(vectors[0], vectors[1])
     return similarity[0][0]
-

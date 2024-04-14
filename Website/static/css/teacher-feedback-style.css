@@ -252,6 +252,6 @@ footer{
 footer .contact{
     font-size: 2vw;
 }
-.feedbackIdSpace {
+.feedbackIdSpaceG, .feedbackIdSpaceC {
     visibility: hidden;
 }

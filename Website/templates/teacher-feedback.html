@@ -48,15 +48,16 @@
                                     <option class="gradeOption" value="1">Need improvement</option>
                                 </div>
                             </select>
-                            <input class="feedbackIdSpace" type="text" name="ID" value="{{feedback.id}}">
+                            <input class="feedbackIdSpaceG" type="text" name="ID" value="{{feedback.id}}">
                             <button type="submit" class="button">
                                 <h1 class="button-text">Confirm</h1>
                             </button>
                         </form>
                     {% else %}
-                        <form class="form" method="POST" action="/comment/{{ student_email }}">
+                        <form class="form" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
                             <h2>Comment</h2>
                             <input type="text" placeholder="Type your comment..." name="comment">
+                            <input class="feedbackIdSpaceC" type="text" name="ID" value="{{feedback.id}}">
                             <button type="submit" class="button">
                                 <h1 class="button-text">Confirm</h1>
                             </button>
