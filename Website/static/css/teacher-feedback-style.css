@@ -119,6 +119,7 @@ header a{
     align-items: flex-end;
     height: 3vw;
     width: 50%;
+    bottom: 10%;
 }
 .field{
     display: flex;
@@ -168,6 +169,17 @@ header a{
     overflow-x:hidden;
     transition: 0.4s;
 }
+
+.plus-img{
+    position: relative;
+    margin-left: auto;
+    margin-top: auto;
+    width: 5%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
 .feedback.active, .feedback:hover {
     background-color: #ccc;
   }
@@ -176,19 +188,19 @@ header a{
     font-size: 20px;
     padding-left: 5px;
 }
-.comment.active, .comment:hover {
-    background-color: #ccc;
-  }
-
-.form{
+.form {
     display: none;
+    position: relative;
     width: 100%;
+    margin-right: 0%;
+    margin-left: auto; /* Push the form to the right */
     height: auto;
     justify-content: center;
     align-items: center;
     background-color: white;
     overflow: hidden;
 }
+
 .dropbtn {
     background-color: #36517C;
     border-radius: 3vw;

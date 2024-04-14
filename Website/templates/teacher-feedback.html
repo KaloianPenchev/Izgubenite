@@ -34,8 +34,9 @@
                 {% endif %}
                 </div>
                 <div class="feedback-field">
-                    <button class="feedback" onclick="check()">
+                    <button class="feedback" onclick="toggleCommentMenu(this)">
                         <p>{{ feedback.message }}</p>
+                        <img class="plus-img" src="{{ url_for('static', filename='pictures/plus.png') }}">
                     </button>
                     {% if feedback.grade == "N/A" %}
                         <form class="form" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
@@ -52,42 +53,36 @@
                                 <h1 class="button-text">Confirm</h1>
                             </button>
                         </form>
+                    {% else %}
+                        <form class="form" method="POST" action="/comment/{{ student_email }}">
+                            <h2>Comment</h2>
+                            <input type="text" placeholder="Type your comment..." name="comment">
+                            <button type="submit" class="button">
+                                <h1 class="button-text">Confirm</h1>
+                            </button>
+                        </form>
                     {% endif %}
-                </div>
-                <div class="comment-field" style="display: none;">
-                    <form class="form" method="POST" action="/comment/{{ student_email }}">
-                        <h2>Comment</h2>
-                        <input type="text" placeholder="Type your comment..." name="comment">
-                        <button type="submit" class="button">
-                            <h1 class="button-text">Confirm</h1>
-                        </button>
-                    </form>
                 </div>
             </div>
         {% endfor %}
     </div>
-    <script>
-        
-        var acc = document.getElementsByClassName("feedback");
-        var i;
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                /* Toggle between adding and removing the "active" class,
-                to highlight the button that controls the panel /
-                this.classList.toggle("active");
 
-                / Toggle between hiding and showing the active panel */
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
-    </script>
     <footer>
         <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
     </footer>
+
+    <script>
+        function toggleCommentMenu(button) {
+            var panel = button.nextElementSibling;
+            var img = button.querySelector('.plus-img');
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+                img.src = "{{ url_for('static', filename='pictures/plus.png') }}";
+            } else {
+                panel.style.display = "block";
+                img.src = "{{ url_for('static', filename='pictures/minus.png') }}";
+            }
+        }
+    </script>
 </body>
 </html>
