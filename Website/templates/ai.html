@@ -83,27 +83,34 @@
             
             <ul class="questions_answers">
                 {% for item in questions_answers %}
-                    <li>
-                        <p>{{ loop.index }}. {{ item['question'] }}</p>
-                        <br>
-                        <textarea placeholder="Type your answer here..." ></textarea>
-                        <button class="revansw">Reveal Answer</button>
-                        <!-- <p>Answer: {{ item['answer'] }}</p> -->
-                    </li>
+                <li>
+                    <p>{{ loop.index }}. {{ item['question'] }}</p>
+                    <br>
+                    <textarea placeholder="Type your answer here..."></textarea>
+                    <button class="revansw" onclick="toggleAnswer(this)">Reveal Answer</button>
+                    <p class="ans" style="display: none;">{{ item['answer'] }}</p> 
+                </li>
                 {% endfor %}
             </ul>
+            
         </div>
         
-        
-        
-        
-    </div>    
+        <script>
+            function toggleAnswer(button) {
+                var answer = button.nextElementSibling; 
+                if (answer.style.display === "none") {
+                    answer.style.display = "block"; 
+                    button.textContent = "Hide Answer"; 
+                } else {
+                    answer.style.display = "none"; 
+                    button.textContent = "Reveal Answer"; 
+                }
+            }
+        </script>
     
-    
-    
-    <footer>
-        <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
-    </footer>
+        <footer>
+            <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
+        </footer>
     
 </body>
 </html>

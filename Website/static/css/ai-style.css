@@ -235,6 +235,9 @@ li textarea:focus{
     border: none;
     padding: 1%;
 }
+
+
+
 .button{
     position: absolute;
     top: 200%;
@@ -251,17 +254,19 @@ li textarea:focus{
 .button:hover{
     opacity: 0.5;
 }
-footer{
-    position: absolute;
-    top: 90%;
-    left: 0%;
-    height: 10%;
+footer {
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
     width: 100%;
+    height: 10%;
     background-color: #D9D9D9;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
 footer .contact{
     font-size: 2vw;
     background-color: #D9D9D9;
