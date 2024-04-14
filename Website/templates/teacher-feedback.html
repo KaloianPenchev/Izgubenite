@@ -53,7 +53,7 @@
                                 <h1 class="button-text">Confirm</h1>
                             </button>
                         </form>
-                    {% else %}
+                    {% elif feedback.comment == "N/A" %}
                         <form class="form" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
                             <h2>Comment</h2>
                             <input type="text" placeholder="Type your comment..." name="comment">
@@ -62,6 +62,10 @@
                                 <h1 class="button-text">Confirm</h1>
                             </button>
                         </form>
+                    {% else %}
+                        <div class="comment" style="display: none;">
+                            <p>{{ feedback.comment }}</p>
+                        </div>
                     {% endif %}
                 </div>
             </div>
