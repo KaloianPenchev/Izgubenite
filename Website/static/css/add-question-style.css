@@ -80,8 +80,8 @@ header a{
 .main{
     position: absolute;
     width: 80%;
-    height: 60%;
-    top: 20%;
+    height: 70%;
+    top: 15%;
     left: 10%;
     background-color: #D9D9D9;
     border-radius: 3vw;
@@ -96,7 +96,7 @@ header a{
     height: 10%;
     font-size: 2vw;
     word-wrap: break-word;
-    border: solid 0.3vw #000000;
+    border: solid 0.2vw #000000;
     background-color: #D9D9D9;
     border-radius: 3vw;
     padding-left: 0.9vw;
@@ -121,28 +121,56 @@ header a{
     align-items: center;
     height: 40%;
 }
-#aqr{
+.option-input{
     width: 50%;
     background-color: #D9D9D9;
     height: 80%;
     font-size: 1.5vw;
     border-radius: 3vw;
-    border: solid 0.3vw black;
+    border: solid 0.2vw black;
+    padding-left: 0.9vw;
+}
+
+.right{
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    outline: 1vw;
+    border: 1vw;
+}
+
+
+.explanation{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+    margin: 1%;
+}
+.explanation input{
+    width: 100%;
+    background-color: #D9D9D9;
+    height: 100%;
+    font-size: 1.5vw;
+    border-radius: 3vw;
+    border: solid 0.2vw black;
     padding-left: 0.9vw;
 }
 
 form .btn{
     position: absolute;
-    top:80%;
-    left: 40%;
-    width: 20%;
-    height: 10%;
+    top: 83%;
+    left: 38%;
+    width: 24%;
+    height: 14%;
     background-color:#36517C;
     border: 0.3vw solid rgba(108, 160, 237, 0.4);
     font-size: 1.5vw;
     font-weight: 700;
     color:white;
     border-radius: 3vw;
+    font-size: 3vw;
 
 }
 

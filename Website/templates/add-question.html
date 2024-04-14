@@ -28,12 +28,14 @@
          <form>
             <input type="text" id="que" placeholder="Question">
             <div class="options">
-                <div class="option"><label>A:</label><input type="text" id="aqr" placeholder="option 1"></div>
-                <div class="option"><label>B:</label><input type="text" id="aqr1" placeholder="option 2"></div>
-                <div class="option"><label>C:</label><input type="text" id="aqr2" placeholder="option 3"></div>
-                <div class="option"><label>D:</label><input type="text" id="aqr3" placeholder="option 4"></div>
-                <div class="option"><label>ANS</label><input type="text" id="aqr4" placeholder="option 4"></div>
+                <div class="option"><label>A:</label><input type="text" id="aqr" placeholder="option 1" class="option-input"><input type="checkbox" class="right"></div>
+                <div class="option"><label>B:</label><input type="text" id="aqr1" placeholder="option 2" class="option-input"><input type="checkbox" class="right"></div>
+                <div class="option"><label>C:</label><input type="text" id="aqr2" placeholder="option 3" class="option-input"><input type="checkbox" class="right"></div>
+                <div class="option"><label>D:</label><input type="text" id="aqr3" placeholder="option 4" class="option-input"><input type="checkbox" class="right"></div>
+                <div class="explanation"><input type="text" id="aqr4" placeholder="Your explanation"></div>
+                
             </div>
+            
             <button type="submit" class="btn" onclick="addQuestion(0, q, w, e, r,t, y,'GDH')">Add</button>
          </form>
     </div>
