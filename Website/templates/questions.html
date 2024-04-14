@@ -44,7 +44,7 @@
             <h1 id="testfor" style="font-size: 40px"></h1>
             <h2 id="numOfRightAnswers"></h2>
             <div id="down">
-                <button id="restart---button" onclick="startOver()">Отначало</button>
+                
                 <button id="btn" onclick="whenStart()">Продължи</button>
             </div>
         </div>
@@ -82,11 +82,11 @@
             let jum = document.getElementById("main");
             jum.style.display = "none";
         }
-        function load(){
-           
-            fetch('http://127.0.0.1:5000/test/0')
-            .then(response => response.json()) // Parse the JSON response
-            .then(data => {
+        
+        function load(){   
+            fetch('{{ url_for('static', filename='arrays.json') }}')
+                .then(response => response.json()) // Parse the JSON response
+                .then(data => {
                 // Access the values from the JSON object
                 questions = data.questions;
                 pos_choisses = data.pos_choisses;
@@ -94,6 +94,7 @@
                 explanations = data.explanations;
 
                 // Now you can use these arrays as needed
+                console.log("DASDFASDD");
                 console.log("Questions:", questions);
                 console.log("Possible Choices:", pos_choisses);
                 console.log("Answers:", answer);
@@ -101,8 +102,8 @@
 
             // Example: Accessing the first question and its choices
             })
-            .catch(error => console.error('Error:', error));
-        }    
+            .catch(error => console.error('Error: dfgdfgdfgfdgfdgfdgdfgfd', error));
+        }
     </script>
 </body>
 </html>
