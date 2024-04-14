@@ -34,43 +34,30 @@
         </form>
         <div class="feedbacks">
             {% for feedback in feedbacks[::-1]%}
-            <button class="feedback" onclick="toggleCommentMenu(this)">
-                <p>{{ feedback.message }}</p>
-                <img class="plus-img" src="{{ url_for('static', filename='pictures/plus.png') }}">
-            </button>
-            <div class="field">
-                <div class="feedback-grade">
-                    {% if feedback.grade == "3"%}
-                        <div class="green-block"></div>
-                    {% elif feedback.grade == "2"%}
-                        <div class="yellow-block"></div>
-                    {% elif feedback.grade == "1"%}
-                        <div class="red-block"></div>
-                    {% endif %}
+                <div class="field">
+                    <div class="feedback-grade">
+                        {% if feedback.grade == "3"%}
+                            <div class="green-block"></div>
+                        {% elif feedback.grade == "2"%}
+                            <div class="yellow-block"></div>
+                        {% elif feedback.grade == "1"%}
+                            <div class="red-block"></div>
+                        {% endif %}
                     </div>
                     <div class="feedback-field">
-                    {% if feedback.grade == "3"%}
-                        <section class="feedback_outstanding">
-                            <p>{{ feedback.message }}</p>
-                        </section>
-                    {% elif feedback.grade == "2"%}
-                        <section class="feedback_neutral">
-                            <p>{{ feedback.message }}</p>
-                        </section>
-                    {% elif feedback.grade == "1"%}
-                        <section class="feedback_need_improvement">
-                            <p>{{ feedback.message }}</p>
-                        </section>
-                    {% else %}
-                        <section class="feedback">
-                            <p>{{ feedback.message }}</p>
-                        </section>
-                    {% endif %}
-                    <div class="comment" style="display: none;">
-                        <p>{{ feedback.comment }}</p>
+                        <button class="feedback" onclick="toggleCommentMenu(this)">
+                            {{ feedback.message }}
+                            {% if feedback.comment != "N/A" %}
+                                <img class="plus-img" src="{{ url_for('static', filename='pictures/plus.png') }}">
+                            {% endif %}
+                        </button>
+                        {% if feedback.comment != "N/A" %}
+                            <div class="comment" style="display: none;">
+                                <p>{{ feedback.comment }}</p>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
-            </div>
             {% endfor %}
         </div>
         <footer>
