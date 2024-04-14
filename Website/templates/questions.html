@@ -7,7 +7,7 @@
     <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='pictures/fav.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/questions-style.css') }}">
 </head>
-<body >
+<body onload="load()">
     <header>
         <div class="div-left">
             <h1>Practicum</h1>
@@ -82,6 +82,27 @@
             let jum = document.getElementById("main");
             jum.style.display = "none";
         }
+        function load(){
+           
+            fetch('http://127.0.0.1:5000/test/0')
+            .then(response => response.json()) // Parse the JSON response
+            .then(data => {
+                // Access the values from the JSON object
+                questions = data.questions;
+                pos_choisses = data.pos_choisses;
+                answer = data.answer;
+                explanations = data.explanations;
+
+                // Now you can use these arrays as needed
+                console.log("Questions:", questions);
+                console.log("Possible Choices:", pos_choisses);
+                console.log("Answers:", answer);
+                console.log("Explanations:", explanations);
+
+            // Example: Accessing the first question and its choices
+            })
+            .catch(error => console.error('Error:', error));
+        }    
     </script>
 </body>
 </html>

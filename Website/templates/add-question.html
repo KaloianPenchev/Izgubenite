@@ -48,7 +48,19 @@
         let r = document.getElementById("aqr2").value;
         let t = document.getElementById("aqr3").value;
         let y = document.getElementById("aqr4").value;
-        console.log(questions[0].length);
+        console.log(pos_choisses);
+        fetch('/add-question', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({}) // You can pass some data here if needed
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Modified JSON data:", data);
+        })
+        .catch(error => console.error('Error:', error));
     </script>
 </body>
 </html>

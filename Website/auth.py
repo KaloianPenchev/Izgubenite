@@ -1,9 +1,9 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify  # Add jsonify import
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
-
+import json
 auth = Blueprint('auth', __name__)
 
 @auth.route('/')
@@ -101,3 +101,25 @@ def test(category):
 @login_required
 def addtest():
     return render_template('add-question.html', user=current_user)
+
+@auth.route('/add-question', methods=['POST', 'GET'])
+@login_required
+def modify_json_and_render():
+    try:
+        file_path = 'Website/static/arrays.json'
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        # Modify the data (for example, add a new array)
+        data['pos_choisses'][2].append(["1", "1", "1", "1"])
+
+        # Write the modified data back to the file
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2)
+
+        # Return the modified data as JSON response
+        return jsonify(data)
+    except Exception as e:
+        print("Error:", e)
+        response = {'error': str(e)}
+        return jsonify(response)
