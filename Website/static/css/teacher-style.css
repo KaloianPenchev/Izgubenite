@@ -6,12 +6,13 @@
 }
 
 header {
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 10%;
     width: 100%;
     background-color: #36517C;
+    z-index: 10;
 }
 .div-left {
     position: absolute;
@@ -28,6 +29,28 @@ header {
     font-size: 3vw;
     margin-left: 10%;
 }
+
+.div-mid{
+    position: absolute;
+    left: 40%;
+    width: 40%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div-mid h1{
+    width: 100%;
+    color: white;
+}
+.div-mid a{
+    width: 40%;
+}
+
+
 #div-right {
     position: absolute;
     display: flex;
@@ -79,10 +102,19 @@ header a{
 
 .page1{
     position: absolute;
-    top: 10px;
+    top: 10%;
     width: 100%;
     height: 100%;
     border-bottom: solid black 0.1vw;
+}
+
+.page2{
+    position: absolute;
+    top: 101%;
+    width: 100%;
+    height: 100%;
+    border-bottom: solid black 0.1vw;
+    
 }
 
 .profilepage{
@@ -227,21 +259,7 @@ header a{
     color: #FFFFFF;
 }
 
-footer{
-    position: absolute;
-    top: 200%;
-    left: 0%;
-    height: 10%;
-    width: 100%;
-    background-color: #D9D9D9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-footer .contact{
-    font-size: 2vw;
-    background-color: #D9D9D9;
-}
+
 #right-side-teachers {
     position: absolute;
     display:flex;
@@ -263,4 +281,55 @@ button:hover{
     justify-content: center;
     font-size: 40px;
     font-family: "Comfortaa", sans-serif;
+}
+
+
+
+footer{
+    position: absolute;
+    top: 200%;
+    height: 30%;
+    width: 100%;
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+
+}
+.footerpic{
+    margin-top: 1.5%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30%;
+    width: 30%;
+}
+footer h1, footer h2{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.80vw;
+    background-color: #D9D9D9;
+}
+.heading {
+    font-size: 4vw;
+}
+footer h2{
+    font-size: 1vw;
+    margin-top: 0.3%;
+    margin-bottom: 0.6%;
+}
+.idk{
+    width:80%;
+    height: auto;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-evenly;
+    background-color: #D9D9D9;
+    font-size: 0.90vw;
+    margin-bottom: 0.6%;
+}
+.idk h1,.idk u{
+    background-color: #D9D9D9;
+    font-size: 2vw;
+    display: flex;
+    align-items: center;
 }
