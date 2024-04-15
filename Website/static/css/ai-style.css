@@ -194,9 +194,9 @@ header a{
     flex-direction: column;
 }
 
-.questions_answers li{
+.questions_answers .li{
     margin-top: 1%;
-    height: auto;
+    height: fit-content;
     min-height: 12vw;
     width: 96%;
     background-color: white;
@@ -235,8 +235,20 @@ li textarea:focus{
     border: none;
     padding: 1%;
 }
-
-
+.ans{
+    display: none;
+    padding: 1%;
+    margin-top: 1%;
+    height: fit-content;
+    width: 96%;
+    background-color: white;
+    padding: 2%;
+    border-radius: 0.5vw;
+    justify-content:center;
+    align-items:center;
+    font-size: 1.5vw;
+    
+}
 
 .button{
     position: absolute;

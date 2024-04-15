@@ -83,12 +83,14 @@
             
             <ul class="questions_answers">
                 {% for item in questions_answers %}
-                <li>
+                <li class="li">
                     <p>{{ loop.index }}. {{ item['question'] }}</p>
                     <br>
                     <textarea placeholder="Type your answer here..."></textarea>
                     <button class="revansw" onclick="toggleAnswer(this)">Reveal Answer</button>
-                    <p class="ans" style="display: none;">{{ item['answer'] }}</p> 
+                </li>
+                <li style="list-style-type: none;">
+                    <div class="ans"><p>{{ item['answer'] }}</p></div>
                 </li>
                 {% endfor %}
             </ul>
@@ -97,16 +99,17 @@
         
         <script>
             function toggleAnswer(button) {
-                var answer = button.nextElementSibling; 
-                if (answer.style.display === "none") {
-                    answer.style.display = "block"; 
-                    button.textContent = "Hide Answer"; 
+                var answerItem = button.parentNode.nextElementSibling;
+                var answer = answerItem.querySelector('.ans');
+                if (answer.style.display === "none" || answer.style.display === "") {
+                    answer.style.display = "flex";
+                    button.textContent = "Hide Answer";
                 } else {
-                    answer.style.display = "none"; 
-                    button.textContent = "Reveal Answer"; 
+                    answer.style.display = "none";
+                    button.textContent = "Reveal Answer";
                 }
             }
-        </script>
+            </script>
     
         <footer>
             <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
