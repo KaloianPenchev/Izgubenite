@@ -176,9 +176,34 @@ form label{
     font-size: 1.5vw;
 }
 
+.dropdown{
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    background-color: #D9D9D9;
+    width: 15%;
+    height: 10%;
+    border: solid 0.2vw black;
+    border-radius: 2vw;
+    font-size: 1vw;
+    padding: 0.3vw;
+
+    
+}
 
 
-
+.categoryOption{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 50%;
+}
+.options{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 footer{
     position: absolute;

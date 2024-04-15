@@ -26,6 +26,15 @@
     </header>
     <div class="main">
          <form>
+            <select class="dropdown" name="grade" >
+                <option selected disabled>Choose a category</option>
+                <div class="dropdown-content">
+                    <option class="categoryOption" value="1">Алгебра</option>
+                    <option class="categoryOption" value="2">Геометрия</option>
+                    <option class="categoryOption" value="3">История</option>
+                    <option class="categoryOption" value="4">География</option>
+                </div>
+            </select>
             <input type="text" id="que" placeholder="Question">
             <div class="options">
                 <div class="option"><label>A: </label><input type="text" id="aqr" placeholder="Option 1" class="option-input"></div>
