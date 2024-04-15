@@ -22,30 +22,33 @@
             
         </div-right>
     </header>
-    <div class="profilepage">
-        <img class="profilepic" src="{{ url_for('static', filename='pictures/user.png') }}"> 
-        <div class="details">
+    <div class="page1">
+        <div class="profilepage">
+            
+            <img class="profilepic" src="{{ url_for('static', filename='pictures/user.png') }}"> 
+            <div class="details">
             <h1 class="details-text">Role: Teacher</h1>
-            <h1 class="details-text">Name: {{teachername}}</h1>
-            <h1 class="details-text">Email: {{teacheremail}}</h1>
-        </div>
-        <a href="/addtest">
-            <button class="add-test"><h1>Add Question</h1></button>
-         </a>
-        <div id="right-side-teachers">
-            <p id="Need-to-return-feedback">Need to return a feedback?</p>
-            {% for student in students %}
-                {% if student.my_teacher == teachername %}
-                    <button class="button" onclick="clicked('{{student.email}}');" type="submit"><h1 class="details-text">{{student.first_name}}</h1></button>
-                    <script>
-                        function clicked(student_email) {
-                            window.location = `/reactions/${student_email}`;
-                        }
-                    </script>
+                <h1 class="details-text">Name: {{teachername}}</h1>
+                <h1 class="details-text">Email: {{teacheremail}}</h1>
+            </div>
+            <a href="/addtest">
+                <button class="add-test"><h1>Add Question</h1></button>
+            </a>
+            <div id="right-side-teachers">
+                <p id="Need-to-return-feedback">Need to return a feedback?</p>
+                {% for student in students %}
+                    {% if student.my_teacher == teachername %}
+                        <button class="button" onclick="clicked('{{student.email}}');" type="submit"><h1 class="details-text">{{student.first_name}}</h1></button>
+                        <script>
+                            function clicked(student_email) {
+                                window.location = `/reactions/${student_email}`;
+                            }
+                        </script>
                 {% endif %}
             {% endfor %}
+            
+            
         </div>
-
     </div>
     <footer>
         <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
