@@ -26,6 +26,7 @@
     </header>
     <div class="main">
          <form>
+            
             <select class="dropdown" name="grade" >
                 <option selected disabled>Choose a category</option>
                 <div class="dropdown-content">
@@ -48,10 +49,15 @@
             <button type="submit" class="btn" onclick="addQuestion(0, q, w, e, r,t, y,'GDH')">Add</button>
          </form>
     </div>
+    
     <footer>
         <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
     </footer>
+    
+    
     <script src="{{ url_for('static', filename='JS/questions.js') }}"></script>
+    
+    
     <script>
         let q = document.getElementById("que").value;
         let w = document.getElementById("aqr").value;
@@ -73,6 +79,7 @@
         })
         .catch(error => console.error('Error:', error));
     </script>
+
 </body>
 </html>
 {% endblock %}
