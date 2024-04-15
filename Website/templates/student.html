@@ -10,24 +10,25 @@
     <title>Student Home Page</title>
 </head>
 <body style="height: 165vw;">
-    <div class="firstpage">
-        <header>
-            <div class="div-left">
-                <h1 class="header-text">Practicum</h1>
-            </div>
-            <div class="div-mid">
-                
-                <h1 class="button2"><a href="#test-section">Tests</a></h1>
-                <h1 class="button2"><a href="#feedback-section">Feedback</h1></a>
-                <h1 class="button2"><a href="#ai-section" >AI</a></h1>
-            </div>
-            <div-right id="div-right">
-                <a href="/logout">
-                    <button type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
-                </a>
+    
+    <header>
+        <div class="div-left">
+            <h1 class="header-text">Practicum</h1>
+        </div>
+        <div class="div-mid">
+            
+            <h1 class="button2"><a href="#test-section">Tests</a></h1>
+            <h1 class="button2"><a href="#feedback-section">Feedback</h1></a>
+            <h1 class="button2"><a href="#ai-section" >AI</a></h1>
+        </div>
+        <div-right id="div-right">
+            <a href="/logout">
+                <button type="submit" class="button1"><h1 class="menu-text">Log out</h1></button>
+            </a>
             </div-right>
-        </header>
-        <div class="profilepage" id="test-section">
+    </header>
+    <div class="firstpage"  id="test-section">
+        <div class="profilepage">
             <img class="profilepic" src="{{ url_for('static', filename='pictures/user.png') }}"> 
             <div class="details">
                 <h1 class="details-text">Role: Student</h1>

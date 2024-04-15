@@ -25,11 +25,11 @@ header {
     position: sticky;
     top: 0px;
     left: 0px;
-    height: 10%;
+    height: 5%;
     width: 100%;
     background-color: #36517C;
     top: 0;
-    z-index: 1000; 
+    z-index: 1; 
 }
 
 .div-left {
@@ -63,6 +63,9 @@ header {
     background-color: #36517C;
     font-size: 2.5vw;
     font-family: 'Comfortaa',sans-serif;
+}
+.div-mid a{
+    color: white;
 }
 .button2{
     display: flex;
