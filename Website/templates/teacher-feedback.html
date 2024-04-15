@@ -39,7 +39,7 @@
                         <img class="plus-img" src="{{ url_for('static', filename='pictures/plus.png') }}">
                     </button>
                     {% if feedback.grade == "N/A" %}
-                        <form class="form" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
+                        <form style="display: none;" class="form" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
                             <select class="dropdown" name="grade">
                                 <option selected disabled>Choose a reaction</option>
                                 <div class="dropdown-content">
@@ -54,10 +54,9 @@
                             </button>
                         </form>
                     {% elif feedback.comment == "N/A" %}
-                        <form class="form" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
-                            <h2>Comment</h2>
+                        <form  style="display: none;" class="form1" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
+                            <h2 class="comment text">Comment: </h2>
                             <input type="text" placeholder="Type your comment..." name="comment">
-                            <input class="feedbackIdSpaceC" type="text" name="ID" value="{{feedback.id}}">
                             <button type="submit" class="button">
                                 <h1 class="button-text">Confirm</h1>
                             </button>
@@ -80,11 +79,11 @@
         function toggleCommentMenu(button) {
             var panel = button.nextElementSibling;
             var img = button.querySelector('.plus-img');
-            if (panel.style.display === "block") {
+            if (panel.style.display === "flex") {
                 panel.style.display = "none";
                 img.src = "{{ url_for('static', filename='pictures/plus.png') }}";
             } else {
-                panel.style.display = "block";
+                panel.style.display = "flex";
                 img.src = "{{ url_for('static', filename='pictures/minus.png') }}";
             }
         }
