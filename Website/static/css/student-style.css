@@ -22,13 +22,16 @@
     background-color: white;
 }
 header {
-    position: absolute;
+    position: sticky;
     top: 0px;
     left: 0px;
     height: 10%;
     width: 100%;
     background-color: #36517C;
+    top: 0;
+    z-index: 1000; 
 }
+
 .div-left {
     position: absolute;
     display: flex;
@@ -58,7 +61,8 @@ header {
 .div-mid h1{
     color:white;
     background-color: #36517C;
-    font-size: 3vw;
+    font-size: 2.5vw;
+    font-family: 'Comfortaa',sans-serif;
 }
 .button2{
     display: flex;
