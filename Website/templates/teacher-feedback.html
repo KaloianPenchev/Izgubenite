@@ -57,6 +57,7 @@
                         <form  style="display: none;" class="form1" method="POST" onsubmit="window.location = `/reactions/${student_email}`;">
                             <h2 class="comment text">Comment: </h2>
                             <input type="text" placeholder="Type your comment..." name="comment">
+                            <input class="feedbackIdSpaceG" type="text" name="ID" value="{{feedback.id}}">
                             <button type="submit" class="button">
                                 <h1 class="button-text">Confirm</h1>
                             </button>
