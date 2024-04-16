@@ -196,7 +196,11 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-} 
+}
+.msg {
+    font-size: 2vw;
+    text-align: center;
+}
 .feedbacks p{
     font-size: 2vw;
     text-align: center;
