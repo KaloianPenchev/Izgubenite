@@ -16,7 +16,7 @@
                 <h1 class="header-text">Practicum</h1>
             </div>
             <div-right id="div-right">
-                <h1 class="username">User: {{current_user.first_name}}</h1>
+                <h1 class="username"></h1>
                 <a href="/profile_student">
                     <button type="submit" class="button1"><h1 class="menu-text">Profile</h1></button>
                 </a>
@@ -26,12 +26,14 @@
                 
             </div-right>
         </header>
+        
         <form method="POST">
             <input type="text" name="feedback" id="feedback" placeholder="Type you feedback...">
             <button href="/feedback" class="btn">
                 <img type="submit" class="img-btn" src="{{ url_for('static', filename='pictures/Add btn.png') }}">
             </button>
         </form>
+        
         <div class="feedbacks">
             {% for feedback in feedbacks[::-1]%}
                 <div class="field">
@@ -60,9 +62,17 @@
                 </div>
             {% endfor %}
         </div>
+        
         <footer>
-            <h1 class="contact">Contact us: practicum_admin@gmail.com</h1>
+            <div class="idk">
+                <h1><u>Terms of service</u></h1>
+                <h1><u>About us</u></h1>
+                <h1><u>Manage Cookies</u></h1>
+                <h1><u>Privacy policy</u></h1>
+            </div>
+            <h2>Copyright &copy 2024 all rights reserved</h2>
         </footer>
+        
         <script>
             function toggleCommentMenu(button) {
                 var panel = button.nextElementSibling;
@@ -76,5 +86,6 @@
                 }
             }
         </script>
+        
     </body>
 </html>

@@ -17,7 +17,7 @@
         </div>
         <div class="div-mid">
             
-            <h1 class="button2"><a href="#test-section">Tests</a></h1>
+            <h1 class="button2"><a href="#test-section">Test</a></h1>
             <h1 class="button2"><a href="#feedback-section">Feedback</h1></a>
             <h1 class="button2"><a href="#ai-section" >AI</a></h1>
         </div>
@@ -28,66 +28,54 @@
             </div-right>
     </header>
     <div class="firstpage"  id="test-section">
-        <div class="profilepage">
-            <img class="profilepic" src="{{ url_for('static', filename='pictures/user.png') }}"> 
-            <div class="details">
-                <h1 class="details-text">Role: Student</h1>
-                <h1 class="details-text">Name: {{studentname}}</h1>
-                <h1 class="details-text">Email: {{studentemail}}</h1>
-                <h1 class="details-text">Teacher: {{teachername}}</h1>
-            </div>
-        
-            
-            <a href="/chatbot">
-                <button type="submit" class="button"><h1 class="menu-text">Chatbot</h1></button>
-            </a>
-                <div class="tests">
-                    <h1 class="test-text">Choose a test</h1>
-                    <ul class="buttons">
-                        <li>
-                            <button class="button" onclick="window.location.href='/test/0';">
-                                <h1 class="details-text">
-                                    Алгебра
-                                </h1>
-                            </button>
-                        </li>
-                        <li>
-                            <button class="button" onclick="window.location.href='/test/1';">
-                                <h1 class="details-text">
-                                    Геометрия
-                                </h1>
-                            </button>
-                        </li>
-                        <li>
-                            <button class="button" onclick="window.location.href='/test/2';">
-                                <h1 class="details-text">
-                                    История
-                                </h1>
-                            </button>
-                        </li>
-                        <li>
-                            <button class="button" onclick="window.location.href='/test/3';">
-                                <h1 class="details-text">
-                                    География
-                                </h1>
-                            </button>
-                        </li>
-                        
-                    </ul>
-                </div>
-                    <div class="feedback">
-                    
-                    <button onclick="window.location.href='/feedbackpage';" type="submit" class="btn"><h1 class="feedback-text">Feedback page</h1></button>
-                </div>
-            
+        <div class="profilepage">   
+            <ul class="buttons">
+                <li>
+                    <button class="button" onclick="window.location.href='/test/0';">
+                        <h1 class="details-text">
+                            Алгебра
+                        </h1>
+                    </button>
+                </li>
+                <li>
+                    <button class="button" onclick="window.location.href='/test/1';">
+                        <h1 class="details-text">
+                            Геометрия
+                        </h1>
+                    </button>
+                </li>
+                <li>
+                    <button class="button" onclick="window.location.href='/test/2';">
+                        <h1 class="details-text">
+                            История
+                        </h1>
+                    </button>
+                </li>
+                <li>
+                    <button class="button" onclick="window.location.href='/test/3';">
+                        <h1 class="details-text">
+                            География
+                        </h1>
+                    </button>
+                </li>
+                
+            </ul>
         </div>
     </div>
+    
     <div class="secondpage" id="feedback-section">
-
+        <div class="feedback">
+            <button onclick="window.location.href='/feedbackpage';" type="submit" class="btn"><h1 class="feedback-text">Feedback page</h1></button>
+        </div>
     </div>
+    
     <div class="thirdpage" id="ai-section">
+        <a href="/chatbot">
+            <button type="submit" class="button"><h1 class="menu-text">Chatbot</h1></button>
+        </a>
 
     </div>
+    
     <footer>
         <img class="footerpic" src="{{ url_for('static', filename='pictures/footer.png') }}">
         

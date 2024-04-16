@@ -203,6 +203,13 @@ input {
     word-wrap: break-word;
     max-width: 100%;
 }
+.img {
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    width: 60%;
+    height: 80%;
+}
 footer{
     position: absolute;
     top: 90%;
@@ -211,9 +218,23 @@ footer{
     width: 100%;
     background-color: #D9D9D9;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
 }
-footer .contact{
-    font-size: 2vw;
+footer h2{
+    font-size: 0.80vw;
+    background-color: #D9D9D9;
+}
+.idk{
+    width:80%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #D9D9D9;
+    font-size: 0.90vw;
+}
+.idk h1,.idk u{
+    background-color: #D9D9D9;
 }
