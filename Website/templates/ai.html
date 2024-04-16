@@ -27,7 +27,7 @@
         <div id="questions-form">
             <form action="/chatbot" method="post">
                 <div class="text">
-                    <button class="button"  type="submit">Generate</button>
+                    <button class="button2"  type="submit" onclick="toggleAnswer1(this)">Generate</button>
                     <h2>Enter your text</h2>
                     <textarea id="context" placeholder="Type your text..." name="context"></textarea>
                 </div>
@@ -76,9 +76,24 @@
                 </div>
             </form>
         </div>
-            
-            
+        <script>
+            function toggleAnswer(button) {
+                var answerItem = button.parentNode.nextElementSibling;
+                var answer = answerItem.querySelector('.ans');
+                if (answer.style.display === "none" || answer.style.display === "") {
+                    answer.style.display = "flex";
+                    button.textContent = "Hide Answer";
+                } else {
+                    answer.style.display = "none";
+                    button.textContent = "Reveal Answer";
+                }
+            }
+        </script>
         <div class="ai_result">
+            <div class="loading-container">
+                <div class="loading"></div>
+                <div id="loading-text">Waiting for your content</div>
+            </div>
             <ul class="questions_answers">
                 {% for item in questions_answers %}
                 <li class="li">
@@ -92,24 +107,49 @@
                 </li>
                 {% endfor %}
             </ul>
-            
         </div>
-        
         <script>
-            function toggleAnswer(button) {
-                var answerItem = button.parentNode.nextElementSibling;
-                var answer = answerItem.querySelector('.ans');
-                if (answer.style.display === "none" || answer.style.display === "") {
-                    answer.style.display = "flex";
-                    button.textContent = "Hide Answer";
-                } else {
-                    answer.style.display = "none";
-                    button.textContent = "Reveal Answer";
-                }
+            
+            function toggleAnswer1(button) {
+                const loadingContainer = document.querySelector('.loading-container');
+                const loadingText = document.getElementById('loading-text');
+                const questionsAnswers = document.querySelector('.questions_answers');
+                
+                loadingContainer.style.display = 'flex';
+        
+                    
+                loadingText.textContent = 'Loading';
+                window.addEventListener('load', function() {
+                    console.log('2');
+                    console.log('Content loaded');
+                    loadingContainer.style.display = "none";
+                    questionsAnswers.style.display = "flex";
+                });
+
+
             }
-            </script>
+            /*function toggleAnswer1(button){
+                document.addEventListener("DOMContentLoaded", function() {
+                // When the DOM content is loaded
+                    loadingContainer.style.display = 'flex';      
+                    loadingText.textContent = 'Loading';
+                    document.getElementById("loading").style.display = "none"; // Hide the loading message
+                });
+
+                window.onload = function() {
+                // When all content (including images and scripts) is loaded
+                    console.log('1');
+                    loadingContainer.style.display = "none";
+                    questionsAnswers.style.display = "flex";
+                };
+            }*/    
+        </script>
     
-    <footer>
+    </div>
+    
+    
+    
+    <div class="footer">
         <div class="idk">
             <h1><u>Terms of service</u></h1>
             <h1><u>About us</u></h1>
@@ -117,7 +157,7 @@
             <h1><u>Privacy policy</u></h1>
         </div>
         <h2>Copyright &copy 2024 all rights reserved</h2>
-    </footer>
+    </div>
     
 </body>
 </html>
