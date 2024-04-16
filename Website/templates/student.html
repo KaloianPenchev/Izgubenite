@@ -9,8 +9,7 @@
     
     <title>Student Home Page</title>
 </head>
-<body style="height: 165vw;">
-    
+<body style="height: 330vh; width: 100%;">
     <header>
         <div class="div-left">
             <h1 class="header-text">Practicum</h1>
@@ -28,52 +27,57 @@
             </div-right>
     </header>
     <div class="firstpage"  id="test-section">
-        <div class="profilepage">   
-            <ul class="buttons">
-                <li>
-                    <button class="button" onclick="window.location.href='/test/0';">
-                        <h1 class="details-text">
-                            Алгебра
-                        </h1>
-                    </button>
-                </li>
-                <li>
-                    <button class="button" onclick="window.location.href='/test/1';">
-                        <h1 class="details-text">
-                            Геометрия
-                        </h1>
-                    </button>
-                </li>
-                <li>
-                    <button class="button" onclick="window.location.href='/test/2';">
-                        <h1 class="details-text">
-                            История
-                        </h1>
-                    </button>
-                </li>
-                <li>
-                    <button class="button" onclick="window.location.href='/test/3';">
-                        <h1 class="details-text">
-                            География
-                        </h1>
-                    </button>
-                </li>
-                
-            </ul>
-        </div>
+        <p class="test-text">Решавай тестове, разширявай знанията си!</p>
+        <img class="test-img" src="{{ url_for('static', filename='pictures/test.png') }}">         
+        <ul class="buttons">
+            <li>
+                <button class="button" id="buttonA" onclick="window.location.href='/test/0';">
+                    <h1 class="details-text">
+                        Алгебра
+                    </h1>
+                </button>
+            </li>
+            <li>
+                <button class="button" id="buttonB" onclick="window.location.href='/test/1';">
+                    <h1 class="details-text">
+                        Геометрия
+                    </h1>
+                </button>
+            </li>
+            <li>
+                <svg class="arrow" width="38" height="474" viewBox="0 0 38 474" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 0L0.806227 30.0728L35.4469 29.9267L18 0ZM20 474L37.1938 443.927L2.55306 444.073L20 474ZM15.125 29.6377L15.2084 49.3877L21.2083 49.3623L21.125 29.6123L15.125 29.6377ZM15.2917 69.1377L15.375 88.8877L21.375 88.8623L21.2916 69.1123L15.2917 69.1377ZM15.4584 108.638L15.5417 128.388L21.5416 128.362L21.4583 108.612L15.4584 108.638ZM15.625 148.138L15.7084 167.888L21.7083 167.862L21.625 148.112L15.625 148.138ZM15.7917 187.638L15.875 207.388L21.875 207.362L21.7916 187.612L15.7917 187.638ZM15.9584 227.138L16.0417 246.888L22.0416 246.862L21.9583 227.112L15.9584 227.138ZM16.125 266.638L16.2084 286.388L22.2083 286.362L22.125 266.612L16.125 266.638ZM16.2917 306.138L16.375 325.888L22.375 325.862L22.2916 306.112L16.2917 306.138ZM16.4584 345.638L16.5417 365.388L22.5416 365.362L22.4583 345.612L16.4584 345.638ZM16.625 385.138L16.7084 404.888L22.7083 404.862L22.625 385.112L16.625 385.138ZM16.7917 424.638L16.875 444.388L22.875 444.362L22.7916 424.612L16.7917 424.638Z" fill="black"/>
+                </svg>   
+            </li>
+            <li>
+                <button class="button" id="buttonC" onclick="window.location.href='/test/2';">
+                    <h1 class="details-text">
+                        История
+                    </h1>
+                </button>
+            </li>
+            <li>
+                <button class="button" id="buttonD" onclick="window.location.href='/test/3';">
+                    <h1 class="details-text">
+                        География
+                    </h1>
+                </button>
+            </li>
+            
+        </ul>
+
     </div>
     
     <div class="secondpage" id="feedback-section">
-        <div class="feedback">
-            <button onclick="window.location.href='/feedbackpage';" type="submit" class="btn"><h1 class="feedback-text">Feedback page</h1></button>
-        </div>
+        <p class="feedback-text" id="fb-text"> Подобрете обучението си като поискате обратна връзка от учител лесно и бързо!</p>
+        <button onclick="window.location.href='/feedbackpage';" type="submit" class="btn"><h1 class="feedback-text">Обратна връзка</h1></button>
+        <img class="feedback-img" src="{{ url_for('static', filename='pictures/feedback.png') }}">
     </div>
     
     <div class="thirdpage" id="ai-section">
-        <a href="/chatbot">
-            <button type="submit" class="button"><h1 class="menu-text">Chatbot</h1></button>
-        </a>
-
+        <p class="ai-text" id="ai-text">Открийте лесния начин за учене с  нашия Practbot- едно приключение в света на знанието!</p>
+        <button onclick="window.location.href='/chatbot';" type="submit" class="btn1"><h1 class="feedback-text">Practicum bot</h1></button>
+        <img class="ai-img" src="{{ url_for('static', filename='pictures/ai.png') }}">
     </div>
     
     <footer>

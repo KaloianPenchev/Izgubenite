@@ -7,12 +7,11 @@
 
 header {
     position: sticky;
-    top: 0px;
-    left: 0px;
-    height: 3%;
+    top:0;
+    left: 0;
+    height: 10vh;
     width: 100%;
     background-color: #36517C;
-    top: 0;
     z-index: 1; 
 }
 
@@ -47,7 +46,7 @@ header a{
     width: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 .div-mid h1{
@@ -58,6 +57,9 @@ header a{
 }
 .div-mid a{
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .button2{
     display: flex;
@@ -75,7 +77,7 @@ header a{
     left: 75%;
     top: 0%;
     height: 100%;
-    width: 25%;
+    width: 22%;
     justify-content: flex-end;
     align-items: center;
 }
@@ -84,7 +86,7 @@ header a{
     justify-content: center;
     align-items: center;
     background-color: #36517C;
-    border: 0.3vw solid rgba(108, 160, 237, 0.4);
+    border: 0.3vh solid rgba(108, 160, 237, 0.4);
     height: 100%; 
     width: 100%;
     border-radius: 3vw;
@@ -95,24 +97,29 @@ header a{
     opacity: 0.5;
     cursor: pointer;
 }
-
-
 .firstpage{
-    height: 53vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
     width: 100%;
-    background-color: white;
-    border-bottom: #000000 solid 0.1vw;
+    background:linear-gradient(white,lightskyblue);
 }
 .secondpage{
-    height: 53vw;
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    height: 100vh;
     width: 100%;
-    background-color: white;
-    border-bottom: #000000 solid 0.1vw;
+    background:linear-gradient(lightskyblue,dodgerblue);
 }
 .thirdpage{
-    height: 53vw;
+    position: absolute;
+    top: 200vh;
+    left: 0;
+    height: 100vh;
     width: 100%;
-    background-color: white;
+    background:linear-gradient(dodgerblue,#D9D9D9);
 }
 
 .menu-text{
@@ -133,32 +140,71 @@ header a{
     display: flex;
     justify-content: center;
 }
+.arrow{
+    position: absolute;
+    top:0;
+    left:37.5%;
+    width: 25%;
+    height: 100%;
+}
+.test-img{
+    position: absolute;
+    top: 19vh;
+}
 .test-text{
-    margin-top: 5%;
-    text-align: center;
-    font-family: 'Comfortaa',sans-serif;
+    position: absolute;
+    top: 16vh;
+    left: 55%;
     font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 45px;
-    color:black;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
 }
 .buttons{
     position: absolute;
     display: flex;
-    width: 90%;
-    height: 50%;
-    top: 40%;
-    left: 5%;
-    right: 5%;
+    width: 40%;
+    height: 60%;
+    top: 34vh;
+    left: 55%;
     justify-content: space-evenly;
-    flex-wrap: wrap;
     list-style: none;
+}
+#buttonA{
+    position: absolute;
+    top:5%;
+    left:10%;
+    width: 30%!important;
+    height: 11%!important;
+}
+#buttonB{
+    position: absolute;
+    top:20%;
+    right:10%;
+    width: 30%!important;
+    height: 11%!important;
+}
+#buttonC{
+    position: absolute;
+    top:45%;
+    left:10%;
+    width: 30%!important;
+    height: 11%!important;
+}
+#buttonD{
+    position: absolute;
+    top:70%;
+    right:10%;
+    width: 30%!important;
+    height: 11%!important;
 }
 .button{
     list-style: none;
     background-color:#36517C;
-    margin-bottom: 2.083vw;
     border: solid rgba(108, 160, 237, 0.4) 0.417vw;
     border-radius: 3vw;
     width: 13.021vw;
@@ -172,18 +218,27 @@ header a{
     color: #FFFFFF;
 }
 .btn{
+    position: absolute;
+    top: 65vh;
+    left: 15vw;
     list-style: none;
     background-color:#36517C;
     border: solid rgba(108, 160, 237, 0.4) 0.417vw;
     border-radius: 2.24vw;
-    width: 50%;
-    height: 40%;
+    width: 20vw;
+    height: 8vh;
     color: white;
 }
 .btn:hover{
     opacity: 0.5;
 }
-
+#fb-text{
+    position: absolute;
+    left:7.5vw;
+    top:40vh;
+    height: 30vh;
+    width: 35vw;
+}
 .feedback{
     height: 50%;
     width: 50%;
@@ -203,11 +258,58 @@ header a{
     line-height: 2.344vw;
     align-items: center;
     text-align: center;
-    color: #FFFFFF;
 }
-
+.feedback-img{
+    position: absolute;
+    height: 80vh;
+    top:15vh;
+    width: 60vw;
+    left:35vw;
+}
+.btn1{
+    position: absolute;
+    top: 65vh;
+    right: 17.5vw;
+    list-style: none;
+    background-color:#36517C;
+    border: solid rgba(108, 160, 237, 0.4) 0.417vw;
+    border-radius: 2.24vw;
+    width: 20vw;
+    height: 8vh;
+    color: white;
+}
+.btn1:hover{
+    opacity: 0.5;
+}
+.ai-img{
+    position: absolute;
+    height: 50vh;
+    top:25vh;
+    width: 40vw;
+    left:6vw;
+}
+.ai-text{
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2.344vw;
+    line-height: 2.344vw;
+    align-items: center;
+    text-align: center;
+}
+#ai-text{
+    position: absolute;
+    right:10vw;
+    top:40vh;
+    height: 30vh;
+    width: 35vw;
+}
 footer{
-    height: auto;
+    position: absolute;
+    top: 300vh;
+    left: 0;
+    height: 30vh;
+    width: 100%;
     background-color: #D9D9D9;
     display: flex;
     flex-direction: column;
