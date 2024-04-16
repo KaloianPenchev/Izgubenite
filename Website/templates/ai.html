@@ -108,50 +108,29 @@
                 {% endfor %}
             </ul>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-        fetch('/chatbot', {
-            method: 'POST',
-            body: new FormData(document.getElementById('generate-form'))
-        })
-        .then(response => response.json())
-        .then(data => {
-            const loadingContainer = document.querySelector('.loading-container');
-            const aiResult = document.querySelector('.ai_result'); // Get the AI result container
-            loadingContainer.style.display = "none"; // Hide the loading container
-            aiResult.style.display = "block"; // Show the AI result container
-
-            
-            const questionsAnswers = data.questions_answers;
-            const ul = document.querySelector('.questions_answers');
-            questionsAnswers.forEach(item => {
-                const li = document.createElement('li');
-                li.className = 'li';
-                li.innerHTML = `
-                    <p>${item['question']}</p>
-                    <br>
-                    <textarea placeholder="Type your answer here..."></textarea>
-                    <button class="revansw" onclick="toggleAnswer(this)">Reveal Answer</button>
-                    <li style="list-style-type: none;">
-                        <div class="ans"><p>${item['answer']}</p></div>
-                    </li>
-                `;
-                ul.appendChild(li);
-            });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            const loadingText = document.getElementById('loading-text');
-            loadingText.textContent = 'Error loading content';
-            });
-        });
-        </script>
-        
-        
-        
-        </script>
-    
     </div>
+    
+    
+    
+    <script>
+        async function toggleAnswer1(button) {
+    
+            const loadingContainer = document.querySelector('.loading-container');
+            const questionsAnswers = document.querySelector('.questions_answers');
+            loadingContainer.display.style = "flex";
+            questionsAnswers.display.style = "none";
+            console.log("2");
+            await new Promise(resolve => setTimeout(resolve, 5000));
+            console.log("1");
+            loadingContainer.display.style = "none";
+            questionsAnswers.display.style = "flex";
+            
+            
+        }
+    </script>
+    
+    
+    
     
     
     
