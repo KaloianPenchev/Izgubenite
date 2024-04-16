@@ -10,9 +10,10 @@
     display: flex;
     justify-content: end;
     align-items: flex-end;
+    bottom: 0;
     list-style: none;
     z-index: 1;
-    font-size: 32px;
+    font-size: 27px;
     position: absolute;
     margin: 20px;
     padding: 20px;

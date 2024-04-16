@@ -109,40 +109,46 @@
             </ul>
         </div>
         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+        fetch('/chatbot', {
+            method: 'POST',
+            body: new FormData(document.getElementById('generate-form'))
+        })
+        .then(response => response.json())
+        .then(data => {
+            const loadingContainer = document.querySelector('.loading-container');
+            const aiResult = document.querySelector('.ai_result'); // Get the AI result container
+            loadingContainer.style.display = "none"; // Hide the loading container
+            aiResult.style.display = "block"; // Show the AI result container
+
             
-            function toggleAnswer1(button) {
-                const loadingContainer = document.querySelector('.loading-container');
-                const loadingText = document.getElementById('loading-text');
-                const questionsAnswers = document.querySelector('.questions_answers');
-                
-                loadingContainer.style.display = 'flex';
+            const questionsAnswers = data.questions_answers;
+            const ul = document.querySelector('.questions_answers');
+            questionsAnswers.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'li';
+                li.innerHTML = `
+                    <p>${item['question']}</p>
+                    <br>
+                    <textarea placeholder="Type your answer here..."></textarea>
+                    <button class="revansw" onclick="toggleAnswer(this)">Reveal Answer</button>
+                    <li style="list-style-type: none;">
+                        <div class="ans"><p>${item['answer']}</p></div>
+                    </li>
+                `;
+                ul.appendChild(li);
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            const loadingText = document.getElementById('loading-text');
+            loadingText.textContent = 'Error loading content';
+            });
+        });
+        </script>
         
-                    
-                loadingText.textContent = 'Loading';
-                window.addEventListener('load', function() {
-                    console.log('2');
-                    console.log('Content loaded');
-                    loadingContainer.style.display = "none";
-                    questionsAnswers.style.display = "flex";
-                });
-
-
-            }
-            /*function toggleAnswer1(button){
-                document.addEventListener("DOMContentLoaded", function() {
-                // When the DOM content is loaded
-                    loadingContainer.style.display = 'flex';      
-                    loadingText.textContent = 'Loading';
-                    document.getElementById("loading").style.display = "none"; // Hide the loading message
-                });
-
-                window.onload = function() {
-                // When all content (including images and scripts) is loaded
-                    console.log('1');
-                    loadingContainer.style.display = "none";
-                    questionsAnswers.style.display = "flex";
-                };
-            }*/    
+        
+        
         </script>
     
     </div>
