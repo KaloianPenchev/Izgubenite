@@ -1,5 +1,5 @@
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
-from flask import Blueprint, render_template, request, session, jsonify
+from flask import Blueprint, render_template, request, session
 from flask_login import login_required, current_user
 from .models import Feedback
 from . import db
@@ -77,10 +77,7 @@ def ai():
 
         data = [{'question': q, 'answer': a} for q, a in zip(questions, answers) if q]  
 
-        return jsonify({'questions_answers': data})
-
-    
-    return render_template('ai.html')
+    return render_template('ai.html', questions_answers=data)
 
     
 def calculate_similarity(question1, question2):
