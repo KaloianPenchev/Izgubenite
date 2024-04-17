@@ -9,7 +9,7 @@
     
     <title>Chatbot</title>
 </head>
-<body onload="pl()">
+<body onload="loadingScreen()">
     <header>
         <div class="div-left">
             <h1 class="header-text">Practicum</h1>
@@ -27,7 +27,7 @@
         <div id="questions-form">
             <form action="/chatbot" method="post">
                 <div class="text">
-                    <button class="button2"  id="btn" type="submit" >Generate</button>
+                    <button class="button2"  id="btn" type="submit" onclick="loading()">Generate</button>
                     <h2>Enter your text</h2>
                     <textarea id="context" placeholder="Type your text..." name="context"></textarea>
                 </div>
@@ -82,7 +82,7 @@
                 <div class="loading"></div>
                 <div id="loading-text">Waiting for your content</div>
             </div> 
-            <ul class="questions_answers">
+            <ul class="questions_answers" >
                 {% for item in questions_answers %}
                 <li class="li">
                     <p>{{ loop.index }}. {{ item['question'] }}</p>
@@ -98,19 +98,9 @@
         </div>
     </div>
     
+    
     <script>
-
         function toggleAnswer(button) {
-
-            var loadingContainers = document.getElementsByClassName("loading-container");
-            var questionAnswers = document.getElementsByClassName("questions_answers");
-            for (var i = 0; i < loadingContainers.length; i++) {
-                loadingContainers[i].style.display = "flex";
-            }
-            for(var i = 0; i < questionAnswers.lenth; i++){
-                questionAnswers[i].style.display = "none";
-            }
-
             var answerItem = button.parentNode.nextElementSibling;
             var answer = answerItem.querySelector('.ans');
             if (answer.style.display === "none" || answer.style.display === "") {
@@ -121,47 +111,42 @@
                 button.textContent = "Reveal Answer";
             }
         }
-        /*function ple(){
+    </script>
+    
+    
+    <script>
+        function loadingScreen(){
             var loadingContainers = document.getElementsByClassName("loading-container");
             var questionAnswers = document.getElementsByClassName("questions_answers");
             var lis = document.getElementsByClassName("li");
-            if(lis.length === 0){
-                for (var i = 0; i < loadingContainers.length; i++) {
-                    loadingContainers[i].style.display = "none";
-                }
-                for(var i = 0; i < questionAnswers.lenth; i++){
-                    questionAnswers[i].style.display = "flex";
-                }
-            }else{
-                for (var i = 0; i < loadingContainers.length; i++) {
-                    loadingContainers[i].style.display = "flex";
-                }
-                for(var i = 0; i < questionAnswers.lenth; i++){
-                    questionAnswers[i].style.display = "none";
-                }   
-                
-            }
-        }*/
-        function pl(){
-            var loadingContainers = document.getElementsByClassName("loading-container");
-            var questionAnswers = document.getElementsByClassName("questions_answers");
-            var lis = document.getElementsByClassName("li");
+            var loadingTexts = document.querySelectorAll("#loading-text");
+            
+            
             if(lis.length === 0){
                 for (var i = 0; i < loadingContainers.length; i++) {
                     loadingContainers[i].style.display = "flex";
                 }
-                for(var i = 0; i < questionAnswers.lenth; i++){
+                for(var i = 0; i < questionAnswers.length; i++){
                     questionAnswers[i].style.display = "none";
                 }   
             }else{
+                loading();
                 for (var i = 0; i < loadingContainers.length; i++) {
                     loadingContainers[i].style.display = "none";
                 }
-                for(var i = 0; i < questionAnswers.lenth; i++){
+                for(var i = 0; i < questionAnswers.length; i++){
                     questionAnswers[i].style.display = "flex";
                 }
             }
         }
+
+       function loading(){
+            var loadingTexts = document.querySelectorAll("#loading-text");
+            for (var i = 0; i < loadingTexts.length; i++) {
+                loadingTexts[i].textContent = "Loading..."; 
+            }
+        }
+
     </script>
     
     
