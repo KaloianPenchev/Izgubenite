@@ -9,7 +9,7 @@
     
     <title>Chatbot</title>
 </head>
-<body>
+<body onload="pl()">
     <header>
         <div class="div-left">
             <h1 class="header-text">Practicum</h1>
@@ -76,31 +76,19 @@
                 </div>
             </form>
         </div>
-        <script>
-            function toggleAnswer(button) {
-                var answerItem = button.parentNode.nextElementSibling;
-                var answer = answerItem.querySelector('.ans');
-                if (answer.style.display === "none" || answer.style.display === "") {
-                    answer.style.display = "flex";
-                    button.textContent = "Hide Answer";
-                } else {
-                    answer.style.display = "none";
-                    button.textContent = "Reveal Answer";
-                }
-            }
-        </script>
+        
         <div class="ai_result">
-            <!-- <div class="loading-container" > 
+            <div class="loading-container" > 
                 <div class="loading"></div>
                 <div id="loading-text">Waiting for your content</div>
-            </div> -->
+            </div> 
             <ul class="questions_answers">
                 {% for item in questions_answers %}
                 <li class="li">
                     <p>{{ loop.index }}. {{ item['question'] }}</p>
                     <br>
                     <textarea placeholder="Type your answer here..."></textarea>
-                    <button class="revansw" onclick="toggleAnswer(this)">Reveal Answer</button>
+                    <button class="revansw" onclick="toggleAnswer(this); ">Reveal Answer</button>
                 </li>
                 <li style="list-style-type: none;">
                     <div class="ans"><p>{{ item['answer'] }}</p></div>
@@ -111,7 +99,69 @@
     </div>
     
     <script>
-        
+
+        function toggleAnswer(button) {
+
+            var loadingContainers = document.getElementsByClassName("loading-container");
+            var questionAnswers = document.getElementsByClassName("questions_answers");
+            for (var i = 0; i < loadingContainers.length; i++) {
+                loadingContainers[i].style.display = "flex";
+            }
+            for(var i = 0; i < questionAnswers.lenth; i++){
+                questionAnswers[i].style.display = "none";
+            }
+
+            var answerItem = button.parentNode.nextElementSibling;
+            var answer = answerItem.querySelector('.ans');
+            if (answer.style.display === "none" || answer.style.display === "") {
+                answer.style.display = "flex";
+                button.textContent = "Hide Answer";
+            } else {
+                answer.style.display = "none";
+                button.textContent = "Reveal Answer";
+            }
+        }
+        /*function ple(){
+            var loadingContainers = document.getElementsByClassName("loading-container");
+            var questionAnswers = document.getElementsByClassName("questions_answers");
+            var lis = document.getElementsByClassName("li");
+            if(lis.length === 0){
+                for (var i = 0; i < loadingContainers.length; i++) {
+                    loadingContainers[i].style.display = "none";
+                }
+                for(var i = 0; i < questionAnswers.lenth; i++){
+                    questionAnswers[i].style.display = "flex";
+                }
+            }else{
+                for (var i = 0; i < loadingContainers.length; i++) {
+                    loadingContainers[i].style.display = "flex";
+                }
+                for(var i = 0; i < questionAnswers.lenth; i++){
+                    questionAnswers[i].style.display = "none";
+                }   
+                
+            }
+        }*/
+        function pl(){
+            var loadingContainers = document.getElementsByClassName("loading-container");
+            var questionAnswers = document.getElementsByClassName("questions_answers");
+            var lis = document.getElementsByClassName("li");
+            if(lis.length === 0){
+                for (var i = 0; i < loadingContainers.length; i++) {
+                    loadingContainers[i].style.display = "flex";
+                }
+                for(var i = 0; i < questionAnswers.lenth; i++){
+                    questionAnswers[i].style.display = "none";
+                }   
+            }else{
+                for (var i = 0; i < loadingContainers.length; i++) {
+                    loadingContainers[i].style.display = "none";
+                }
+                for(var i = 0; i < questionAnswers.lenth; i++){
+                    questionAnswers[i].style.display = "flex";
+                }
+            }
+        }
     </script>
     
     
