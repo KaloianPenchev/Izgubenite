@@ -192,22 +192,33 @@ header a{
 }
 .test-img{
     position: absolute;
+    top:25vh;
+    left:10vw;
 }
 .add-test{
     position: absolute;
-    top: 60%;
-    left: 10%;
+    top: 60vh;
+    right: 12vw;
     list-style: none;
     background-color:#36517C;
     margin-bottom: 2.083vw;
     border: solid rgba(108, 160, 237, 0.4) 0.417vw;
     border-radius: 3vw;
-    height: 30%;
-    width: 40%;
+    height: 10vh;
+    width: 30vw;
 }
 .add-test h1{
     color: white;
-    font-size: 5vw;
+    font-size: 3vw;
+}
+.page2 p{
+    position: absolute;
+    top:40vh;
+    right: 9vw;
+    height: 20vh;
+    width: 35vw;
+    font-size: 2vw;
+    text-align: center;
 }
 .btn{
     list-style: none;
