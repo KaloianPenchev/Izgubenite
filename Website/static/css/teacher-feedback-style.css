@@ -225,6 +225,13 @@ header a{
     font-size: 1vw;
     opacity: 0.1;
 }
+
+.comment{
+    margin-left: 10%;
+    margin-top: 0.5%;
+    font-size: 2vw;
+}
+
 .button{
     border-radius: 0.5vw;
     padding: 1%;
