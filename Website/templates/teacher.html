@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/teacher-style.css') }}">
     <title>Teacher Home Page</title>
 </head>
-<body>
+<body style="height: 230vh;">
     <header>
         <div class="div-left">
             <h1 class="header-text">Practicum</h1>
@@ -25,11 +25,12 @@
     </header>
    
     <div class="page1" id="p1">
+        <img src="{{ url_for('static', filename='pictures/feedback1-h.png') }}" class="feedback-img">
+        <p>Обратна връзка за ученици</p>
         <div class="profilepage">
-            
            {% for student in students %}
                 {% if student.my_teacher == teachername %}
-                    <button class="button" onclick="clicked('{{student.email}}');" type="submit"><h1 class="details-text">{{student.first_name}}</h1></button>
+                    <button class="button3" onclick="clicked('{{student.email}}');" type="submit"><h1 class="details-text">{{student.first_name}}</h1></button>
                     <script>
                         function clicked(student_email) {
                             window.location = `/reactions/${student_email}`;
@@ -37,21 +38,17 @@
                     </script>
                 {% endif %}
             {% endfor %}
-            
+        </div>
     </div>
     
     <div class="page2" id="p2">
-        
+        <img src="{{ url_for('static', filename='pictures/test1.png') }}" class="test-img">
         <a href="/addtest">
             <button class="add-test"><h1>Add Question</h1></button>
         </a>
         
     </div>
-    
-    
     <footer>
-        <img class="footerpic" src="{{ url_for('static', filename='pictures/footer.png') }}">
-        
         <h1 class="heading">Practicum</h2>
         
         <h2>Copyright &copy 2024 all rights reserved</h2>
