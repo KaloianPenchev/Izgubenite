@@ -27,7 +27,7 @@
         <div id="questions-form">
             <form action="/chatbot" method="post">
                 <div class="text">
-                    <button class="button2"  type="submit" onclick="toggleAnswer1(this)">Generate</button>
+                    <button class="button2"  id="btn" type="submit" >Generate</button>
                     <h2>Enter your text</h2>
                     <textarea id="context" placeholder="Type your text..." name="context"></textarea>
                 </div>
@@ -90,10 +90,10 @@
             }
         </script>
         <div class="ai_result">
-            <div class="loading-container">
+            <!-- <div class="loading-container" > 
                 <div class="loading"></div>
                 <div id="loading-text">Waiting for your content</div>
-            </div>
+            </div> -->
             <ul class="questions_answers">
                 {% for item in questions_answers %}
                 <li class="li">
@@ -110,27 +110,9 @@
         </div>
     </div>
     
-    
-    
     <script>
-        async function toggleAnswer1(button) {
-    
-            const loadingContainer = document.querySelector('.loading-container');
-            const questionsAnswers = document.querySelector('.questions_answers');
-            loadingContainer.display.style = "flex";
-            questionsAnswers.display.style = "none";
-            console.log("2");
-            await new Promise(resolve => setTimeout(resolve, 5000));
-            console.log("1");
-            loadingContainer.display.style = "none";
-            questionsAnswers.display.style = "flex";
-            
-            
-        }
+        
     </script>
-    
-    
-    
     
     
     
