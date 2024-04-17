@@ -72,8 +72,12 @@ def ai():
             new_question = question_tokenizer.decode(generated_question[0], skip_special_tokens=True)
             
             new_question = new_question.capitalize() if new_question else ""  
-            questions.append(new_question)
-            answers.append(random_sentence)
+            
+            # Check similarity between new question and existing questions
+            similarity_scores = [calculate_similarity(new_question, q) for q in questions]
+            if not similarity_scores or max(similarity_scores) < 0.8:  # Ensure diversity
+                questions.append(new_question)
+                answers.append(random_sentence)
 
         data = [{'question': q, 'answer': a} for q, a in zip(questions, answers) if q]  
 
