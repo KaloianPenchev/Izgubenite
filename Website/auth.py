@@ -105,22 +105,23 @@ def addtest():
 @auth.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
-        category = request.form['category']
+        category = int(request.form['category']) - 1
         question = request.form['question']
         option_a = request.form['option_a']
         option_b = request.form['option_b']
         option_c = request.form['option_c']
         option_d = request.form['option_d']
+        ans =  request.form['ans']
         explanation = request.form['explanation']
         
         # Now you have all the form data, you can process it as needed.
         
-        return ()
+        return modify_json_and_render(category, question, option_a, option_b, option_c, option_d, ans, explanation)
 
 
 @auth.route('/add-question', methods=['POST', 'GET'])
 @login_required
-def modify_json_and_render(cat, quest, a, b, c, d, exp):
+def modify_json_and_render(cat, quest, a, b, c, d, ans,exp):
     try:
         file_path = 'Website/static/arrays.json'
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -129,8 +130,8 @@ def modify_json_and_render(cat, quest, a, b, c, d, exp):
         # Modify the data (for example, add a new array)
         data['questions'][cat].append(quest)
         data['pos_choisses'][cat].append([a, b, c, d])
-        data['answer'][cat].append()
-        data['explanations'][cat].append()
+        data['answer'][cat].append(ans)
+        data['explanations'][cat].append(exp)
         # Write the modified data back to the file
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2)
