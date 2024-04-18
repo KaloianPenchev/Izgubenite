@@ -25,7 +25,7 @@
         </div-right>
     </header>
     <div class="main">
-        <form method="post" action="/submit">
+        <form method="post" action="/add-question">
             <select class="dropdown" name="category">
                 <option selected disabled>Choose a category</option>
                 <option class="categoryOption" value="1">Алгебра</option>
@@ -33,30 +33,33 @@
                 <option class="categoryOption" value="3">История</option>
                 <option class="categoryOption" value="4">География</option>
             </select>
-            <div class="option">
+            <div id="que">
+                <label for="question">Question</label>
+                <input type="text" name="question" placeholder="Question" class="option-text">
+            </div>
+            <div class="optionA">
                 <label for="option_a">A: </label>
                 <input type="text" name="option_a" placeholder="Option 1" class="option-text">
             </div>
-            <input type="text" name="question" placeholder="Question">
-            <div class="option">
+            
+            <div class="optionB">
                 <label for="option_b">B: </label>
                 <input type="text" name="option_b" placeholder="Option 2" class="option-text">
             </div>
-            <div class="option">
+            <div class="optionC">
                 <label for="option_c">C: </label>
             
                 <input type="text" name="option_c" placeholder="Option 3" class="option-text">
             </div>
-            <div class="option">
+            <div class="optionD">
                 <label for="option_d">D: </label>
                 <input type="text" name="option_d" placeholder="Option 4" class="option-text">
             </div>
-            <div class="option">
-                <label for="ans">ans </label>
+            <div class="optionans">
                 <input type="text" name="ans" placeholder="Ans" class="option-text">
             </div>
             <div class="explanation"><input type="text" name="explanation" placeholder="Explanation"></div>
-            <button type="submit" class="btn">Add</button>
+            <button type="submit" class="btn" onclick="window.location.href='/add-question';window.location.href='/addtest';">Add</button>
         </form>
     </div>
     
@@ -75,13 +78,7 @@
     
     
     <script>
-        let q = document.getElementById("que").value;
-        let w = document.getElementById("aqr").value;
-        let e = document.getElementById("aqr1").value;
-        let r = document.getElementById("aqr2").value;
-        let t = document.getElementById("aqr3").value;
-        let y = document.getElementById("aqr4").value;
-        console.log(pos_choisses);
+
         fetch('/add-question', {
             method: 'POST',
             headers: {
