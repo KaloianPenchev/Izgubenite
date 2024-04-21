@@ -128,10 +128,8 @@ def modify_json_and_render():
             with open(file_path, 'w', encoding='utf-8') as f:
                 json.dump(data, f, indent=2)
 
-            # Redirect to a different page after successful modification
-            flash('Question added successfully!', category='success')
+            
             return redirect(url_for('auth.addtest'))  # Redirect to the addtest route
         except Exception as e:
-            print("Error:", e)
-            flash('An error occurred while adding the question.', category='error')
+            
             return redirect(url_for('auth.addtest'))  # Redirect to addtest route in case of error
